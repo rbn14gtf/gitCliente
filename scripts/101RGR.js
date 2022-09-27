@@ -36,3 +36,7 @@ function ambito(){
     window.alert(variableAmbito);
 
 }
+function muestraVariableGlobal(){
+    window.alert(variableGlobal);
+
+}
