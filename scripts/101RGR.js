@@ -16,11 +16,6 @@ console.log("Lirio: precio unitario:",precioLirio,"cantidad:",numeroLirios,"valo
 console.log("Tulipan: precio unitario:",precioTulipan,"cantidad:",numeroTulipanes,"valor:",valorTulipanes);
 console.log("Total:",valorRosas+valorLirio+valorTulipanes);
 
-varTexto="ABCD";
-varTexto+="EFG"
-console.log(varTexto);
-
-
 function saludar(){
     var saludo="Hola";
     window.alert(saludo);
