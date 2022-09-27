@@ -23,10 +23,16 @@ console.log(varTexto);
 
 function saludar(){
     var saludo="Hola";
-    alert(saludo);
+    window.alert(saludo);
 }
 
 var despedida="Adiós";
 function despedir(){
-    alert(despedida);
+    window.alert(despedida);
+}
+var variableAmbito="fuera";
+function ambito(){
+    var variableAmbito="dentro";
+    window.alert(variableAmbito);
+
 }
