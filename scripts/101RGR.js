@@ -38,5 +38,7 @@ function ambito(){
 }
 function muestraVariableGlobal(){
     window.alert(variableGlobal);
-
+}
+function muestraVariableAutomaticamenteGlobal(){
+    variableAutomaticamenteGlobal="Esto es una variable automaticamente global";
 }
