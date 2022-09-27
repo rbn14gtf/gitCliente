@@ -16,6 +16,7 @@ console.log("Lirio: precio unitario:",precioLirio,"cantidad:",numeroLirios,"valo
 console.log("Tulipan: precio unitario:",precioTulipan,"cantidad:",numeroTulipanes,"valor:",valorTulipanes);
 console.log("Total:",valorRosas+valorLirio+valorTulipanes);
 
+//EJERCICIO 3
 function saludar(){
     var saludo="Hola";
     window.alert(saludo);
@@ -28,7 +29,7 @@ function despedir(){
 var variableAmbito="fuera";
 function ambito(){
     var variableAmbito="dentro";
-    window.alert(variableAmbito);
+    window.alert("Variable desde dentro de la funcion ambito: "+variableAmbito);
 
 }
 function muestraVariableGlobal(){
