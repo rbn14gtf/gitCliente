@@ -16,7 +16,27 @@
 
         };
         alert(coche.marca);
-        alert(coche[modelo]);
+        alert(coche["modelo"]);
+
+
+        var coche=new Object();
+        coche.marca="Ford";
+        coche.modelo="Mondeo";
+        coche.cilindrada="1700";
+        coche.color="Rojo";
+
+
+
+        function coche(marca,modelo,cilindrada,color){
+            this.marca=marca;
+            this.modelo=modelo;
+            this.cilindrada=cilindrada;
+            this.color=color;
+
+        }
+        var coche2=new coche("lambo","huracan",5000,"Amarillo");
+        alert(coche2.marca);
+
     </script>
     
 </body>
