@@ -15,8 +15,8 @@
 
 
         };
-        alert(coche.marca);
-        alert(coche["modelo"]);
+        //alert(coche.marca);
+        //alert(coche["modelo"]);
 
 
         var coche=new Object();
@@ -33,8 +33,14 @@
             this.edad=edad;
         }
         var persona1=new persona("Ruben","Garcia Rivera",21);
-        alert(persona1.nombre);
+        //alert(persona1.nombre);
+        var barco={nombre:"Ocean Melody",tipo:"Goleta",eslora:16,edad:20};
+        var prop;
 
+        for (prop in barco) {
+            alert(barco[prop]);
+            
+        }
     </script>
     
 </body>
