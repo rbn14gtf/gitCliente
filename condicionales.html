@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            
+            /*if(nota>10||nota<=0){
+                alert("Nota no valida.");
+            }else if(nota<5){
+                alert("Has suspendido.");
+            }else if(nota==5){
+                alert("Has sacado un suficiente.");
+            }else if(nota==6){
+                alert("Has sacado un bien.");
+            }else if(6<nota<=8){
+                alert("Has sacado un notable.");
+            }else{
+                alert("Has sacado un sobresaliente.");   
+            }
+            */
+            let nota=9;
+            switch (nota){
+                case 1: case 2:case 3:case 4:
+                    alert("Has suspendido.");
+                    break;
+                case 5:
+                    alert("Has sacado un suficiente.");
+                    break;
+                case 6:
+                    alert("Has sacado un bien.");
+                    break;
+                case 7:case 8:
+                    alert("Has sacado un notable.");
+                    break;
+                case 9: case 10:
+                    alert("Has sacado un sobresaliente.");
+                    break;
+                default:
+                    alert("Nota no válida");
+                    break;  
+            }
+        
+
+        </script>
+        
+        
+    </body>
+</html>
