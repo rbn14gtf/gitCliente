@@ -1,3 +1,4 @@
+//EJERCICIO 2
 let precioRosa =8;
 let precioLirio =10;
 let precioTulipan =2;
