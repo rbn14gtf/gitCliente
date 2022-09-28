@@ -15,29 +15,30 @@
             let h=Number(miFecha.getHours());
             let m=Number(miFecha.getMinutes());
             let s=Number(miFecha.getSeconds());
+            /*  h=14;
+            m=4;
+            s=3;  */
+            
             console.log(h);
             console.log(m);
             console.log(s);
+
+            if(s<10){
+                s="0"+s;
+            }  
+            if(m<10){
+                m="0"+m;
+            }
             if(h<10){
-                if(m<10){
-                    if(s<10){
-                        texto.innerHTML="0"+h+":0"+m+":"+"0"+s;
-                    }
-                    else{
-                        texto.innerHTML="0"+h+":"+"0"+m+":"+s;
-                    }
-                }else{
-                    texto.innerHTML="0"+h+":"+m+":"+s;
-                }
+                h="0"+h;
+            }
+            if(h>12){
+                texto.innerHTML="0"+(h-12)+":"+m+":"+s+" pm";
 
             }else{
-                texto.innerHTML=miFecha.getHours()+":"+miFecha.getMinutes()+":"+miFecha.getSeconds();
+                texto.innerHTML=h+":"+m+":"+s+" am";
+
             }
-            //mostrar hora formato am/pm
-
-            
         </script>
-
-        
     </body>
 </html>
