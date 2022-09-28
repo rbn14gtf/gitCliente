@@ -10,8 +10,34 @@
         <script>
             var miFecha=new Date();
             var texto=document.getElementById("hora");
-            texto.innerHTML=miFecha;
+            //texto.innerHTML=miFecha;
+
+            let h=Number(miFecha.getHours());
+            let m=Number(miFecha.getMinutes());
+            let s=Number(miFecha.getSeconds());
+            console.log(h);
+            console.log(m);
+            console.log(s);
+            if(h<=10){
+                if(m<=10){
+                    if(s<=10){
+                        texto.innerHTML=h+":"+m+":"+"0"+s;
+                    }
+                    else{
+                        texto.innerHTML=h+":"+"0"+m+":"+s;
+                    }
+                }else{
+                    texto.innerHTML="0"+h+":"+m+":"+s;
+                }
+
+            }else{
+                texto.innerHTML=miFecha.getHours()+":"+miFecha.getMinutes()+":"+miFecha.getSeconds();
+            }
+            //mostrar hora formato am/pm
+
             
         </script>
+
+        
     </body>
 </html>
