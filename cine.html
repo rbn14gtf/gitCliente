@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cine</title>
+
+    </head>
+    <body>
+        <h3 id="peliculas">"Spider Man", "Superman", "Dragon Ball Super", "La era del hielo", "18videos"</h3>
+        <script>
+            let peliculas=["Spider Man", "Superman", "Dragon Ball Super", "La era del hielo", "18videos"]
+
+            function Persona(name,age){
+                this.name=name;
+                this.age=age;
+            }
+
+            let p1=new Persona();
+            //PIDE EL name Y COMPRUEBA QUE EL INTRODUCIDO ES VALIDO
+            do{
+                p1.name=String(prompt("Introduce tu nombre:",""));
+
+            }while(p1.name==null||p1.name=="");
+
+            //PIDE EL age Y COMPRUEBA QUE EL INTRODUCIDO ES VALIDA
+            do{
+                p1.age=Number(prompt("Introduce tu edad:",""));
+
+            }while(p1.age==null||p1.age==""||isNaN(p1.age));
+           
+            console.log(p1.name)
+            console.log(p1.age)
+            console.log(typeof(p1.age))
+
+
+
+
+        </script>
+        
+                
+    </body>
+</html>
