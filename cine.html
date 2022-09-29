@@ -27,8 +27,8 @@
 
 
             let precioEntrada=10;
-            const regalosRecibidos=[];
-
+            //const regalosRecibidos=[];
+            p1.regalosRecibidos=[];
             //PIDE LA PELICULA Y COMPRUEBA QUE LA INTRODUCIDA EXISTE 
             //Y COMPRUEBA QUE SI ES LA DE ADULTOS QUE SEA MAYOR DE EDAD
             do{
@@ -66,24 +66,24 @@
             }*/
             if(p1.age<=17){
                 p1.precioEntrada=precioEntrada*0.5;
-                regalosRecibidos.push(regalos[1]);
-                regalosRecibidos.push(regalos[4]);
+                p1.regalosRecibidos.push(regalos[1]);
+                p1.regalosRecibidos.push(regalos[4]);
             }
             else if((p1.age>=18)&&(p1.age<=25)){
                 p1.precioEntrada=precioEntrada;
-                regalosRecibidos.push(regalos[2]);
-                regalosRecibidos.push(regalos[3]);
-                regalosRecibidos.push(regalos[4]);
+                p1.regalosRecibidos.push(regalos[2]);
+                p1.regalosRecibidos.push(regalos[3]);
+                p1.regalosRecibidos.push(regalos[4]);
             }
 
             else if((p1.age>=26)&&(p1.age<=35)){
                 p1.precioEntrada=precioEntrada*0.9;
-                regalosRecibidos.push(regalos[3]);
-                regalosRecibidos.push(regalos[4]);
+                p1.regalosRecibidos.push(regalos[3]);
+                p1.regalosRecibidos.push(regalos[4]);
             }
             else if(p1.age>=36){
                 p1.precioEntrada=precioEntrada*0.8;
-                regalosRecibidos.push(regalos[0]);
+                p1.regalosRecibidos.push(regalos[0]);
             }
             else{
                 alert("ERROR");
@@ -93,9 +93,9 @@
             console.log("Edad: "+p1.age);
             console.log("Pelicula elegida: "+p1.peliculaElegida);
             console.log("Precio Entrada: "+p1.precioEntrada);
-            console.log("Regalos Recibidos: "+regalosRecibidos);
+            console.log("Regalos Recibidos: "+p1.regalosRecibidos);
 
-            document.getElementById("entrada").innerHTML="<fieldset><h3>ENTRADA</h3><h4>Nombre: "+p1.name+"</h4><h4>Edad: "+p1.age+"</h4><h4>Pelicula: "+p1.peliculaElegida+"</h4><h4>Precio Entrada: "+p1.precioEntrada+"€</h4><h4>Regalos: "+regalosRecibidos+"</h4></fieldset>";
+            document.getElementById("entrada").innerHTML="<fieldset><h3>ENTRADA</h3><h4>Nombre: "+p1.name+"</h4><h4>Edad: "+p1.age+"</h4><h4>Pelicula: "+p1.peliculaElegida+"</h4><h4>Precio Entrada: "+p1.precioEntrada+"€</h4><h4>Regalos: "+p1.regalosRecibidos+"</h4></fieldset>";
             
         </script>
     </body>
