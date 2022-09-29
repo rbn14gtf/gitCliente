@@ -6,7 +6,9 @@
 
     </head>
     <body>
+        <p id="aqui"></p>
         <script>
+        /*
             const numeros=[1,2,3,4,5];
             console.log(numeros);
             numeros.push(6);//introducir un valor
@@ -21,7 +23,22 @@
 
             for(const k in numeros){
                 console.log(numeros[k]);
-            }
+            }*/
+        var txt="";
+        var txt2="";
+        var dias=['lunes','martes','miercoles','jueves','viernes','sabado','domingo'];
+        dias.forEach(muestra);
+        document.getElementById("aqui").innerHTML=txt;
+        function muestra(valor,index,array){
+            txt=txt+valor+" ";
+        }
+        document.getElementById("aqui").innerHTML+="<br>----------</br>";
+        for(i=0;i<dias.length;i++){
+            txt2=txt2+dias[i]+" ";
+            
+        }
+        document.getElementById("aqui").innerHTML+=txt2;
+
         </script>    
     </body>
 </html>
