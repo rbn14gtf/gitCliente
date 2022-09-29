@@ -5,11 +5,14 @@
         <title>Tablas</title>
     </head>
     <body>
+        <p id="tablas"></p>
         <script>
             for(i=0;i<11;i++){
                 for(j=0;j<11;j++){
                     console.log(i+"x"+j+"="+i*j);
+                    document.getElementById("tablas").innerHTML+=i+"x"+j+"="+i*j+"<br>";
                 }  
+                document.getElementById("tablas").innerHTML+="<br>";
             }
         </script>                
     </body>
