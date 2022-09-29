@@ -1,9 +1,9 @@
-function Persona(name,age,peliculaElegida,precioEntrada,regalosRecibidos){
+function Persona(name,age,peliculaElegida,precioEntrada){
     this.name=name;
     this.age=age;
     this.peliculaElegida=peliculaElegida;
     this.precioEntrada=precioEntrada;
-    this.regalosRecibidos=regalosRecibidos;
+    //this.regalosRecibidos=regalosRecibidos;
 }
 
 function esMayorEdad(edad){
