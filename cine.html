@@ -9,7 +9,8 @@
     <body>
         <h3 id="peliculas">"Spider Man", "Superman", "Dragon Ball Super", "La era del hielo", "18videos"</h3>
         <script>
-            let peliculas=["Spider Man", "Superman", "Dragon Ball Super", "La era del hielo", "18videos"]
+            let peliculas=["Spider Man", "Superman", "Dragon Ball Super", "La era del hielo", "18videos"];
+            let regalos=["Agua","Caramelos","Palomitas","Perrito","Refresco"];
 
             let p1=new Persona();
             //PIDE EL name Y COMPRUEBA QUE EL INTRODUCIDO ES VALIDO
@@ -23,16 +24,48 @@
                 p1.age=Number(prompt("Introduce tu edad:",""));
 
             }while(p1.age==null||p1.age==""||isNaN(p1.age));
+
+
             let peliculaElegida="";
+            let precioEntrada=10;
+            let regalosRecibidos=[];
+
+
             //PIDE LA PELICULA Y COMPRUEBA QUE LA INTRODUCIDA EXISTE 
             //Y COMPRUEBA QUE SI ES LA DE ADULTOS QUE SEA MAYOR DE EDAD
             do{
                 peliculaElegida=String(prompt("Introduce una pelicula:",""));
             }while((peliculas.indexOf(peliculaElegida)==-1)||(!esMayorEdad(p1.age)&&peliculaElegida=="18videos"));
            
-            console.log(p1.name)
-            console.log(p1.age)
-            console.log(peliculas.indexOf(peliculaElegida));
+            //let regalos=["Agua","Caramelos","Palomitas","Perrito","Refresco"];
+
+            switch (p1.age){
+                case p1.age<=17:
+                    precioEntrada*=0.5;
+                    regalosRecibidos.push(regalos[1])
+                    regalosRecibidos.push(regalos[4])
+                    break;
+                case (p1.age>=18)&&(p1.age<=25):
+                    regalosRecibidos.push(regalos[2])
+                    regalosRecibidos.push(regalos[3])
+                    regalosRecibidos.push(regalos[4])
+                    break;
+                case (p1.age>=26)&&(p1.age<=35):
+                    precioEntrada*=0.9;
+                    regalosRecibidos.push(regalos[3])
+                    regalosRecibidos.push(regalos[4])
+                    break;
+                case p1.age>=36:
+                    precioEntrada*=0.8;
+                    regalosRecibidos.push(regalos[0])
+                    break;
+            }
+            console.log("Nombre: "+p1.name)
+            console.log("Edad: "+p1.age)
+            console.log("Regalos Recibidos: "+p1)
+            console.log("Edad: "+p1.age)
+
+            console.log("Pelicula elegida: "+peliculaElegida);
             
 
 
