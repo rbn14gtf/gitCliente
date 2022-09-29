@@ -16,13 +16,13 @@
             let p1=new Persona();
             //PIDE EL name Y COMPRUEBA QUE EL INTRODUCIDO ES VALIDO
             do{
-                p1.name=String(prompt("Introduce tu nombre:","Ruben"));
+                p1.name=String(prompt("Introduce tu nombre:",""));
 
             }while(p1.name==null||p1.name==""||!isNaN(p1.name));
 
             //PIDE LA EDAD Y COMPRUEBA QUE LA INTRODUCIDA ES VALIDA
             do{
-                p1.age=Number(prompt("Introduce tu edad:","17"));
+                p1.age=Number(prompt("Introduce tu edad:",""));
 
             }while(p1.age==null||p1.age==""||isNaN(p1.age));
 
@@ -33,7 +33,7 @@
             //PIDE LA PELICULA Y COMPRUEBA QUE LA INTRODUCIDA EXISTE 
             //Y COMPRUEBA QUE SI ES LA DE ADULTOS QUE SEA MAYOR DE EDAD
             do{
-                p1.peliculaElegida=String(prompt("Introduce una pelicula:","Superman"));
+                p1.peliculaElegida=String(prompt("Introduce una pelicula:",""));
             }while((peliculas.indexOf(p1.peliculaElegida)==-1)||(!esMayorEdad(p1.age)&&p1.peliculaElegida=="18videos"));
            
             //DESCUENTOS
