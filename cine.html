@@ -16,7 +16,7 @@
             }
 
             function esMayorEdad(edad){
-                if (edad<18){
+                if (edad>=18){
                     return true;
                 }else{
                     return false;
@@ -40,7 +40,7 @@
             //Y COMPRUEBA QUE SI ES LA DE ADULTOS QUE SEA MAYOR DE EDAD
             do{
                 peliculaElegida=String(prompt("Introduce una pelicula:",""));
-            }while((peliculas.indexOf(peliculaElegida)==-1)||(!esMayorEdad(p1.edad)&&peliculaElegida=="18videos"));
+            }while((peliculas.indexOf(peliculaElegida)==-1)||(!esMayorEdad(p1.age)&&peliculaElegida=="18videos"));
            
             console.log(p1.name)
             console.log(p1.age)
