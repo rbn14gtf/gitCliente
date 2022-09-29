@@ -17,24 +17,28 @@ console.log("Tulipan: precio unitario:",precioTulipan,"cantidad:",numeroTulipane
 console.log("Total:",valorRosas+valorLirio+valorTulipanes);
 
 //EJERCICIO 3
+//1
 function saludar(){
     var saludo="Hola";
     window.alert(saludo);
 }
-
+//2
 var despedida="Adiós";
 function despedir(){
     window.alert(despedida);
 }
+//3
 var variableAmbito="fuera";
 function ambito(){
     var variableAmbito="dentro";
     window.alert("Variable desde dentro de la funcion ambito: "+variableAmbito);
 
 }
+//4
 function muestraVariableGlobal(){
     window.alert(variableGlobal);
 }
+//5
 function muestraVariableAutomaticamenteGlobal(){
     variableAutomaticamenteGlobal="Esto es una variable automaticamente global";
 }
