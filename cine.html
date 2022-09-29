@@ -40,25 +40,25 @@
             switch (p1.age){
                 case p1.age<=17:
                     p1.precioEntrada=precioEntrada*0.5;
-                    regalosRecibidos.push("Hola");
-                    regalosRecibidos.push(regalos[1]);
-                    regalosRecibidos.push(regalos[4]);
+                    p1.regalosRecibidos.push("Hola");
+                    p1.regalosRecibidos.push(regalos[1]);
+                    p1.regalosRecibidos.push(regalos[4]);
                     break;
                 case (p1.age>=18)&&(p1.age<=25):
                     regalosRecibidos.push("Hola");
                     p1.precioEntrada=precioEntrada;
-                    regalosRecibidos.push(regalos[2]);
-                    regalosRecibidos.push(regalos[3]);
-                    regalosRecibidos.push(regalos[4]);
+                    p1.regalosRecibidos.push(regalos[2]);
+                    p1.regalosRecibidos.push(regalos[3]);
+                    p1.regalosRecibidos.push(regalos[4]);
                     break;
                 case (p1.age>=26)&&(p1.age<=35):
                     p1.precioEntrada=precioEntrada*0.9;
-                    regalosRecibidos.push(regalos[3]);
-                    regalosRecibidos.push(regalos[4]);
+                    p1.regalosRecibidos.push(regalos[3]);
+                    p1.regalosRecibidos.push(regalos[4]);
                     break;
                 case p1.age>=36:
                     p1.precioEntrada=precioEntrada*0.8;
-                    regalosRecibidos.push(regalos[0]);
+                    p1.regalosRecibidos.push(regalos[0]);
                     break;
                 default:
                     alert("ERROR");
@@ -88,7 +88,7 @@
             else{
                 alert("ERROR");
             }
-
+            
             console.log("Nombre: "+p1.name);
             console.log("Edad: "+p1.age);
             console.log("Pelicula elegida: "+p1.peliculaElegida);
