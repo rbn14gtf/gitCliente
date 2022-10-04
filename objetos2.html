@@ -18,16 +18,16 @@
             alert("Division "+-div1+"/"+div2+"="+-div1/div2);
             alert("Typeof: "+(div1/div2));*/
             let numero=0;
-            let base=0;
+            let base=10;
             do{
-                numero=Number(prompt("Introduce un numero:",""));
+                numero=Number(prompt("Introduce un número:",""));
 
             }while(numero==null||numero==""||isNaN(numero));
             do{
                 base=Number(prompt("Introduce una base:",""));
 
-            }while(base==null||base==""||isNaN(base));
-            console.log("El numero "+numero+" en base "+base+" es "+numero.toString(base));
+            }while(base==null||base==""||isNaN(base)||base<0);
+            console.log("El número "+numero+" en base "+base+" es "+numero.toString(base));
         </script>                
     </body>
 </html>
