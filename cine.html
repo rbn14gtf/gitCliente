@@ -33,27 +33,27 @@
             do{
                 p1.peliculaElegida=String(prompt("Introduce una pelicula de las siguientes:\nSpider Man\nSuperman\nDragon Ball Super\nLa era del hielo\n18videos",""));
             }while((peliculas.indexOf(p1.peliculaElegida)==-1)||(!esMayorEdad(p1.age)&&p1.peliculaElegida=="18videos"));
-           
+           //console.log(getDescuento(p1.age));
             //DESCUENTOS
             if(p1.age<=17){
-                p1.precioEntrada=precioEntrada*0.5;
+                p1.precioEntrada=precioEntrada*Number(getDescuento(p1.age));
                 p1.regalosRecibidos.push(regalos[1]);
                 p1.regalosRecibidos.push(regalos[4]);
             }
             else if((p1.age>=18)&&(p1.age<=25)){
-                p1.precioEntrada=precioEntrada;
+                p1.precioEntrada=precioEntrada*Number(getDescuento(p1.age));
                 p1.regalosRecibidos.push(regalos[2]);
                 p1.regalosRecibidos.push(regalos[3]);
                 p1.regalosRecibidos.push(regalos[4]);
             }
 
             else if((p1.age>=26)&&(p1.age<=35)){
-                p1.precioEntrada=precioEntrada*0.9;
+                p1.precioEntrada=precioEntrada*Number(getDescuento(p1.age));
                 p1.regalosRecibidos.push(regalos[3]);
                 p1.regalosRecibidos.push(regalos[4]);
             }
             else if(p1.age>=36){
-                p1.precioEntrada=precioEntrada*0.8;
+                p1.precioEntrada=precioEntrada*Number(getDescuento(p1.age));
                 p1.regalosRecibidos.push(regalos[0]);
             }
             else{
