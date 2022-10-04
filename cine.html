@@ -31,7 +31,7 @@
             //PIDE LA PELICULA Y COMPRUEBA QUE LA INTRODUCIDA EXISTE 
             //Y COMPRUEBA QUE SI ES LA DE ADULTOS QUE SEA MAYOR DE EDAD
             do{
-                p1.peliculaElegida=String(prompt("Introduce una pelicula:\nSpider Man\nSuperman\nDragon Ball Super\nLa era del hielo\n18videos",""));
+                p1.peliculaElegida=String(prompt("Introduce una pelicula de las siguientes:\nSpider Man\nSuperman\nDragon Ball Super\nLa era del hielo\n18videos",""));
             }while((peliculas.indexOf(p1.peliculaElegida)==-1)||(!esMayorEdad(p1.age)&&p1.peliculaElegida=="18videos"));
            
             //DESCUENTOS
