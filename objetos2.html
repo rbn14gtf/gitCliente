@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Objetos 2</title>
+    </head>
+    <body>
+        <script>
+            let inf=2;
+            /*while(inf!=Infinity){
+                alert(inf);
+                console.log(inf);
+                inf*=inf;
+            }*/
+            /*
+            let div1=2, div2=0;
+            alert("Division "+div1+"/"+div2+"="+div1/div2);
+            alert("Division "+-div1+"/"+div2+"="+-div1/div2);
+            alert("Typeof: "+(div1/div2));*/
+            let numero=0;
+            let base=0;
+            do{
+                numero=Number(prompt("Introduce un numero:",""));
+
+            }while(numero==null||numero==""||isNaN(numero));
+            do{
+                base=Number(prompt("Introduce una base:",""));
+
+            }while(base==null||base==""||isNaN(base));
+            console.log("El numero "+numero+" en base "+base+" es "+numero.toString(base));
+        </script>                
+    </body>
+</html>
