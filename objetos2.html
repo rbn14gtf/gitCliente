@@ -6,18 +6,24 @@
     </head>
     <body>
         <script>
+            /*
             let inf=2;
             while(inf!=Infinity){
-                
-                console.log(inf);
                 inf*=inf;
                 alert(inf);
+                console.log(inf);
+
             }
-            /*
+            */
+           /*
             let div1=2, div2=0;
             alert("Division "+div1+"/"+div2+"="+div1/div2);
+            console.log("Division "+div1+"/"+div2+"="+div1/div2);
             alert("Division "+-div1+"/"+div2+"="+-div1/div2);
-            alert("Typeof: "+(div1/div2));*/
+            console.log("Division "+-div1+"/"+div2+"="+-div1/div2);
+            alert("Typeof: "+(div1/div2));
+            console.log("Typeof: "+(div1/div2));
+            */
             /*
             let numero=0;
             let base=10;
@@ -30,6 +36,13 @@
 
             }while(base==null||base==""||isNaN(base)||base<0);
             console.log("El número "+numero+" en base "+base+" es "+numero.toString(base));*/
+
+            let v1=100/"casa";
+            let v2=100/"10";
+            alert("100/'casa'="+v1);
+            alert("100/'10'="+v2);
+            alert("Es un NaN atipico?\n"+isNaN(v1));
+            alert("De que tipo es NaN?\n"+typeof(v2));
         </script>                
     </body>
 </html>
