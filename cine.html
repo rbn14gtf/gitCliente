@@ -12,14 +12,24 @@
             const regalos=["Agua","Caramelos","Palomitas","Perrito","Refresco"];
 
             let p1=new Persona();
+            p1.name=String(prompt("Introduce tu nombre:",""));
             //PIDE EL name Y COMPRUEBA QUE EL INTRODUCIDO ES VALIDO
             do{
-                p1.name=String(prompt("Introduce tu nombre:",""));
+                if(p1.name==null||p1.name==""||!isNaN(p1.name)){
+                    alert("Nombre no válido");
+                    p1.name=String(prompt("Introduce tu nombre:",""));
+
+                }
             }while(p1.name==null||p1.name==""||!isNaN(p1.name));
+            p1.age=Number(prompt("Introduce tu edad:",""));
 
             //PIDE LA EDAD Y COMPRUEBA QUE LA INTRODUCIDA ES VALIDA
             do{
-                p1.age=Number(prompt("Introduce tu edad:",""));
+                if(p1.age==null||p1.age==""||isNaN(p1.age)||p1.age<0){
+                    alert("Edad No Valida");
+                    p1.age=Number(prompt("Introduce tu edad:",""));
+
+                }
 
             }while(p1.age==null||p1.age==""||isNaN(p1.age)||p1.age<0);
 
@@ -28,8 +38,16 @@
             p1.regalosRecibidos=[];
             //PIDE LA PELICULA Y COMPRUEBA QUE LA INTRODUCIDA EXISTE 
             //Y COMPRUEBA QUE SI ES LA DE ADULTOS QUE SEA MAYOR DE EDAD
+            p1.peliculaElegida=String(prompt("Introduce una pelicula de las siguientes:\nSpider Man\nSuperman\nDragon Ball Super\nLa era del hielo\n18videos",""));
+
             do{
-                p1.peliculaElegida=String(prompt("Introduce una pelicula de las siguientes:\nSpider Man\nSuperman\nDragon Ball Super\nLa era del hielo\n18videos",""));
+                if(peliculas.indexOf(p1.peliculaElegida)==-1){
+                    alert("La pelicula introducida no existe");
+                    p1.peliculaElegida=String(prompt("Introduce una pelicula de las siguientes:\nSpider Man\nSuperman\nDragon Ball Super\nLa era del hielo\n18videos",""));
+                }else if(!esMayorEdad(p1.age)&&p1.peliculaElegida=="18videos"){
+                    alert("No puedes ver esta pelicula siendo menor de edad");
+                    p1.peliculaElegida=String(prompt("Introduce una pelicula de las siguientes:\nSpider Man\nSuperman\nDragon Ball Super\nLa era del hielo\n18videos",""));
+                }
             }while((peliculas.indexOf(p1.peliculaElegida)==-1)||(!esMayorEdad(p1.age)&&p1.peliculaElegida=="18videos"));
            //console.log(getDescuento(p1.age));
             //DESCUENTOS
