@@ -8,8 +8,7 @@
         <script>
             function getDaysFromMiliseconds(miliseconds){
                 miliseconds/=1000;
-                miliseconds/=60;
-                miliseconds/=60;
+                miliseconds/=3600;
                 miliseconds/=24;
                 return Math.ceil(miliseconds);
             }
@@ -32,7 +31,6 @@
             console.log("Fecha Introducida: "+fechaIntroducida);
             console.log("Milisegundos Fecha Introducida: "+fechaIntroducida.getTime());
 
-            //let fechaHoy=Date.now(); 
             let fechaHoy=new Date(); 
             console.log("Fecha de Hoy: "+fechaHoy);
             console.log("Milisegundos Fecha de Hoy: "+fechaHoy.getTime());
