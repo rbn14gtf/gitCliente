@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Fecha</title>
+    </head>
+    <body>
+        <script>
+            function getDaysFromMiliseconds(miliseconds){
+                miliseconds/=1000;
+                miliseconds/=60;
+                miliseconds/=60;
+                miliseconds/=24;
+                return Math.ceil(miliseconds);
+            }
+            let meses=["Enero"," Febrero"," Marzo"," Abril"," Mayo"," Junio"," Julio"," Agosto"," Septiembre"," Octubre"," Noviembre"," Diciembre"];
+            let dia=0;
+            let mes=0;
+            let anyo=0;
+            do{
+                dia=Number(prompt("Introduce un dia:","3"));
+            }while(dia<0||dia>32);
+            do{
+                mes=Number(prompt("Introduce un mes:","7"));
+            }while(mes<0||mes>13);
+            do{
+                anyo=Number(prompt("Introduce un año:","2001"));
+            }while(anyo<0);
+            
+
+            let fechaIntroducida=new Date(anyo,mes-1,dia);
+            console.log("Fecha Introducida: "+fechaIntroducida);
+            console.log("Milisegundos Fecha Introducida: "+fechaIntroducida.getTime());
+
+            //let fechaHoy=Date.now(); 
+            let fechaHoy=new Date(); 
+            console.log("Fecha de Hoy: "+fechaHoy);
+            console.log("Milisegundos Fecha de Hoy: "+fechaHoy.getTime());
+
+            let diferencia=fechaHoy.getTime()-fechaIntroducida.getTime();
+            
+            //console.log("Diferencia: "+diferencia);
+            console.log("Diferencia: "+getDaysFromMiliseconds(diferencia)+" dias");
+        </script>                
+    </body>
+</html>
