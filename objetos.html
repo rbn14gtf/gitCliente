@@ -37,9 +37,22 @@
         var barco={nombre:"Ocean Melody",tipo:"Goleta",eslora:16,edad:20};
         var prop;
 
+        //recorre los indices
         for (prop in barco) {
             alert(barco[prop]);
             
+        }
+        //recorre los valores
+        let datos=[5,10,15,85];
+        let sumaDatos=0;
+        for (let valor of datos){
+            sumaDatos+=valor;
+        }
+        console.log(sumaDatos);
+
+        let cadena="Hola";
+        for(letra of cadena){
+            console.log(letra);
         }
         
     </script>
