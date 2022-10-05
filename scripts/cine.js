@@ -30,22 +30,3 @@ function getDescuento(edad){
     }
 
 }
-//devuelve un array con los regalos que recibe segun la edad
-/*
-function getRegalos(edad){
-    if (edad<=17){
-        return new Array[];
-    }else if((edad>=18)&&(edad<=25)){
-        return 1;
-    }else if((edad>=26)&&(edad<=35)){
-        return 0.9;
-    }
-    else if(edad>=36){
-        return 0.8;
-    }
-    else{
-        return 1;
-    }
-
-}
-*/
