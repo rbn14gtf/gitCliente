@@ -36,8 +36,18 @@
 </head>
 <body>
     <script>
-        var resultado=sumar(15);
-        alert(resultado);
+        //var resultado=sumar(15);
+        //alert(resultado);
+        let potencia=(base,exponente)=>{
+            let valor=1;
+            for(let i=1;i<=exponente;i++){
+                valor*=base;
+            }
+            return valor;
+        }
+        let cuadrado=base=>base*base;
+        console.log(potencia(2,4));
+        console.log(cuadrado(9))
     </script>
 </body>
 </html>
