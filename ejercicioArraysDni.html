@@ -20,12 +20,12 @@
                 dni=String(prompt("Introduce tu dni:","")).toUpperCase();
             }while(dni.length!=9);
             
-            let suma=sumaDni(dni);
-            if(dni.charAt(dni.length-1)==letrasDNI[suma%23]){
+            //let suma=sumaDni(dni);
+            if(dni.charAt(dni.length-1)==letrasDNI[sumaDni(dni)%23]){
                 alert("El dni "+dni+" es valido");
             }
             else{
-                alert("Al dni "+dni+" no es valido\nA este dni le corresponderia la letra "+letrasDNI[suma%23]);
+                alert("Al dni "+dni+" no es valido\nA este dni le corresponderia la letra "+letrasDNI[sumaDni(dni)%23]);
             }
         </script>                
     </body>
