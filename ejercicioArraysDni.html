@@ -22,8 +22,7 @@
             do{
                 dni=String(prompt("Introduce tu dni:","48159494R")).toUpperCase();
             }while(dni.length!=9);
-            
-            console.log(soloNumero(dni));
+            //COMPRUEBA SI LA LETRA ES LA CORRECTA 
             if(dni.charAt(dni.length-1)==letrasDNI[soloNumero(dni)%23]){
                 alert("El dni "+dni+" es valido");
             }
