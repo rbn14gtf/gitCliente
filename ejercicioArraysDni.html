@@ -18,7 +18,7 @@
 
             do{
                 dni=String(prompt("Introduce tu dni:","")).toUpperCase();
-            }while((dni.length!=9));
+            }while(dni.length!=9);
             
             let suma=sumaDni(dni);
             if(dni.charAt(dni.length-1)==letrasDNI[suma%23]){
