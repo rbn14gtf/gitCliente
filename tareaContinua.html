@@ -3,6 +3,20 @@
     <meta charset="UTF-8">
     <title>Tarea Continua</title>
     <script>
+        function persona(nombre,telefono,correo){
+            this.nombre=nombre;
+            this.telefono=telefono;
+            this.correo=correo;
+        }
+
+        let primero=new persona("Maxwell Wright","(0191) 7196495","Curabitur.egestas.nunc@nonummyac.co.uk");
+        let segundo=new persona("Raja Villareal","(0191) 7196495","posuere.vulputate@sed.com");
+        let tercero=new persona("Helen Richards","0800 1111","libero@convallis.edu");
+        let contactos=new Array();
+        contactos.push(primero);
+        contactos.push(segundo);
+        contactos.push(tercero);
+        console.log(contactos);
         let nombre="Maxwell Wright";
         let telefono="(0191) 7196495";
         let correo="Curabitur.egestas.nunc@nonummyac.co.uk";
@@ -12,8 +26,8 @@
         let nombre2="Helen Richards";
         let telefono2="0800 1111";
         let correo2="libero@convallis.edu";
-        console.log(nombre+"/"+telefono+"/"+correo)
-        console.log(nombre2+"/"+telefono2+"/"+correo2)
+        // console.log(nombre+"/"+telefono+"/"+correo)
+        // console.log(nombre2+"/"+telefono2+"/"+correo2)
     </script>
 </head>
 <body>
