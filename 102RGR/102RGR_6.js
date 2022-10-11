@@ -7,22 +7,47 @@ function showContact(contactos,index){
         }
     }
     else{
-        alert(typeof(contactos));
         alert("ERROR");
     }
 
 }
 function showAllContacts(contactos){
+    if(Array.isArray(contactos)){
+        for(let i=0;i<contactos.length;i++){
+            console.log(contactos[i]);
+            alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
+        }
+    }else{
+        alert("ERROR");
+    }
 
 }
 function addNewContact(contactos,nombre,telefono,correo){
+    if(Array.isArray(contactos)){
+
+    }
+    
+    if(nombre==""||nombre==null){
+        alert("No se puede guardar un contacto sin nombre");
+    }
+    else if(telefono==""||telefono==null){
+        alert("No se puede guardar un contacto sin telefono");
+    }
+    else if(correo==""||correo==null){
+        alert("No se puede guardar un contacto sin correo");
+    }
+    else{
+        addNewContact(contactos,nombreIntroducido,telefonoIntroducido,correoIntroducido);
+        contactos.push({nombre:nombreIntroducido,telefono:telefonoIntroducido,correo:correoIntroducido});
+        alert("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido");   
+    }
 
 }
 
 let contactos=[{nombre:"Maxwell Wright",telefono:"(0191) 7196495",correo:"Curabitur.egestas.nunc@nonummyac.co.uk"},{nombre:"Raja Villareal",telefono:"0866 398 2895",correo:"posuere.vulputate@sed.com"},{nombre:"Helen Richards",telefono:"0800 1111",correo:"libero@convallis.edu"},{nombre:"Maisie Haley",telefono:"0913 531 3030",correo:"risus.Quisque@urna.ca"}];
 let opcion=0;
 do{
-    opcion=Number(prompt("Elige una de estas opciones\n1. Mostrar el primer contacto\n2. Mostrar el ultimo contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir del programa ","Escribe el numero de la opcion elegida"));
+    opcion=Number(prompt("Elige una de estas opciones\n1. Mostrar contacto\n2. Mostrar todos los contactos\n3. Añadir un nuevo contacto\n4. Salir del programa ","Escribe el numero de la opcion elegida"));
     switch (opcion){
         case 1:
             index=Number(prompt("Introduce el numero del contacto que quires ver",""));
@@ -30,34 +55,16 @@ do{
             break;
     
         case 2:
-            console.log(contactos[contactos.length-1]);
-            alert("Nombre: "+contactos[contactos.length-1].nombre+"\nTelefono: "+contactos[contactos.length-1].telefono+"\nCorreo: "+contactos[contactos.length-1].correo);   
+            showAllContacts(contactos);
+            // console.log(contactos[contactos.length-1]);
+            // alert("Nombre: "+contactos[contactos.length-1].nombre+"\nTelefono: "+contactos[contactos.length-1].telefono+"\nCorreo: "+contactos[contactos.length-1].correo);   
             break;
     
         case 3:
-            for(let i=0;i<contactos.length;i++){
-                console.log(contactos[i]);
-                alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
-    
-            }
-            break;
-        case 4:
-            nombreIntroducido=prompt("Introduce el nombre","");
-            telefonoIntroducido=prompt("Introduce el telefono","");
-            correoIntroducido=prompt("Introduce el correo","");
-            if(nombreIntroducido==""||nombreIntroducido==null){
-                alert("No se puede guardar un contacto sin nombre");
-            }
-            else if(telefonoIntroducido==""||telefonoIntroducido==null){
-                alert("No se puede guardar un contacto sin telefono");
-            }
-            else if(correoIntroducido==""||correoIntroducido==null){
-                alert("No se puede guardar un contacto sin correo");
-            }
-            else{
-                contactos.push({nombre:nombreIntroducido,telefono:telefonoIntroducido,correo:correoIntroducido});
-                alert("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido");   
-            }
+            nombre=prompt("Introduce el nombre","");
+            telefono=prompt("Introduce el telefono","");
+            correo=prompt("Introduce el correo","");
+            addNewContact(contactos,nombre,telefono,correo);
             break;
         case 5:
             alert("Saliendo del programa");
