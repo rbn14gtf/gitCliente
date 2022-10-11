@@ -18,6 +18,8 @@ let contactoIntroducido=new persona(nombreIntroducido,telefonoIntroducido,correo
 contactos.push(contactoIntroducido);
 console.log(contactos[0]);
 console.log(contactos[contactos.length-1]);
-alert(contactos[0]);
-alert(contactos[contactos.length-1]);
+console.log(contactos[0]);
+console.log(contactos[contactos.length-1]);
+alert(contactos[0].nombre+" | "+contactos[0].telefono+" | "+contactos[0].correo);
+alert(contactos[contactos.length-1].nombre+" | "+contactos[contactos.length-1].telefono+" | "+contactos[contactos.length-1].correo);
 
