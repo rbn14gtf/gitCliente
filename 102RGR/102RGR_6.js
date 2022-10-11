@@ -3,6 +3,7 @@ function showContact(contactos,index){
         if(index>contactos.length){
             alert("ERROR ArrayIndexOutOfBounds");
         }else{
+            console.log(contactos[index]);
             alert("Nombre: "+contactos[index-1].nombre+"\nTelefono: "+contactos[index-1].telefono+"\nCorreo: "+contactos[index-1].correo);
         }
     }
@@ -34,8 +35,8 @@ function addNewContact(contactos,nombre,telefono,correo){
             alert("No se puede guardar un contacto sin correo");
         }
         else{
-            addNewContact(contactos,nombreIntroducido,telefonoIntroducido,correoIntroducido);
-            contactos.push({nombre:nombreIntroducido,telefono:telefonoIntroducido,correo:correoIntroducido});
+            contactos.push({nombre:nombre,telefono:telefono,correo:correo});
+            console.log(contactos[contactos.length-1])
             alert("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido");   
         }
     }
@@ -59,8 +60,6 @@ do{
     
         case 2:
             showAllContacts(contactos);
-            // console.log(contactos[contactos.length-1]);
-            // alert("Nombre: "+contactos[contactos.length-1].nombre+"\nTelefono: "+contactos[contactos.length-1].telefono+"\nCorreo: "+contactos[contactos.length-1].correo);   
             break;
     
         case 3:
@@ -69,7 +68,7 @@ do{
             correo=prompt("Introduce el correo","");
             addNewContact(contactos,nombre,telefono,correo);
             break;
-        case 5:
+        case 4:
             alert("Saliendo del programa");
             break;
 
@@ -79,4 +78,4 @@ do{
         break;
     
     }
-}while(opcion!=5);
+}while(opcion!=4);
