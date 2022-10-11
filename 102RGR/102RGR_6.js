@@ -1,6 +1,10 @@
 function showContact(contactos,index){
-    if(Array.isArray(contactos)&&typeof(index)=="Number"){
-        alert("Nombre: "+contactos[index-1].nombre+"\nTelefono: "+contactos[index-1].telefono+"\nCorreo: "+contactos[index-1].correo);
+    if((Array.isArray(contactos))&&(typeof(index)=="number")){
+        if(index>contactos.length){
+            alert("ERROR ArrayIndexOutOfBounds");
+        }else{
+            alert("Nombre: "+contactos[index-1].nombre+"\nTelefono: "+contactos[index-1].telefono+"\nCorreo: "+contactos[index-1].correo);
+        }
     }
     else{
         alert(typeof(contactos));
