@@ -39,6 +39,9 @@ function addNewContact(contactos,nombre,telefono,correo){
             alert("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido");   
         }
     }
+    else{
+        alert("ERROR");
+    }
     
     
 
