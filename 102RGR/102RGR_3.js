@@ -10,6 +10,6 @@ contactos.push({nombre:nombreIntroducido,telefono:telefonoIntroducido,correo:cor
 console.log(contactos[0]);
 console.log(contactos[contactos.length-1]);
 
-alert(contactos[0].nombre+" | "+contactos[0].telefono+" | "+contactos[0].correo);
-alert(contactos[contactos.length-1].nombre+" | "+contactos[contactos.length-1].telefono+" | "+contactos[contactos.length-1].correo);
+alert("Nombre: "+contactos[0].nombre+"\nTelefono: "+contactos[0].telefono+"\nCorreo: "+contactos[0].correo);   
+alert("Nombre: "+contactos[contactos.length-1].nombre+"\nTelefono: "+contactos[contactos.length-1].telefono+"\nCorreo: "+contactos[contactos.length-1].correo);   
 

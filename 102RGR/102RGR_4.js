@@ -4,13 +4,13 @@ let opcion=Number(prompt("Elige una de estas opciones\n1. Mostrar el primer cont
 switch (opcion){
     case 1:
         console.log(contactos[0]);
-        alert(contactos[0].nombre+" | "+contactos[0].telefono+" | "+contactos[0].correo);
-    break;
+        alert("Nombre: "+contactos[0].nombre+"\nTelefono: "+contactos[0].telefono+"\nCorreo: "+contactos[0].correo);   
+        break;
 
     case 2:
         console.log(contactos[contactos.length-1]);
-        alert(contactos[contactos.length-1].nombre+" | "+contactos[contactos.length-1].telefono+" | "+contactos[contactos.length-1].correo);   
-    break;
+        alert("Nombre: "+contactos[contactos.length-1].nombre+"\nTelefono: "+contactos[contactos.length-1].telefono+"\nCorreo: "+contactos[contactos.length-1].correo);   
+        break;
 
     case 3:
         nombreIntroducido=prompt("Introduce el nombre","");
