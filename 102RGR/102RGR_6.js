@@ -24,23 +24,23 @@ function showAllContacts(contactos){
 }
 function addNewContact(contactos,nombre,telefono,correo){
     if(Array.isArray(contactos)){
-
+        if(nombre==""||nombre==null){
+            alert("No se puede guardar un contacto sin nombre");
+        }
+        else if(telefono==""||telefono==null){
+            alert("No se puede guardar un contacto sin telefono");
+        }
+        else if(correo==""||correo==null){
+            alert("No se puede guardar un contacto sin correo");
+        }
+        else{
+            addNewContact(contactos,nombreIntroducido,telefonoIntroducido,correoIntroducido);
+            contactos.push({nombre:nombreIntroducido,telefono:telefonoIntroducido,correo:correoIntroducido});
+            alert("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido");   
+        }
     }
     
-    if(nombre==""||nombre==null){
-        alert("No se puede guardar un contacto sin nombre");
-    }
-    else if(telefono==""||telefono==null){
-        alert("No se puede guardar un contacto sin telefono");
-    }
-    else if(correo==""||correo==null){
-        alert("No se puede guardar un contacto sin correo");
-    }
-    else{
-        addNewContact(contactos,nombreIntroducido,telefonoIntroducido,correoIntroducido);
-        contactos.push({nombre:nombreIntroducido,telefono:telefonoIntroducido,correo:correoIntroducido});
-        alert("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido");   
-    }
+    
 
 }
 
