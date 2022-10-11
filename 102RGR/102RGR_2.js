@@ -1,16 +1,6 @@
-function persona(nombre,telefono,correo){
-    this.nombre=nombre;
-    this.telefono=telefono;
-    this.correo=correo;
-}
+let contactos=[{nombre:"Maxwell Wright",telefono:"(0191) 7196495",correo:"Curabitur.egestas.nunc@nonummyac.co.uk"},{nombre:"Raja Villareal",telefono:"0866 398 2895",correo:"posuere.vulputate@sed.com"},{nombre:"Helen Richards",telefono:"0800 1111",correo:"libero@convallis.edu"},{nombre:"Maisie Haley",telefono:"0913 531 3030",correo:"risus.Quisque@urna.ca"}];
 
-let primero=new persona("Maxwell Wright","(0191) 7196495","Curabitur.egestas.nunc@nonummyac.co.uk");
-let segundo=new persona("Raja Villareal","0866 398 2895","posuere.vulputate@sed.com");
-let tercero=new persona("Helen Richards","0800 1111","libero@convallis.edu");
-
-let contactos=new Array(primero,segundo,tercero);
-let contactoNuevo=new persona("Maisie Haley","0913 531 3030","risus.Quisque@urna.ca");
-contactos.push(contactoNuevo);
+contactos.push({nombre:"Maisie Haley",telefono:"0913 531 3030",correo:"risus.Quisque@urna.ca"});
 
 console.log(contactos[0]);
 console.log(contactos[contactos.length-1]);

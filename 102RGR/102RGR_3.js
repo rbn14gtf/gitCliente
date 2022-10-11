@@ -1,25 +1,15 @@
-function persona(nombre,telefono,correo){
-    this.nombre=nombre;
-    this.telefono=telefono;
-    this.correo=correo;
-}
+let contactos=[{nombre:"Maxwell Wright",telefono:"(0191) 7196495",correo:"Curabitur.egestas.nunc@nonummyac.co.uk"},{nombre:"Raja Villareal",telefono:"0866 398 2895",correo:"posuere.vulputate@sed.com"},{nombre:"Helen Richards",telefono:"0800 1111",correo:"libero@convallis.edu"},{nombre:"Maisie Haley",telefono:"0913 531 3030",correo:"risus.Quisque@urna.ca"}];
 
-let primero=new persona("Maxwell Wright","(0191) 7196495","Curabitur.egestas.nunc@nonummyac.co.uk");
-let segundo=new persona("Raja Villareal","0866 398 2895","posuere.vulputate@sed.com");
-let tercero=new persona("Helen Richards","0800 1111","libero@convallis.edu");
-let cuarto=new persona("Maisie Haley","0913 531 3030","risus.Quisque@urna.ca");
-let contactos=new Array(primero,segundo,tercero,cuarto);
 
 
 nombreIntroducido=prompt("Introduce el nombre","");
 telefonoIntroducido=prompt("Introduce el telefono","");
 correoIntroducido=prompt("Introduce el correo","");
-let contactoIntroducido=new persona(nombreIntroducido,telefonoIntroducido,correoIntroducido);
-contactos.push(contactoIntroducido);
+contactos.push({nombre:nombreIntroducido,telefono:telefonoIntroducido,correo:correoIntroducido});
+
 console.log(contactos[0]);
 console.log(contactos[contactos.length-1]);
-console.log(contactos[0]);
-console.log(contactos[contactos.length-1]);
+
 alert(contactos[0].nombre+" | "+contactos[0].telefono+" | "+contactos[0].correo);
 alert(contactos[contactos.length-1].nombre+" | "+contactos[contactos.length-1].telefono+" | "+contactos[contactos.length-1].correo);
 
