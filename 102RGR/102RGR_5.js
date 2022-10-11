@@ -1,7 +1,7 @@
 let contactos=[{nombre:"Maxwell Wright",telefono:"(0191) 7196495",correo:"Curabitur.egestas.nunc@nonummyac.co.uk"},{nombre:"Raja Villareal",telefono:"0866 398 2895",correo:"posuere.vulputate@sed.com"},{nombre:"Helen Richards",telefono:"0800 1111",correo:"libero@convallis.edu"},{nombre:"Maisie Haley",telefono:"0913 531 3030",correo:"risus.Quisque@urna.ca"}];
 let opcion=0;
 do{
-    opcion=Number(prompt("Elige una de estas opciones\n1. Mostrar el primer contacto\n2. Mostrar el ultimo contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir del programa ","Escribe el numero de la opcion elegida"));
+    opcion=Number(prompt("Elige una de estas opciones\n1. Mostrar el primer contacto\n2. Mostrar el ultimo contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir del programa ","Escribe el numero de la opcion deseada"));
     switch (opcion){
         case 1:
             console.log(contactos[0]);
