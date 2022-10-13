@@ -89,8 +89,8 @@ do{
                         }
                         return 0;
                     });
-                    alert("Contactos ordenaos por nombre");
-                    console.log("Contactos ordenaos por nombre");
+                    alert("Contactos ordenados por nombre");
+                    console.log("Contactos ordenados por nombre");
                     break;
                 case 2:
                     contactos.sort(function(a, b){
@@ -102,8 +102,8 @@ do{
                         }
                         return 0;
                     });
-                    alert("Contactos ordenaos por telefono");
-                    console.log("Contactos ordenaos por telefono");
+                    alert("Contactos ordenados por telefono");
+                    console.log("Contactos ordenados por telefono");
                     break;
                 case 3:
                     contactos.sort(function(a, b){
@@ -115,8 +115,8 @@ do{
                         }
                         return 0;
                     });
-                    alert("Contactos ordenaos por correo");
-                    console.log("Contactos ordenaos por correo");
+                    alert("Contactos ordenados por correo");
+                    console.log("Contactos ordenados por correo");
                     break;
                 default:
                     alert("ERROR Valor no valido");
