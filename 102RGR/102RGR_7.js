@@ -126,7 +126,6 @@ do{
 
         default:
             alert("Opcion no valida");
-    
         break;
     
     }
