@@ -16,7 +16,7 @@ function showAllContacts(contactos){
     if(Array.isArray(contactos)){
         let contacts="";
         for(let i=0;i<contactos.length;i++){
-            contacts+="Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo+"\n\n";
+            contacts+=i+1+" Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo+"\n\n";
             //console.log(contactos[i]);
             //alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
         }
@@ -58,7 +58,8 @@ do{
     opcion=Number(prompt("Elige una de estas opciones\n1. Mostrar contacto\n2. Mostrar todos los contactos\n3. Añadir un nuevo contacto\n4. Ordenar Contactos\n5. Salir del programa ","Escribe el numero de la opcion deseada"));
     switch (opcion){
         case 1:
-            index=Number(prompt("Introduce el numero del contacto que quires ver",""));
+            
+            index=Number(prompt("Introduce el numero del contacto que quires ver\n",showAllContacts(contactos),""));
             showContact(contactos,index);
             break;
     
