@@ -84,6 +84,7 @@ do{
                         if(a.nombre > b.nombre) { return 1; }
                         return 0;
                     });
+                    alert("Contactos ordenaos por nombre");
                     break;
                 case 2:
                     contactos.sort(function(a, b){
@@ -91,6 +92,7 @@ do{
                         if(a.telefono > b.telefono) { return 1; }
                         return 0;
                     });
+                    alert("Contactos ordenaos por telefono");
                     break;
                 case 3:
                     contactos.sort(function(a, b){
@@ -98,6 +100,7 @@ do{
                         if(a.correo > b.correo) { return 1; }
                         return 0;
                     });
+                    alert("Contactos ordenaos por correo");
                     break;
                 default:
                     alert("ERROR Valor no valido");
