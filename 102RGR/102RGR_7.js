@@ -17,8 +17,6 @@ function showAllContacts(contactos){
         let contacts="";
         for(let i=0;i<contactos.length;i++){
             contacts+=i+1+" Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo+"\n\n";
-            //console.log(contactos[i]);
-            //alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
         }
         alert(contacts);
         console.log(contacts);
