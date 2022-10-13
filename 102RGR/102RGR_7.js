@@ -80,24 +80,36 @@ do{
             switch(op){
                 case 1:
                     contactos.sort(function(a, b){
-                        if(a.nombre < b.nombre) { return -1; }
-                        if(a.nombre > b.nombre) { return 1; }
+                        if(a.nombre < b.nombre) { 
+                            return -1; 
+                        }
+                        if(a.nombre > b.nombre) { 
+                            return 1; 
+                        }
                         return 0;
                     });
                     alert("Contactos ordenaos por nombre");
                     break;
                 case 2:
                     contactos.sort(function(a, b){
-                        if(a.telefono < b.telefono) { return -1; }
-                        if(a.telefono > b.telefono) { return 1; }
+                        if(a.telefono < b.telefono) { 
+                            return -1; 
+                        }
+                        if(a.telefono > b.telefono) { 
+                            return 1; 
+                        }
                         return 0;
                     });
                     alert("Contactos ordenaos por telefono");
                     break;
                 case 3:
                     contactos.sort(function(a, b){
-                        if(a.correo < b.correo) { return -1; }
-                        if(a.correo > b.correo) { return 1; }
+                        if(a.correo < b.correo) { 
+                            return -1;
+                        }
+                        if(a.correo > b.correo) { 
+                            return 1; 
+                        }
                         return 0;
                     });
                     alert("Contactos ordenaos por correo");
