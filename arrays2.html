@@ -13,13 +13,23 @@
             console.log(days);
             console.log(dias.sort());
             */
-            let a=["Lunes","Martes",2,4,6];
-            let cadena=a.join("-");
-            console.log(cadena);
-            let notas="5,3.9,6,9.75,7.5,3";
-            let arrayNotas=notas.split(",");
-            console.log(arrayNotas);
-            console.log(a.sort());
+            // let a=["Lunes","Martes",2,4,6];
+            // let cadena=a.join("-");
+            // console.log(cadena);
+            // let notas="5,3.9,6,9.75,7.5,3";
+            // let arrayNotas=notas.split(",");
+            // console.log(arrayNotas);
+            // console.log(a.sort());
+
+            let notas=[5.4,5,3,2,2.4,6,6,9];
+            let aprobados=[];
+            for(let i=0;i<notas.length;i++){
+                if(notas[i]>=5){
+                    aprobados.push(notas[i]);
+                }
+            }
+            console.log(aprobados);
+
 
 
         </script>    

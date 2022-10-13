@@ -14,10 +14,14 @@ function showContact(contactos,index){
 }
 function showAllContacts(contactos){
     if(Array.isArray(contactos)){
+        let contacts="";
         for(let i=0;i<contactos.length;i++){
-            console.log(contactos[i]);
-            alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
+            contacts+="Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo+"\n\n";
+            //console.log(contactos[i]);
+            //alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
         }
+        alert(contacts);
+        console.log(contacts);
     }else{
         alert("ERROR");
     }
@@ -98,12 +102,11 @@ do{
                     alert("ERROR Valor no valido");
                     break;
             }
-            console.log(contactos)
+            console.log(contactos);
             break;
         case 5:
         alert("Saliendo del programa");
         break;
-
 
         default:
             alert("Opcion no valida");
