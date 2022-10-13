@@ -68,12 +68,10 @@ do{
             correo=prompt("Introduce el correo","");
             addNewContact(contactos,nombre,telefono,correo);
             break;
+        
         case 4:
-            alert("Saliendo del programa");
-            break;
-        case 5:
             let op=0;
-            op=Number(prompt("Como desea ordenarlos:\n1. Por Nombre\n2. Por Telefono\n1. Por Correo",""));
+            op=Number(prompt("Como desea ordenarlos:\n1. Por Nombre\n2. Por Telefono\n3. Por Correo",""));
             switch(op){
                 case 1:
                     contactos.sort(function(a, b){
@@ -102,6 +100,9 @@ do{
             }
             console.log(contactos)
             break;
+        case 5:
+        alert("Saliendo del programa");
+        break;
 
 
         default:
