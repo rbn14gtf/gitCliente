@@ -18,16 +18,17 @@
             let personas=[persona1,persona2]
 
             let personaBuscada=personas.find(persona=>persona.dni==="48159494R");
-            let pospersonaBuscada=personas.findIndex(persona=>persona.dni==="48159494R");
+            let posPersonaBuscada=personas.findIndex(persona=>persona.dni==="48159494R");
             // console.log(personaBuscada);
-            // console.log(pospersonaBuscada);
+            // console.log(posPersonaBuscada);
 
             // array.reduce(funcion,valorinicial)
-            let sumaNotas=notas.reduce((total,nota)=>total+=nota,0);
-            // let sumaNotas=notas.reduce((total,nota)=>total+=nota);
-            let mediaNotas=notas.reduce((media,nota)=>sumaNotas/notas.length);
+            let sumaNotas=notas.reduce((total,nota)=>total+=nota);
+            // let sumaNotas=notas.reduce((total,nota)=>total+=nota,0);
+            let mediaNotas=notas.reduce((suma,nota)=>sumaNotas/notas.length);
+            // let mediaNotas=notas.reduce((media,nota)=>sumaNotas/notas.length);
             let maxNota=notas.reduce((max,nota)=>nota>max?nota:max);
-            // console.log(sumaNotas);
+            console.log(sumaNotas);
             // console.log(maxNota);
             console.log(mediaNotas);
 
