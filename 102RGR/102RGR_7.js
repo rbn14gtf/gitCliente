@@ -144,7 +144,7 @@ do{
 
         default:
             alert("Opción no valida");
-            console.log("Saliendo del programa");
+            console.log("Opción no valida");
         break;
     }
 }while(opcion!=5);
