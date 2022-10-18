@@ -23,16 +23,12 @@
             // console.log(pospersonaBuscada);
 
             // array.reduce(funcion,valorinicial)
-
-
-
-
             let sumaNotas=notas.reduce((total,nota)=>total+=nota,0);
             // let sumaNotas=notas.reduce((total,nota)=>total+=nota);
             let mediaNotas=notas.reduce((media,nota)=>sumaNotas/notas.length);
-            let max=notas.reduce((max,nota)=>nota>max?nota:max);
+            let maxNota=notas.reduce((max,nota)=>nota>max?nota:max);
             // console.log(sumaNotas);
-            // console.log(max);
+            // console.log(maxNota);
             console.log(mediaNotas);
 
         </script>                
