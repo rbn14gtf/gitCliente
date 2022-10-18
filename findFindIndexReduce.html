@@ -26,11 +26,13 @@
             let sumaNotas=notas.reduce((total,nota)=>total+=nota);
             // let sumaNotas=notas.reduce((total,nota)=>total+=nota,0);
             let mediaNotas=notas.reduce((suma,nota)=>sumaNotas/notas.length);
+            let mediaNotas2=notas.reduceRight((suma)=>sumaNotas/notas.length);
             // let mediaNotas=notas.reduce((media,nota)=>sumaNotas/notas.length);
             let maxNota=notas.reduce((max,nota)=>nota>max?nota:max);
             console.log(sumaNotas);
             // console.log(maxNota);
             console.log(mediaNotas);
+            console.log(mediaNotas2);
 
         </script>                
     </body>
