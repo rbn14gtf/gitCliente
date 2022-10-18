@@ -45,9 +45,15 @@ function addNewContact(contactos,nombre,telefono,correo){
             alert("No se puede guardar un contacto sin correo");
             console.log("No se puede guardar un contacto sin correo");
         }
+        //comprueba si ya existe un contacto con ese nombre
         else if(contactos.find(contactos=>contactos.nombre===nombre)){
-            alert("Ya existe un contacto con este nombre");
-            console.log("Ya existe un contacto con este nombre");
+            alert("Ya existe un contacto con el nombre "+nombre);
+            console.log("Ya existe un contacto con el nombre "+nombre);
+        }
+        //comprueba si ya existe un contacto con ese telefono
+        else if(contactos.find(contactos=>contactos.telefono===telefono)){
+            alert("Ya existe un contacto con el teléfono "+telefono);
+            console.log("Ya existe un contacto con el teléfono "+telefono);
         }
         else{
             contactos.push({nombre:nombre,telefono:telefono,correo:correo});
