@@ -12,7 +12,6 @@ function showContact(contactos,index){
         alert("ERROR");
         console.log("ERROR");
     }
-
 }
 function showAllContacts(contactos){
     if(Array.isArray(contactos)){
