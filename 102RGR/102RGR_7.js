@@ -83,14 +83,14 @@ do{
     
         case 3:
             nombre=prompt("Introduce el nombre","");
-            telefono=prompt("Introduce el telefono","");
+            telefono=prompt("Introduce el teléfono","");
             correo=prompt("Introduce el correo","");
             addNewContact(contactos,nombre,telefono,correo);
             break;
         
         case 4:
             let op=0;
-            op=Number(prompt("Como desea ordenarlos:\n1. Por Nombre\n2. Por Telefono\n3. Por Correo",""));
+            op=Number(prompt("Como desea ordenarlos:\n1. Por Nombre\n2. Por Teléfono\n3. Por Correo",""));
             switch(op){
                 case 1:
                     contactos.sort(function(a, b){
@@ -115,8 +115,8 @@ do{
                         }
                         return 0;
                     });
-                    alert("Contactos ordenados por telefono");
-                    console.log("Contactos ordenados por telefono");
+                    alert("Contactos ordenados por teléfono");
+                    console.log("Contactos ordenados por teléfono");
                     break;
                 case 3:
                     contactos.sort(function(a, b){
