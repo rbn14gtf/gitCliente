@@ -37,6 +37,7 @@ function addNewContact(contactos,nombre,telefono,correo){
             alert("No se puede guardar un contacto sin teléfono");
             console.log("No se puede guardar un contacto sin teléfono");
         }
+        //comprueba si no es un numero 
         else if(isNaN(telefono)){
             alert("Formato del teléfono no válido");
             console.log("Formato del teléfono no válido"); 
