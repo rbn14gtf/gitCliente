@@ -26,7 +26,6 @@ function showAllContacts(contactos){
         alert("ERROR");
         console.log("ERROR");
     }
-
 }
 function addNewContact(contactos,nombre,telefono,correo){
     if(Array.isArray(contactos)){
@@ -38,9 +37,17 @@ function addNewContact(contactos,nombre,telefono,correo){
             alert("No se puede guardar un contacto sin teléfono");
             console.log("No se puede guardar un contacto sin teléfono");
         }
+        else if(isNaN(telefono)){
+            alert("Formato del teléfono no válido");
+            console.log("Formato del teléfono no válido"); 
+        }
         else if(correo==""||correo==null){
             alert("No se puede guardar un contacto sin correo");
             console.log("No se puede guardar un contacto sin correo");
+        }
+        else if(contactos.find(contactos=>contactos.nombre===nombre)){
+            alert("Ya existe un contacto con este nombre");
+            console.log("Ya existe un contacto con este nombre");
         }
         else{
             contactos.push({nombre:nombre,telefono:telefono,correo:correo});
@@ -130,7 +137,7 @@ do{
         break;
 
         default:
-            alert("Opcion no valida");
+            alert("Opción no valida");
             console.log("Saliendo del programa");
         break;
     }
