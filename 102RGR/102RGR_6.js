@@ -1,5 +1,5 @@
 function showContact(contactos,index){
-    if((Array.isArray(contactos))&&(typeof(index)=="number")){
+    if((Array.isArray(contactos))&&(!isNaN(index))){
         if(index>contactos.length){
             alert("ERROR ArrayIndexOutOfBounds");
         }else{

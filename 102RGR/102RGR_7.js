@@ -1,5 +1,5 @@
 function showContact(contactos,index){
-    if((Array.isArray(contactos))&&(typeof(index)=="number")){
+    if((Array.isArray(contactos))&&(!isNaN(index))){
         if(index>contactos.length){
             alert("ERROR ArrayIndexOutOfBounds");
             console.log("ERROR ArrayIndexOutOfBounds");
@@ -25,7 +25,6 @@ function showAllContacts(contactos){
         alert("ERROR");
         console.log("ERROR");
     }
-
 }
 function addNewContact(contactos,nombre,telefono,correo){
     if(Array.isArray(contactos)){
@@ -37,9 +36,24 @@ function addNewContact(contactos,nombre,telefono,correo){
             alert("No se puede guardar un contacto sin teléfono");
             console.log("No se puede guardar un contacto sin teléfono");
         }
+        //comprueba si no es un numero 
+        else if(isNaN(telefono)){
+            alert("Formato del teléfono no válido");
+            console.log("Formato del teléfono no válido"); 
+        }
         else if(correo==""||correo==null){
             alert("No se puede guardar un contacto sin correo");
             console.log("No se puede guardar un contacto sin correo");
+        }
+        //comprueba si ya existe un contacto con ese nombre
+        else if(contactos.find(contactos=>contactos.nombre===nombre)){
+            alert("Ya existe un contacto con el nombre "+nombre);
+            console.log("Ya existe un contacto con el nombre "+nombre);
+        }
+        //comprueba si ya existe un contacto con ese telefono
+        else if(contactos.find(contactos=>contactos.telefono===telefono)){
+            alert("Ya existe un contacto con el teléfono "+telefono);
+            console.log("Ya existe un contacto con el teléfono "+telefono);
         }
         else{
             contactos.push({nombre:nombre,telefono:telefono,correo:correo});
@@ -69,14 +83,14 @@ do{
     
         case 3:
             nombre=prompt("Introduce el nombre","");
-            telefono=prompt("Introduce el telefono","");
+            telefono=prompt("Introduce el teléfono","");
             correo=prompt("Introduce el correo","");
             addNewContact(contactos,nombre,telefono,correo);
             break;
         
         case 4:
             let op=0;
-            op=Number(prompt("Como desea ordenarlos:\n1. Por Nombre\n2. Por Telefono\n3. Por Correo",""));
+            op=Number(prompt("Como desea ordenarlos:\n1. Por Nombre\n2. Por Teléfono\n3. Por Correo",""));
             switch(op){
                 case 1:
                     contactos.sort(function(a, b){
@@ -101,8 +115,8 @@ do{
                         }
                         return 0;
                     });
-                    alert("Contactos ordenados por telefono");
-                    console.log("Contactos ordenados por telefono");
+                    alert("Contactos ordenados por teléfono");
+                    console.log("Contactos ordenados por teléfono");
                     break;
                 case 3:
                     contactos.sort(function(a, b){
@@ -129,8 +143,8 @@ do{
         break;
 
         default:
-            alert("Opcion no valida");
-            console.log("Saliendo del programa");
+            alert("Opción no valida");
+            console.log("Opción no valida");
         break;
     }
 }while(opcion!=5);
