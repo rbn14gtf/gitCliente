@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Conversor de Temperatura</title>
+    </head>
+    <body>
+        <script>
+            function farenACelsius(temp){
+                alert("Temperatura en Grados Celsius "+Math.round(100*(temp-32)*5/9)/100+"ºC");
+            }
+            let temperaturaCelsius=0;
+            do{
+                temperaturaCelsius=Number(prompt("Introduce un valor de temperatura en Grados Celsius",""));
+            }while(isNaN(temperaturaCelsius));
+            let temperaturaFaren=(temperaturaCelsius*9/5)+32;
+            alert("Temperatura en Grados Fahrenheit "+temperaturaFaren+"ºF");
+            if(14<temperaturaFaren&&temperaturaFaren<=32){
+                alert("Temperatura Baja");
+            }
+            else if(32<temperaturaFaren&&temperaturaFaren<=68){
+                alert("Temperatura Adecuada");
+            }
+            else if(68<temperaturaFaren&&temperaturaFaren<=96){
+                alert("Temperatura Alta");
+            }
+            else{
+                alert("Temperatura Desconocida");
+            }
+            do{
+                temperaturaFaren=Number(prompt("Introduce un valor de temperatura en Grados Fahrenheit",""));
+            }while(isNaN(temperaturaFaren));
+            farenACelsius(temperaturaFaren);
+
+
+        </script>                
+    </body>
+</html>
