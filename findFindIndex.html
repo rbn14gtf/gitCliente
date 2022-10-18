@@ -2,13 +2,38 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>findFindIndex</title>
     </head>
     <body>
         <script>
-            let notas=[5.4,5,3,2,2.4,6,6,9];
+            let notas=[5.2,3.9,6,9.75,7.5,3];
             let primerAprobado=notas.find(nota=>nota>=5);
-            console.log(primerAprobado);
+            // console.log(primerAprobado);
+            function persona(nombre,dni){
+                this.nombre=nombre;
+                this.dni=dni;
+            }
+            let persona1={nombre:"Ruben",dni:"48159494R"};
+            let persona2={nombre:"Paco",dni:"123456789W"};
+            let personas=[persona1,persona2]
+
+            let personaBuscada=personas.find(persona=>persona.dni==="48159494R");
+            let pospersonaBuscada=personas.findIndex(persona=>persona.dni==="48159494R");
+            // console.log(personaBuscada);
+            // console.log(pospersonaBuscada);
+
+            // array.reduce(funcion,valorinicial)
+
+
+
+
+            let sumaNotas=notas.reduce((total,nota)=>total+=nota,0);
+            // let sumaNotas=notas.reduce((total,nota)=>total+=nota);
+            let mediaNotas=notas.reduce((media,nota)=>sumaNotas/notas.length);
+            let max=notas.reduce((max,nota)=>nota>max?nota:max);
+            // console.log(sumaNotas);
+            // console.log(max);
+            console.log(mediaNotas);
 
         </script>                
     </body>
