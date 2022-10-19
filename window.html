@@ -6,6 +6,7 @@
     </head>
     <body>
         <p id="ventana"></p>
+
         <script>
             window.name="Mi ventana";
             let texto="";
@@ -16,7 +17,6 @@
             texto+="<br/>Anchura de la pestaña "+window.innerWidth;
             texto+="<br/>Posicion X del navegador "+window.screenX;
             texto+="<br/>Posicion Y del navegador "+window.screenY;
-            console.log(texto);
             document.getElementById("ventana").innerHTML=texto;
         </script>                
     </body>
