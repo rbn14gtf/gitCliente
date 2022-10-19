@@ -10,6 +10,12 @@
             window.name="Mi ventana";
             let texto="";
             texto+="<br/>Nombre: "+window.name;
+            texto+="<br/>Altura de la ventana "+window.outerHeight;
+            texto+="<br/>Anchura de la ventana "+window.outerWidth;
+            texto+="<br/>Altura de la pestaña "+window.innerHeight;
+            texto+="<br/>Anchura de la pestaña "+window.innerWidth;
+            texto+="<br/>Posicion X del navegador "+window.screenX;
+            texto+="<br/>Posicion Y del navegador "+window.screenY;
             console.log(texto);
             document.getElementById("ventana").innerHTML=texto;
         </script>                
