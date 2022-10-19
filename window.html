@@ -7,7 +7,8 @@
     <body>
         <!-- <p id="ventana"></p> -->
 
-        <button id="button" onclick=crearVentana()>Abrir Pestaña</button>
+        <button id="buttonAbrir" onclick=crearVentana()>Abrir Pestaña</button>
+        <button id="buttonCerrar" onclick=cerrarVentana()>Cerrar Pestaña</button>
 
         <script>
             
@@ -25,6 +26,9 @@
             let miVentana;
             function crearVentana(){
                 miVentana=window.open("http://www.w3schools.com");
+            }
+            function cerrarVentana(){
+                miVentana=window.close();
             }
             // miVentana=window.open("","","width=500,heigth=900");
             // miVentana.document.write("<h1>Mi ventana</h1>");
