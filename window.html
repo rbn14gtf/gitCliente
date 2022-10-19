@@ -5,9 +5,13 @@
         <title>Window</title>
     </head>
     <body>
+        <p id="ventana"></p>
         <script>
-            
-
+            window.name="Mi ventana";
+            let texto="";
+            texto+="<br/>Nombre: "+window.name;
+            console.log(texto);
+            document.getElementById("ventana").innerHTML=texto;
         </script>                
     </body>
 </html>
