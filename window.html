@@ -7,8 +7,9 @@
     <body>
         <!-- <p id="ventana"></p> -->
 
-        <button onclick=crearVentana()>Abrir Pestaña</button>
-        <button onclick=cerrarVentana()>Cerrar Pestaña</button>
+        <button onclick=crearVentana()>Abrir Ventana</button>
+        <button onclick=cerrarVentana()>Cerrar Ventana</button>
+        <button onclick=redimensionarVentana()>Redimensionar Ventana</button>
 
         <script>
             
@@ -25,12 +26,16 @@
             // document.getElementById("ventana").innerHTML=texto;
             let miVentana;
             function crearVentana(){
-                miVentana=window.open("http://www.w3schools.com");
+                // miVentana=window.open("http://www.google.com");
+                miVentana=window.open("", "", "width=100, height=100");
             }
             function cerrarVentana(){
                 miVentana=window.close();
             }
-            // miVentana=window.open("","","width=500,heigth=900");
+            function redimensionarVentana(){
+                miVentana.resizeBy(240,120);
+            }
+            // miVentana=window.open("","","width=500,height=900");
             // miVentana.document.write("<h1>Mi ventana</h1>");
         </script>                
     </body>
