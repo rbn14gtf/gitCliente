@@ -10,6 +10,7 @@
         <button onclick=crearVentana()>Abrir Ventana</button>
         <button onclick=cerrarVentana()>Cerrar Ventana</button>
         <button onclick=redimensionarVentana()>Redimensionar Ventana</button>
+        <button onclick=moverVentana()>Mover Ventana</button>
 
         <script>
             
@@ -34,6 +35,9 @@
             }
             function redimensionarVentana(){
                 miVentana.resizeBy(240,120);
+            }
+            function moverVentana(){
+                miVentana.moveTo(100,100);
             }
             // miVentana=window.open("","","width=500,height=900");
             // miVentana.document.write("<h1>Mi ventana</h1>");
