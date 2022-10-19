@@ -23,7 +23,7 @@
             // texto+="<br/>Posicion X del navegador "+window.screenX;
             // texto+="<br/>Posicion Y del navegador "+window.screenY;
             // document.getElementById("ventana").innerHTML=texto;
-            
+
             let miVentana;
             function crearVentana(){
                 // miVentana=window.open("http://www.google.com");
@@ -36,6 +36,7 @@
                 miVentana.resizeBy(240,120);
             }
             function moverVentana(){
+                miVentana.focus();
                 miVentana.moveBy(100,100);
             }
             // miVentana=window.open("","","width=500,height=900");
