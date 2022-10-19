@@ -6,8 +6,14 @@
     </head>
     <body>
         <p id="ventana"></p>
+        <button id="button" onclick=abrirPestaña()>Abrir Pestaña</button>
 
         <script>
+            function abrirPestaña(){
+                window.open();
+
+            }
+
             window.name="Mi ventana";
             let texto="";
             texto+="<br/>Nombre: "+window.name;
