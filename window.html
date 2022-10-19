@@ -5,25 +5,29 @@
         <title>Window</title>
     </head>
     <body>
-        <p id="ventana"></p>
-        <button id="button" onclick=abrirPestaña()>Abrir Pestaña</button>
+        <!-- <p id="ventana"></p> -->
+
+        <button id="button" onclick=crearVentana()>Abrir Pestaña</button>
 
         <script>
-            function abrirPestaña(){
-                window.open();
+            
 
+            // window.name="Mi ventana";
+            // let texto="";
+            // texto+="<br/>Nombre: "+window.name;
+            // texto+="<br/>Altura de la ventana "+window.outerHeight;
+            // texto+="<br/>Anchura de la ventana "+window.outerWidth;
+            // texto+="<br/>Altura de la pestaña "+window.innerHeight;
+            // texto+="<br/>Anchura de la pestaña "+window.innerWidth;
+            // texto+="<br/>Posicion X del navegador "+window.screenX;
+            // texto+="<br/>Posicion Y del navegador "+window.screenY;
+            // document.getElementById("ventana").innerHTML=texto;
+                let miVentana;
+            function crearVentana(){
+                miVentana=window.open("http://www.w3schools.com");
             }
-
-            window.name="Mi ventana";
-            let texto="";
-            texto+="<br/>Nombre: "+window.name;
-            texto+="<br/>Altura de la ventana "+window.outerHeight;
-            texto+="<br/>Anchura de la ventana "+window.outerWidth;
-            texto+="<br/>Altura de la pestaña "+window.innerHeight;
-            texto+="<br/>Anchura de la pestaña "+window.innerWidth;
-            texto+="<br/>Posicion X del navegador "+window.screenX;
-            texto+="<br/>Posicion Y del navegador "+window.screenY;
-            document.getElementById("ventana").innerHTML=texto;
+            // miVentana=window.open("","","width=500,heigth=900");
+            // miVentana.document.write("<h1>Mi ventana</h1>");
         </script>                
     </body>
 </html>
