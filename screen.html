@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Screen</title>
+    </head>
+    <body>
+        <p id="prop"></p>
+        
+        <script>
+            let texto="";
+            texto="Altura: "+screen.height+"<br/>";
+            texto+="Anchura: "+screen.width+"<br/>";
+            texto+="Altura sin barra: "+screen.availHeight+"<br/>";
+            texto+="Anchura sin barra: "+screen.availWidth+"<br/>";
+            texto+="Profundidad del color: "+screen.colorDepth+"<br/>";
+            texto+="Resolucion: "+screen.pixelDepth+"<br/>";
+            document.getElementById("prop").innerHTML=texto;
+            alert("Java activado: "+screen.javaEnabled());
+        </script>                
+    </body>
+</html>
