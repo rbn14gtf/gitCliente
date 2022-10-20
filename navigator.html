@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Navigator</title>
+    </head>
+    <body>
+        <p id="prop"></p>
+        
+        <script>
+            let texto="";
+            texto="Code Name: "+navigator.appCodeName+"<br/>";
+            texto+="App Name: "+navigator.appName+"<br/>";
+            texto+="Version: "+navigator.appVersion+"<br/>";
+            texto+="Motor: "+navigator.product+"<br/>";
+            texto+="Plataforma: "+navigator.platform+"<br/>";
+            texto+="En Linea: "+navigator.onLine+"<br/>";
+            texto+="Idioma: "+navigator.language+"<br/>";
+            texto+="Coockies Activadas: "+navigator.cookieEnabled+"<br/>";
+            texto+="User Agent: " +navigator.userAgent+"<br/>";
+            texto+="Geolocalizacion: "+navigator.geolocation+"<br/>";
+            document.getElementById("prop").innerHTML=texto;
+            alert("Java activado: "+navigator.javaEnabled());
+        </script>                
+    </body>
+</html>
