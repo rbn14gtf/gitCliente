@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Reloj</title>
+    </head>
+    <body>
+        <p id="reloj"></p>
+        <script>
+            var int=setInterval(reloj,1000);
+            function reloj(){
+                var fecha=new Date();
+                document.getElementById("reloj").innerHTML="Segundo: "+fecha.getSeconds();
+            }
+
+
+        </script>     
+        <button onclick="clearInterval(int)">Parar</button>
+           
+    </body>
+</html>
