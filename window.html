@@ -23,7 +23,12 @@
             // texto+="<br/>Posicion X del navegador "+window.screenX;
             // texto+="<br/>Posicion Y del navegador "+window.screenY;
             // document.getElementById("ventana").innerHTML=texto;
-
+            if(window.confirm("Pulsa")){
+                alert("Pulsado");
+            }
+            else{
+                alert("Cancelado")
+            }
             let miVentana;
             function crearVentana(){
                 // miVentana=window.open("http://www.google.com");
