@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Emoji</title>
+    </head>
+    <body>
+        <script>
+            let emojiFamilia="👨‍👩‍👧‍👦";
+            let emojiNino="\u{1f466}";
+            let emojiNina="\u{1f467}";
+            let emojiPadre="\u{1f468}";
+            let emojiMadre="\u{1f469}";
+            
+            const paste="\u{200d}";
+           
+            let arrayEmojis=[emojiPadre,emojiMadre,emojiNino,emojiNina].join("");
+            console.log(arrayEmojis)
+            arrayEmojis=[emojiPadre,emojiMadre,emojiNino,emojiNina].join(paste);
+            console.log(arrayEmojis.split(""));
+            console.log(arrayEmojis);
+
+        </script>                
+    </body>
+</html>
