@@ -6,9 +6,19 @@
     </head>
     <body>
         <script>
-            console.log("\u{0041}")
-            console.log(String.fromCharCode(65))
-            console.log(String.fromCharCode(13).codePointAt(0))
+            // console.log("\u{0041}")
+            // console.log(String.fromCharCode(65));
+            // console.log(String.fromCodePoint(65));
+
+            const letter="Manz";
+            letter[0];
+            console.log(letter.codePointAt(0));
+            console.log(letter.codePointAt(0).toString(16));
+            console.log(letter.codePointAt(3));
+            console.log(letter.codePointAt(4));
+            console.log(String.fromCodePoint(65));
+            console.log(String.fromCodePoint(77));
+            console.log(String.fromCodePoint(0x004d));
         </script>                
     </body>
 </html>
