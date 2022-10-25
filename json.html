@@ -10,9 +10,17 @@
                 "name":"Manz",
                 "life":99
             }`;
-            const user=JSON.parse(json);
-            console.log(user.name);
-            console.log(user.life);
+            const user={
+                "name":"Manz",
+                "life":99,
+                talk:function(){
+                    return "Hola!"
+                }
+            };
+            const usuario=JSON.parse(json);
+            console.log(JSON.stringify(user));
+            console.log(usuario.name);
+            console.log(usuario.life);
 
         </script>                
     </body>
