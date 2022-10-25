@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Callback</title>
+    </head>
+    <body>
+        <script>
+            const function2=function(){
+                console.log("La funcion 2 ha sido ejecutada")
+            }
+            const function1=function(callback){
+                callback();
+            }
+            function1(function2);
+
+        </script>                
+    </body>
+</html>
