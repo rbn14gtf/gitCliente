@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Estacion</title>
+    </head>
+    <body>
+        <script>
+            //04 suben:4 bajan:0
+            let num=68573528467604;
+            let viajeros=0;
+            
+            for(let i=String(num).length;i>=0;i=i-2){
+                //console.log(String(num).charAt(i-1));
+                console.log("Suben "+Number(String(num).charAt(i-1)));
+                console.log("Bajan "+Number(String(num).charAt(i-2)));
+                viajeros+=Number(String(num).charAt(i-1));
+                viajeros-=Number(String(num).charAt(i-2))
+                console.log("Viajeros en la estacion "+viajeros);
+            }
+            console.log(viajeros);
+            viajeros=0;
+            let num2=String(num).split("").reverse();
+            // console.log(num2);
+            for(let i=0;i<num2.length;i=i+2){
+                viajeros+=Number(num2[i]);
+                viajeros-=Number(num2[i+1]);
+                console.log("Suben "+num2[i]);
+                console.log("Bajan "+num2[i+1]);
+                console.log("Viajeros en la estacion "+viajeros);
+            }
+           
+            console.log(viajeros);
+        </script>                
+    </body>
+</html>
