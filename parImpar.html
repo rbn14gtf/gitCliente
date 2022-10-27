@@ -6,21 +6,31 @@
     </head>
     <body>
         <script>
-
+            let parIMpar=(a)=>{
+                if(a%2==0){
+                    return alert(a+" es par");
+                }else{
+                    return alert(a+" es impar");
+                }
+            }
             function parImpar(num){
                 console.log();
 
                 if(num%2==1){
-                    return alert("El numero "+num+" es impar");
+                    return alert("El número "+num+" es impar");
                 }else{
-                    return alert("El numero "+num+" es par");
-
+                    return alert("El número "+num+" es par");
                 }
             }
+            let numIntroducido=0;
             do{
-                numIntroducido=Number(prompt("Introduce un numero:",""));
+                numIntroducido=Number(prompt("Introduce un número:",""));
             }while(isNaN(numIntroducido));
-            parImpar(numIntroducido);
+            
+            // numIntroducido=numIntroducido%2? numIntroducido+=" es impar":numIntroducido+=" es par"
+            parIMpar(numIntroducido);
+            console.log(numIntroducido)
+            //parImpar(numIntroducido);
         </script>                
     </body>
 </html>
