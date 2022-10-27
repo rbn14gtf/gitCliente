@@ -10,19 +10,12 @@
             function parImpar(num){
                 console.log();
 
-                if(num==1){
+                if(num%2==1){
                     alert("El número "+num+" es impar");
                 }else{
                     alert("El número "+num+" es par");
                 }
             }
-            let numIntroducido=0;
-            do{
-                numIntroducido=Number(prompt("Introduce un número:",""));
-            }while(isNaN(numIntroducido));
-            console.log(numIntroducido)
-            // numIntroducido=numIntroducido%2? numIntroducido+=" es impar":numIntroducido+=" es par"
-            //funcion flecha
             let parImparFlecha=(num)=>{
                 if(num%2==0){
                     alert(num+" es par");
@@ -37,9 +30,17 @@
                     alert("es impar");
                 }
             }
+            let numIntroducido=0;
+            do{
+                numIntroducido=Number(prompt("Introduce un número:",""));
+            }while(isNaN(numIntroducido));
+            console.log(numIntroducido)
+            // numIntroducido=numIntroducido%2? numIntroducido+=" es impar":numIntroducido+=" es par"
+            //funcion flecha
+            
             parImparFlecha(numIntroducido);
             parImparFlecha2(numIntroducido%2);
-            //parImpar(numIntroducido);
+            parImpar(numIntroducido);
         </script>                
     </body>
 </html>
