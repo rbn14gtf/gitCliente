@@ -4,18 +4,18 @@ do{
     opcion=Number(prompt("Elige una de estas opciones\n1. Mostrar el primer contacto\n2. Mostrar el ultimo contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir del programa ","Escribe el numero de la opcion deseada"));
     switch (opcion){
         case 1:
-            console.log(contactos[0]);
+            console.log("Nombre: "+contactos[0].nombre+"\nTelefono: "+contactos[0].telefono+"\nCorreo: "+contactos[0].correo);
             alert("Nombre: "+contactos[0].nombre+"\nTelefono: "+contactos[0].telefono+"\nCorreo: "+contactos[0].correo);
             break;
     
         case 2:
-            console.log(contactos[contactos.length-1]);
+            console.log("Nombre: "+contactos[contactos.length-1].nombre+"\nTelefono: "+contactos[contactos.length-1].telefono+"\nCorreo: "+contactos[contactos.length-1].correo);
             alert("Nombre: "+contactos[contactos.length-1].nombre+"\nTelefono: "+contactos[contactos.length-1].telefono+"\nCorreo: "+contactos[contactos.length-1].correo);   
             break;
     
         case 3:
             for(let i=0;i<contactos.length;i++){
-                console.log(contactos[i]);
+                console.log("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
                 alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
     
             }

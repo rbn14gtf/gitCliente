@@ -3,7 +3,7 @@ function showContact(contactos,index){
         if(index>contactos.length){
             alert("ERROR ArrayIndexOutOfBounds");
         }else{
-            console.log(contactos[index]);
+            console.log("Nombre: "+contactos[index-1].nombre+"\nTelefono: "+contactos[index-1].telefono+"\nCorreo: "+contactos[index-1].correo);
             alert("Nombre: "+contactos[index-1].nombre+"\nTelefono: "+contactos[index-1].telefono+"\nCorreo: "+contactos[index-1].correo);
         }
     }
@@ -15,7 +15,7 @@ function showContact(contactos,index){
 function showAllContacts(contactos){
     if(Array.isArray(contactos)){
         for(let i=0;i<contactos.length;i++){
-            console.log(contactos[i]);
+            console.log("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
             alert("Nombre: "+contactos[i].nombre+"\nTelefono: "+contactos[i].telefono+"\nCorreo: "+contactos[i].correo);
         }
     }else{
@@ -36,16 +36,13 @@ function addNewContact(contactos,nombre,telefono,correo){
         }
         else{
             contactos.push({nombre:nombre,telefono:telefono,correo:correo});
-            console.log(contactos[contactos.length-1])
+            console.log("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido")
             alert("El contacto de "+contactos[contactos.length-1].nombre+" con el numero "+contactos[contactos.length-1].telefono+" y el correo "+contactos[contactos.length-1].correo+" ha sido añadido");   
         }
     }
     else{
         alert("ERROR");
     }
-    
-    
-
 }
 
 let contactos=[{nombre:"Maxwell Wright",telefono:"(0191) 7196495",correo:"Curabitur.egestas.nunc@nonummyac.co.uk"},{nombre:"Raja Villareal",telefono:"0866 398 2895",correo:"posuere.vulputate@sed.com"},{nombre:"Helen Richards",telefono:"0800 1111",correo:"libero@convallis.edu"},{nombre:"Maisie Haley",telefono:"0913 531 3030",correo:"risus.Quisque@urna.ca"}];
