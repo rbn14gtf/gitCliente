@@ -28,12 +28,17 @@
                 console.log("Bajan "+num2[i+1]);
                 console.log("Pasajeros en la estacion: "+viajeros);
             }
-           
-            console.log("Viajeros: "+viajeros);
             let pasajeros=[[4,0],[6,7],[6,4],[8,2],[5,3],[7,5],[8,6]];
-
+            let total=0;
+            console.log("Viajeros: "+viajeros);
+            for(let i=0;i<pasajeros.length;i++){
+                total+=pasajeros[i][0];
+                total-=pasajeros[i][1];
+            }
+            console.log("Total "+total);
+            //reduce
             let tren=(pasajeros)=>pasajeros.reduce((acumulador,[suben,bajan])=>acumulador+suben-bajan,0);
-            console.log("Viajeros: "+tren(pasajeros))
+            console.log("Viajeros: "+tren(pasajeros));
         </script>                
     </body>
 </html>
