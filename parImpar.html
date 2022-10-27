@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PAR/IMPAR</title>
+    </head>
+    <body>
+        <script>
+            let numeroSecreto=Math.ceil(Math.random() * 100);
+            console.log(numeroSecreto);
+            let numIntroducido=0;
+            let acertado=false;
+            do{
+                numIntroducido=Number(prompt("Introduce 0 si crees que el numero es par o 1 si es impar:",""));
+                if((numIntroducido==1)&&(numeroSecreto%2==1)){
+                    acertado=true;
+                }
+                else if((numIntroducido==0)&&(numeroSecreto%2==0)){
+                    acertado=true;
+                }else{
+
+                }
+
+            }while(!acertado);
+
+
+
+        </script>                
+    </body>
+</html>
