@@ -6,25 +6,21 @@
     </head>
     <body>
         <script>
-            let numeroSecreto=Math.ceil(Math.random() * 100);
-            console.log(numeroSecreto);
-            let numIntroducido=0;
-            let acertado=false;
-            do{
-                numIntroducido=Number(prompt("Introduce 0 si crees que el numero es par o 1 si es impar:",""));
-                if((numIntroducido==1)&&(numeroSecreto%2==1)){
-                    acertado=true;
-                }
-                else if((numIntroducido==0)&&(numeroSecreto%2==0)){
-                    acertado=true;
+
+            function parImpar(num){
+                console.log();
+
+                if(num%2==1){
+                    return alert("El numero "+num+" es impar");
                 }else{
+                    return alert("El numero "+num+" es par");
 
                 }
-
-            }while(!acertado);
-
-
-
+            }
+            do{
+                numIntroducido=Number(prompt("Introduce un numero:",""));
+            }while(isNaN(numIntroducido));
+            parImpar(numIntroducido);
         </script>                
     </body>
 </html>
