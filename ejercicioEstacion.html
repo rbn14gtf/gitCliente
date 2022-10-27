@@ -12,7 +12,7 @@
             
             for(let i=String(num).length;i>=0;i=i-2){
                 viajeros+=Number(String(num).charAt(i-1));
-                viajeros-=Number(String(num).charAt(i-2))
+                viajeros-=Number(String(num).charAt(i-2));
                 console.log("Suben "+Number(String(num).charAt(i-1)));
                 console.log("Bajan "+Number(String(num).charAt(i-2)));
                 console.log("Pasajeros en la estacion: "+viajeros);
@@ -33,7 +33,7 @@
             let pasajeros=[[4,0],[6,7],[6,4],[8,2],[5,3],[7,5],[8,6]];
 
             let tren=(pasajeros)=>pasajeros.reduce((acumulador,[suben,bajan])=>acumulador+suben-bajan,0);
-            console.log("Viajeros: "+tren(pasajeros))
+            console.log("Viajeros: "+tren(pasajeros));
         </script>                
     </body>
 </html>
