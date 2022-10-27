@@ -42,7 +42,10 @@
             parImparFlecha(numIntroducido);
             parImparFlecha2(numIntroducido%2);
             parImpar(numIntroducido);
+            let resultado=((numIntroducido)=>numIntroducido%2==0?numIntroducido+=" es par":numIntroducido+=" es impar");
+            alert(resultado(numIntroducido));
             numIntroducido=numIntroducido%2? numIntroducido+=" es impar":numIntroducido+=" es par";
+            
             alert(numIntroducido)
         </script>                
     </body>
