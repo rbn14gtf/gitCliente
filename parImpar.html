@@ -32,15 +32,20 @@
                 }
             }
             //CODIGO
+           
+
             let numIntroducido=0;
             do{
                 numIntroducido=Number(prompt("Introduce un número:",""));
             }while(isNaN(numIntroducido));
+
             console.log(numIntroducido);
-            
+
             parImparFlecha(numIntroducido);
             parImparFlecha2(numIntroducido%2);
             parImpar(numIntroducido);
+            numIntroducido=numIntroducido%2? numIntroducido+=" es impar":numIntroducido+=" es par";
+            alert(numIntroducido)
         </script>                
     </body>
 </html>
