@@ -11,14 +11,13 @@
             let viajeros=0;
             
             for(let i=String(num).length;i>=0;i=i-2){
-                //console.log(String(num).charAt(i-1));
-                console.log("Suben "+Number(String(num).charAt(i-1)));
-                console.log("Bajan "+Number(String(num).charAt(i-2)));
                 viajeros+=Number(String(num).charAt(i-1));
                 viajeros-=Number(String(num).charAt(i-2))
-                console.log("Viajeros en la estacion: "+viajeros);
+                console.log("Suben "+Number(String(num).charAt(i-1)));
+                console.log("Bajan "+Number(String(num).charAt(i-2)));
+                console.log("Pasajeros en la estacion: "+viajeros);
             }
-            console.log(viajeros);
+            console.log("Viajeros: "+viajeros);
             viajeros=0;
             let num2=String(num).split("").reverse();
             // console.log(num2);
@@ -27,11 +26,14 @@
                 viajeros-=Number(num2[i+1]);
                 console.log("Suben "+num2[i]);
                 console.log("Bajan "+num2[i+1]);
-                console.log("Viajeros en la estacion: "+viajeros);
+                console.log("Pasajeros en la estacion: "+viajeros);
             }
            
-            console.log(viajeros);
-            //console.log(num2.reduce((total,valor)=>total-=valor));
+            console.log("Viajeros: "+viajeros);
+            let pasajeros=[[4,0],[6,7],[6,4],[8,2],[5,3],[7,5],[8,6]];
+
+            let tren=(pasajeros)=>pasajeros.reduce((acumulador,[suben,bajan])=>acumulador+suben-bajan,0);
+            console.log("Viajeros: "+tren(pasajeros))
         </script>                
     </body>
 </html>
