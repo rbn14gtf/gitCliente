@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Eventos</title>
     </head>
-    <body onload="alert('La pagina se ha cargado correctamente')">
+    <body>
         <button onclick="innerHTML=Date()">Pulse para saber la hora</button>
         <!-- <button onclick="this.innerHTML=Date()">Pulse para saber la hora</button> -->
         <input type="button" onclick="innerHTML=Date()" value="Pulse para saber la hora"/>
@@ -19,11 +19,22 @@
 
         <h1>Modelo de registro de eventos tradicional</h1>
         <h3 id="tradicional">Pulse aqui para ver lo que se ejecuta</h3>
+        
+        
+        <h1>Modelo de registro de eventos avanzados del W3C</h1>
+        <h3 id="w3c">Modelo del W3C</h3>
+
         <script>
             document.getElementById("tradicional").onclick=cambiar2;
 
+            // document.getElementById("w3c").addEventListener("mouseover",color,false)
+            document.getElementById("w3c").addEventListener("click",color,false)
+
             function cambiar(elem){
                 elem.innerHTML="Javascript";
+            }
+            function color(color){
+                document.getElementById("w3c").style.color="red";
             }
 
             function cambiar2(){
