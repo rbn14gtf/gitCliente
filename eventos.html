@@ -12,9 +12,18 @@
         <h3 id="cab1" onclick="this.innerHTML='Javascript'" onmouseover="this.style.background='red'" onmouseout="this.style.background='white'">Pulse aqui para ver lo que se ejecuta</h3>
 
         <h3 onclick="cambiar(this)">Pulse aqui para ver lo que se ejecuta</h3>
+        <a href="https://www.google.es"onclick="alertar(); return false;">Pulse aqui para ver lo que se ejecuta Alertar</a>
+        <br>
+        <a href="https://www.google.es"onclick="preguntar();">Pulse aqui para ver lo que se ejecuta Preguntar</a>
         <script>
             function cambiar(elem){
                 elem.innerHTML="Javascript";
+            }
+            function alertar(){
+                alert("Vamos a google")
+            }
+            function preguntar(){
+                return confirm("Deseas ir a google?")
             }
 
         </script>                
