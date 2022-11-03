@@ -11,16 +11,32 @@
             let array=cadena.split("");
             for(let i=0;i<array.length;i++){
                 for(let j=0;j<cadenaPatron.length;j++){
-                    if(array[i]==cadenaPatron.charAt(j)&&array[i+1]==cadenaPatron.charAt(j+1)){
-                        //console.log("array "+i+" cadena at "+j+" array "+i+1+" cadena at "+j+1)
-                        if(cadenaPatron=="00"){
-                            vecesPatron00++;
-                        }else if(cadenaPatron=="101"){
-                            vecesPatron101++;
-                        }else if(cadenaPatron=="ABC"){
-                            vecesPatronABC++;
-                        }else{
-                            vecesPatronH0++;
+                    if(cadenaPatron.length==2){
+                        if(array[i]==cadenaPatron.charAt(j)&&array[i+1]==cadenaPatron.charAt(j+1)){
+                            //console.log("array "+i+" cadena at "+j+" array "+i+1+" cadena at "+j+1)
+                            if(cadenaPatron=="00"){
+                                vecesPatron00++;
+                            }else if(cadenaPatron=="101"){
+                                vecesPatron101++;
+                            }else if(cadenaPatron=="ABC"){
+                                vecesPatronABC++;
+                            }else{
+                                vecesPatronH0++;
+                            }
+                        }
+                    }
+                    if(cadenaPatron.length==3){
+                        if(array[i]==cadenaPatron.charAt(j)&&array[i+1]==cadenaPatron.charAt(j+1)&&array[i+2]==cadenaPatron.charAt(j+2)){
+                            //console.log("array "+i+" cadena at "+j+" array "+i+1+" cadena at "+j+1)
+                            if(cadenaPatron=="00"){
+                                vecesPatron00++;
+                            }else if(cadenaPatron=="101"){
+                                vecesPatron101++;
+                            }else if(cadenaPatron=="ABC"){
+                                vecesPatronABC++;
+                            }else{
+                                vecesPatronH0++;
+                            }
                         }
                     }
                 }
