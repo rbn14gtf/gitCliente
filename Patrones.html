@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        var cadena = prompt("Introduce una cadena:");
+        cadena.toUpperCase();
+
+        var verdadero02 = cadena.includes("00")
+        var verdadero01 = cadena.includes("101")
+        var verdadero03 = cadena.includes("ABC")
+        var verdadero04 = cadena.includes("H0")
+
+        if(verdadero01 || verdadero02 || verdadero03 || verdadero04){
+            var patrones = contarPatrones(cadena);
+        }else{
+            alert("La cadena no contiene ningun patron.")
+        }
+
+        alert("Patron 00: " + patrones[0]+ "/ Patron 101: "+patrones[1]+ "/ Patron ABC: "+patrones[2]+ "/ Patron H0: "+patrones[3]+ "/ Total de patrones: " +patrones[4])
+
+        function contarPatrones(cadena){
+            var contador1 = 0;
+            var contador2 = 0;
+            var contador3 = 0;
+            var contador4 = 0;
+
+            for (let index = 0; index <= cadena.length; index++) {
+                //Contador de "00"
+                if(cadena.charAt(index) == "0" && cadena.charAt(index+1) == "0"){
+                    contador1++;
+                }
+                //Contador de "101"
+                if(cadena.charAt(index) == "1" && cadena.charAt(index+1) == "0" && cadena.charAt(index+2) == "1"){
+                    contador2++;
+                }
+                //Contador de "ABC"
+                if(cadena.charAt(index) == "A" && cadena.charAt(index+1) == "B" && cadena.charAt(index+2) == "C"){
+                    contador3++;
+                }
+                //Contador de "H0"
+                if(cadena.charAt(index) == "H" && cadena.charAt(index+1) == "0"){
+                    contador4++;
+                }
+            }
+
+            var total = contador1 + contador2 + contador3 + contador4;
+
+            var patrones = [contador1, contador2, contador3, contador4, total];
+
+            return patrones;
+        }
+    </script>
+</body>
+</html>
