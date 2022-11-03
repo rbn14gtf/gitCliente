@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Patrones</title>
+    </head>
+    <body>
+        <script>
+
+        function countPatron(cadenaPatron){
+            let array=cadena.split("");
+            for(let i=0;i<array.length;i++){
+                for(let j=0;j<cadenaPatron.length;j++){
+                    if(array[i]==cadenaPatron.charAt(j)&&array[i+1]==cadenaPatron.charAt(j+1)){
+                        if(cadenaPatron=="00"){
+                            vecesPatron00++;
+                        }else if(cadenaPatron=="101"){
+                            vecesPatron101++;
+                        }else if(cadenaPatron=="ABC"){
+                            vecesPatronABC++;
+                        }else{
+                            vecesPatronH0++;
+                        }
+                    }
+                }
+            }
+            if(cadenaPatron=="00"){
+                console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatron00);
+            }else if(cadenaPatron=="101"){
+                console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatron101);
+            }else if(cadenaPatron=="ABC"){
+                console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronABC);
+            }else{
+                console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronH0);
+            }
+        }
+
+        function countNumeroPatronesEncontrados(){
+            if(vecesPatron00!=0){
+                numPatronesEncontrados++;
+            }
+            if(vecesPatron101!=0){
+                numPatronesEncontrados++;
+            }
+            if(vecesPatronABC!=0){
+                numPatronesEncontrados++;
+            }
+            if(vecesPatronH0!=0){
+                numPatronesEncontrados++;
+            }
+            console.log("Numero de patrones encontrados: "+numPatronesEncontrados)
+        }
+        let cadena="";
+        let patron00="00";
+        let patron101="101";
+        let patronABC="ABC";
+        let patronH0="H0";
+        let numPatronesEncontrados=0;
+        let vecesPatron00=0;
+        let vecesPatron101=0;
+        let vecesPatronABC=0;
+        let vecesPatronH0=0;
+        
+        do{
+            cadena=String(prompt("Introduzca una cadena de caracteres","")).toUpperCase();
+        }while(cadena=="");
+        console.log(cadena);
+        countPatron(patron00);
+        countPatron(patron101);
+        countPatron(patronABC);
+        countPatron(patronH0);
+        countNumeroPatronesEncontrados();
+        
+        </script>                
+    </body>
+</html>
