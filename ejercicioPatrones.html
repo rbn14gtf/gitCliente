@@ -20,7 +20,7 @@
                             }else if(cadenaPatron=="ABC"){
                                 vecesPatronABC++;
                             }else{
-                                vecesPatronH0++;
+                                vecesPatronHO++;
                             }
                         }
                     }
@@ -33,7 +33,7 @@
                             }else if(cadenaPatron=="ABC"){
                                 vecesPatronABC++;
                             }else{
-                                vecesPatronH0++;
+                                vecesPatronHO++;
                             }
                         }
                     }
@@ -46,7 +46,7 @@
             }else if(cadenaPatron=="ABC"){
                 console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronABC);
             }else{
-                console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronH0);
+                console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronHO);
             }
         }
 
@@ -60,7 +60,7 @@
             if(vecesPatronABC!=0){
                 numPatronesEncontrados++;
             }
-            if(vecesPatronH0!=0){
+            if(vecesPatronHO!=0){
                 numPatronesEncontrados++;
             }
             console.log("Numero de patrones encontrados: "+numPatronesEncontrados)
@@ -69,12 +69,12 @@
         let patron00="00";
         let patron101="101";
         let patronABC="ABC";
-        let patronH0="H0";
+        let patronHO="HO";
         let numPatronesEncontrados=0;
         let vecesPatron00=0;
         let vecesPatron101=0;
         let vecesPatronABC=0;
-        let vecesPatronH0=0;
+        let vecesPatronHO=0;
         
         do{
             cadena=String(prompt("Introduzca una cadena de caracteres","")).toUpperCase();
@@ -83,7 +83,7 @@
         countPatron(patron00);
         countPatron(patron101);
         countPatron(patronABC);
-        countPatron(patronH0);
+        countPatron(patronHO);
         countNumeroPatronesEncontrados();
         
         </script>                
