@@ -49,13 +49,10 @@
                     if(window.confirm("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno+"\nDesea eliminar este alumno?")){
                         alumnos.splice(i, 1); 
                         i--;
-
                     }
                     else{
                     }    
-                        
                 }
-                
                 console.table(alumnos)
             }
             function introduceNotas(){
