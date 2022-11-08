@@ -3,12 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Ejercicio Alumnos</title>
-                     
     </head>
     <body>
         <p id="notaMedia">Nota Media:</p>
         <script>
-            let alumnos=[{nombreAlumno:"Maria",notaAlumno:0},{nombreAlumno:"Ruben",notaAlumno:0},{nombreAlumno:"Pablo",notaAlumno:0},{nombreAlumno:"Marcos",notaAlumno:0},{nombreAlumno:"Juan",notaAlumno:0},{nombreAlumno:"Clara",notaAlumno:0},{nombreAlumno:"Pilar",notaAlumno:0},{nombreAlumno:"Sara",notaAlumno:0},{nombreAlumno:"Nerea",notaAlumno:0},{nombreAlumno:"Julian",notaAlumno:0},{nombreAlumno:"Marcos",notaAlumno:0},{nombreAlumno:"Alfredo",notaAlumno:0},{nombreAlumno:"Victoria",notaAlumno:0},{nombreAlumno:"Raul",notaAlumno:0},{nombreAlumno:"Tomas",notaAlumno:0},];
+            let alumnos=[{nombreAlumno:"Maria",notaAlumno:1},{nombreAlumno:"Ruben",notaAlumno:1},{nombreAlumno:"Pablo",notaAlumno:1},{nombreAlumno:"Marcos",notaAlumno:1},{nombreAlumno:"Juan",notaAlumno:1},{nombreAlumno:"Clara",notaAlumno:1},{nombreAlumno:"Pilar",notaAlumno:1},{nombreAlumno:"Sara",notaAlumno:1},{nombreAlumno:"Nerea",notaAlumno:1},{nombreAlumno:"Julian",notaAlumno:1},{nombreAlumno:"Marcos",notaAlumno:1},{nombreAlumno:"Alfredo",notaAlumno:1},{nombreAlumno:"Victoria",notaAlumno:1},{nombreAlumno:"Raul",notaAlumno:1},{nombreAlumno:"Tomas",notaAlumno:1},];
             let i=0;
             let nota=0;
 
@@ -38,7 +37,7 @@
                     do{
                         nombreNuevo=String(prompt("Introduzca el nombre del alumno ","Ruben2"))
                     }while((!isNaN(nombreNuevo))&&(nombreNuevo===""))
-                    alumnos.push({nombreAlumno:nombreNuevo,notaAlumno:0})
+                    alumnos.push({nombreAlumno:nombreNuevo,notaAlumno:1})
                     alert(nombreNuevo+" ha sido añadido")
                     }
                     else{
