@@ -19,12 +19,28 @@
                 }
                 return (total/arrayAlumnos.length).toFixed(2);
             }
+            function muestraNotas(arrayAlumnos){
+                let notaNueva=0;
+                for(i=0;i<arrayAlumnos.length;i++){
+                    if(window.confirm("Nombre Alumno: "+arrayAlumnos[i].nombreAlumno+"\nNota Alumno: "+arrayAlumnos[i].notaAlumno+"\nDesea cambiar la nota?")){
+                        notaNueva=Number(prompt(i+" Introduzca la nota del alumno "+alumnos[i].nombreAlumno,arrayAlumnos[i].notaAlumno))
+                        alumnos[i].notaAlumno=notaNueva;
+                        alert("Nombre Alumno: "+arrayAlumnos[i].nombreAlumno+"\nNota Alumno: "+arrayAlumnos[i].notaAlumno)
+                    }
+                    else{
+                        
+                    }
+                    
+                }
+            }
             do{
                 nota=Number(prompt(i+" Introduzca la nota del alumno "+alumnos[i].nombreAlumno,"5"))
                 alumnos[i].notaAlumno=nota;
                 i++;
 
             }while((i<15)&&(nota>=1)&&nota<=10);
+            //Funcionalidad 1
+            muestraNotas(alumnos)
             document.getElementById("notaMedia").innerHTML+=calculaMedia(alumnos)
         </script>  
     </body>
