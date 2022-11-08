@@ -147,4 +147,5 @@ do{
             console.log("Opción no valida");
         break;
     }
+    showAllContacts(contactos)
 }while(opcion!=5);
