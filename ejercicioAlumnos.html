@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Alumnos</title>
+                     
+    </head>
+    <body>
+        <p id="notaMedia">Nota Media:</p>
+        <script>
+            let alumnos=[{nombreAlumno:"Maria",notaAlumno:0},{nombreAlumno:"Ruben",notaAlumno:0},{nombreAlumno:"Pablo",notaAlumno:0},{nombreAlumno:"Marcos",notaAlumno:0},{nombreAlumno:"Juan",notaAlumno:0},{nombreAlumno:"Clara",notaAlumno:0},{nombreAlumno:"Pilar",notaAlumno:0},{nombreAlumno:"Sara",notaAlumno:0},{nombreAlumno:"Nerea",notaAlumno:0},{nombreAlumno:"Julian",notaAlumno:0},{nombreAlumno:"Marcos",notaAlumno:0},{nombreAlumno:"Alfredo",notaAlumno:0},{nombreAlumno:"Victoria",notaAlumno:0},{nombreAlumno:"Raul",notaAlumno:0},{nombreAlumno:"Tomas",notaAlumno:0},];
+            let i=0;
+            let nota=0;
+
+            function calculaMedia(arrayAlumnos){
+                let total=0;
+                for(i=0;i<arrayAlumnos.length;i++){
+                    total+=arrayAlumnos[i].notaAlumno;
+                }
+                return (total/arrayAlumnos.length).toFixed(2);
+            }
+            do{
+                nota=Number(prompt(i+" Introduzca la nota del alumno "+alumnos[i].nombreAlumno,"5"))
+                alumnos[i].notaAlumno=nota;
+                i++;
+
+            }while((i<15)&&(nota>=1)&&nota<=10);
+            document.getElementById("notaMedia").innerHTML+=calculaMedia(alumnos)
+        </script>  
+    </body>
+</html>
