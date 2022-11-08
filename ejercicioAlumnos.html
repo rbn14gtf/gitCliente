@@ -48,6 +48,8 @@
                 for(let i=0;i<alumnos.length;i++){
                     if(window.confirm("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno+"\nDesea eliminar este alumno?")){
                         alumnos.splice(i, 1); 
+                        i--;
+
                     }
                     else{
                     }    
@@ -57,6 +59,7 @@
                 console.table(alumnos)
             }
             function introduceNotas(){
+                let i=0;
                 do{
                     nota=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,"5"))
                     alumnos[i].notaAlumno=nota;
