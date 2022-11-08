@@ -8,19 +8,18 @@
         <p id="notaMedia">Nota Media:</p>
         <script>
             let alumnos=[{nombreAlumno:"Maria",notaAlumno:1},{nombreAlumno:"Ruben",notaAlumno:1},{nombreAlumno:"Pablo",notaAlumno:1},{nombreAlumno:"Marcos",notaAlumno:1},{nombreAlumno:"Juan",notaAlumno:1},{nombreAlumno:"Clara",notaAlumno:1},{nombreAlumno:"Pilar",notaAlumno:1},{nombreAlumno:"Sara",notaAlumno:1},{nombreAlumno:"Nerea",notaAlumno:1},{nombreAlumno:"Julian",notaAlumno:1},{nombreAlumno:"Marcos",notaAlumno:1},{nombreAlumno:"Alfredo",notaAlumno:1},{nombreAlumno:"Victoria",notaAlumno:1},{nombreAlumno:"Raul",notaAlumno:1},{nombreAlumno:"Tomas",notaAlumno:1},];
-            let i=0;
             let nota=0;
-
+            console.table(alumnos)
             function calculaMedia(){
                 let total=0;
-                for(i=0;i<alumnos.length;i++){
+                for(let i=0;i<alumnos.length;i++){
                     total+=alumnos[i].notaAlumno;
                 }
                 return (total/alumnos.length).toFixed(2);
             }
-            function muestraNotas(){
+            function cambiaNotas(){
                 let notaNueva=0;
-                for(i=0;i<alumnos.length;i++){
+                for(let i=0;i<alumnos.length;i++){
                     if(window.confirm("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno+"\nDesea cambiar la nota?")){
                         notaNueva=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,alumnos[i].notaAlumno))
                         alumnos[i].notaAlumno=notaNueva;
@@ -40,21 +39,38 @@
                     alumnos.push({nombreAlumno:nombreNuevo,notaAlumno:1})
                     alert(nombreNuevo+" ha sido añadido")
                     }
-                    else{
-                        
+                else{
+                    
+                }
+                console.table(alumnos)
+            }
+            function deleteAlumno(){
+                for(let i=0;i<alumnos.length;i++){
+                    if(window.confirm("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno+"\nDesea eliminar este alumno?")){
+                        alumnos.splice(i, 1); 
                     }
-                    console.table(alumnos)
+                    else{
+                    }    
+                        
+                }
+                
+                console.table(alumnos)
+            }
+            function introduceNotas(){
+                do{
+                    nota=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,"5"))
+                    alumnos[i].notaAlumno=nota;
+                    i++;
+                }while((i<alumnos.length)&&(nota>=1)&&nota<=10);
+                console.table(alumnos)
+
             }
             //Funcionalidad 2
             addAlumno()
-            do{
-                nota=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,"5"))
-                alumnos[i].notaAlumno=nota;
-                i++;
-
-            }while((i<alumnos.length)&&(nota>=1)&&nota<=10);
+            deleteAlumno()
+            introduceNotas();
             //Funcionalidad 1
-            muestraNotas()
+            cambiaNotas()
             console.table(alumnos)
 
             document.getElementById("notaMedia").innerHTML+=calculaMedia()
