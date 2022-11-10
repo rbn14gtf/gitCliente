@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Buscador</title>
+        <script>
+            function limpiaArray(arrayALimpiar){
+                for(let i=0;i<arrayALimpiar.length;i++){
+                    if((arrayALimpiar[i]=="\n")||(arrayALimpiar[i]=="")||(arrayALimpiar[i]==".")||(arrayALimpiar[i]==",")){
+                        arrayALimpiar.splice(i, 1); 
+                        i--;
+                    }
+                }
+                return arrayALimpiar;
+            }
+            function buscar(){
+                let textoABuscar=document.getElementById("textoABuscar").value;
+                let text=document.getElementById("texto").textContent;
+                console.log(textoABuscar)
+                console.log(text)
+                let textArray=text.split(" ")
+                console.log(textArray)
+                textArray=limpiaArray(textArray)
+                console.log(textArray)
+                // for(let i=0;i<text.length;i++){
+                //     for(let j=0;i<textoABuscar.length;j++){
+                //         if(textoABuscar.charAt(j)==text.charAt(i)){
+
+                //         }
+                //     }    
+                // }
+                
+            }
+        </script> 
+    </head>
+    <body>
+        <p id="texto">
+            Fabrik fue inaugurada en el año 2003, tomando el relevo a la Discoteca Radical, clausurada en 2000 en Alcalá de Henares (Madrid) España, que abrió de nuevo dos años más tarde, en Torrijos (Toledo) España y cerrando definitivamente en 2010 Desde entonces Fabrik sumó su público más punk y bakala al suyo original, logrando convertirse en una de las referencias más destacadas del panorama electrónico español, escalando incluso a nivel mundial</p>
+        <label for="textoABuscar">Texto a buscar:</label>
+        <input type="text" placeholder="Texto a buscar" id="textoABuscar" name="textoABuscar">
+        <input type="button" value="Buscar" onclick="buscar()">
+        
+        <label for="mayus">Buscar solo palabras completas</label>
+        <input type="radio" id="mayus" name="mayus" value="Buscar solo palabras completas">
+        <label for="mayusvsminus">Distinguir entre mayusculas y minusculas</label>
+        <input type="radio" id="mayusvsminus" name="mayusvsminus" value="Distinguir entre mayusculas y minusculas">
+       
+    </body>
+</html>
