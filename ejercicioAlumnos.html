@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>1
 <html>
     <head>
         <meta charset="UTF-8">
@@ -7,9 +7,18 @@
     <body>
         <p id="notaMedia">Nota Media:</p>
         <script>
-            let alumnos=[{nombreAlumno:"Maria",notaAlumno:1},{nombreAlumno:"Ruben",notaAlumno:1},{nombreAlumno:"Pablo",notaAlumno:1},{nombreAlumno:"Marcos",notaAlumno:1},{nombreAlumno:"Juan",notaAlumno:1},{nombreAlumno:"Clara",notaAlumno:1},{nombreAlumno:"Pilar",notaAlumno:1},{nombreAlumno:"Sara",notaAlumno:1},{nombreAlumno:"Nerea",notaAlumno:1},{nombreAlumno:"Julian",notaAlumno:1},{nombreAlumno:"Marcos",notaAlumno:1},{nombreAlumno:"Alfredo",notaAlumno:1},{nombreAlumno:"Victoria",notaAlumno:1},{nombreAlumno:"Raul",notaAlumno:1},{nombreAlumno:"Tomas",notaAlumno:1},];
+            let alumnos=[{nombreAlumno:"Maria",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Ruben",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Pablo",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Marcos",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Juan",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Clara",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Pilar",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Sara",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Nerea",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Julian",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Marcos",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Alfredo",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Victoria",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Raul",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Tomas",notaAlumno:Math.round(Math. random()*10)},];
             let nota=0;
             console.table(alumnos)
+            function muestraAlumnos(){
+                let alum="";
+                for(let i=0;i<alumnos.length;i++){
+                    alum+=i+" Nombre: "+alumnos[i].nombreAlumno+"\nNota: "+alumnos[i].notaAlumno+"\n"
+                     
+                }
+                alert(alum)
+
+            }
             function calculaMedia(){
                 let total=0;
                 for(let i=0;i<alumnos.length;i++){
@@ -19,16 +28,23 @@
             }
             function cambiaNotas(){
                 let notaNueva=0;
-                for(let i=0;i<alumnos.length;i++){
-                    if(window.confirm("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno+"\nDesea cambiar la nota?")){
-                        notaNueva=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,alumnos[i].notaAlumno))
-                        alumnos[i].notaAlumno=notaNueva;
-                        alert("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno)
+                if(window.confirm("Desea cambiar alguna nota?")){
+                    muestraAlumnos();
+                    for(let i=0;i<alumnos.length;i++){
+                        if(window.confirm("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno+"\nDesea cambiar la nota?")){
+                            notaNueva=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,alumnos[i].notaAlumno))
+                            alumnos[i].notaAlumno=notaNueva;
+                            alert("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno)
+                        }
+                        else{
+                            
+                        }
                     }
-                    else{
-                        
-                    }
+                }else{
+
                 }
+
+                
             }
             function addAlumno(){
                 let nombreNuevo=""
@@ -36,7 +52,7 @@
                     do{
                         nombreNuevo=String(prompt("Introduzca el nombre del alumno ","Ruben2"))
                     }while((!isNaN(nombreNuevo))&&(nombreNuevo===""))
-                    alumnos.push({nombreAlumno:nombreNuevo,notaAlumno:1})
+                    alumnos.push({nombreAlumno:nombreNuevo,notaAlumno:Math.round(Math. random()*10)})
                     alert(nombreNuevo+" ha sido añadido")
                     }
                 else{
@@ -45,25 +61,40 @@
                 console.table(alumnos)
             }
             function deleteAlumno(){
-                for(let i=0;i<alumnos.length;i++){
-                    if(window.confirm("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno+"\nDesea eliminar este alumno?")){
-                        alumnos.splice(i, 1); 
-                        i--;
+                if(window.confirm("Desea eliminar algún alumno?")){
+                    let numAlumABorrar=0;
+                    muestraAlumnos()
+                    numAlumABorrar=prompt("Introduce el numero de alumno que desea borrar",""); 
+                    
+                    if(window.confirm("Nombre Alumno: "+alumnos[numAlumABorrar].nombreAlumno+"\nNota Alumno: "+alumnos[numAlumABorrar].notaAlumno+"\nDesea eliminar este alumno?")){
+                        alert("El alumno "+alumnos[numAlumABorrar].nombreAlumno+" ha sido borrado")
+                        alumnos.splice(numAlumABorrar, 1); 
+                        
                     }
                     else{
                     }    
-                }
+                
                 console.table(alumnos)
+                }else{
+
+                }
+
+                
             }
             function introduceNotas(){
-                let i=0;
-                do{
-                    nota=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,"5"))
-                    alumnos[i].notaAlumno=nota;
-                    i++;
-                }while((i<alumnos.length)&&(nota>=1)&&nota<=10);
-                console.table(alumnos)
+                if(window.confirm("Desea introducir las notas de los alumnos?")){
+                    let i=0;
+                    do{
+                        nota=Number(prompt("Introduzca la nota del alumno "+alumnos[i].nombreAlumno,"5"))
+                        alumnos[i].notaAlumno=nota;
+                        i++;
+                    }while((i<alumnos.length)&&(nota>=1)&&nota<=10);
+                    console.table(alumnos)
+    
+                }else{
 
+                }
+                
             }
             //Funcionalidad 2
             addAlumno()
