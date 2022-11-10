@@ -11,38 +11,88 @@
                         i--;
                     }
                 }
+                /*
+                for(let i=0;i<arrayALimpiar.length;i++){
+                    for(let j=0;j<arrayALimpiar[i].length;j++){
+                        if((arrayALimpiar[i].charAt[j]==",")||(arrayALimpiar[i].charAt[j]==".")){
+                            arrayALimpiar[i].replace(",","");
+                            arrayALimpiar[i].replace(".","");
+                            console.log("encontrada")
+                        }
+                    }
+                    
+                }*/
                 return arrayALimpiar;
             }
             function buscar(){
                 let textoABuscar=document.getElementById("textoABuscar").value;
                 let text=document.getElementById("texto").textContent;
-                let mayus=document.getElementById("mayus").checked
+                let completas=document.getElementById("completas").checked
                 let mayusvsminus=document.getElementById("mayusvsminus").checked
                 let textArray=text.split(" ")
                 textArray=limpiaArray(textArray)
                 console.log(textArray)
                 console.log(textoABuscar)
+                let numberOfOptions=0
+                if(completas&&mayusvsminus){
+                    numberOfOptions=2
+                }
+                else if(!completas&&!mayusvsminus){
+                    numberOfOptions=0
+                }
+                else{
+                    numberOfOptions=1
+                }
 
                 for(let i=0;i<textArray.length;i++){
-                    if(mayusvsminus){
-                        if(textArray[i]==textoABuscar){
-                            console.log("Palabra encontrada")
-                            console.log(i)
-                        }
-                        else{
+                    switch(numberOfOptions){
+                        //no distingue y palabras no completas
+                        case 0:
+                            if((textArray[i].toLowerCase()==textoABuscar.toLowerCase())||(textArray[i].includes(textoABuscar))){
+                                console.log("Palabra encontrada")
+                                document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
+                                console.log(i)
+                            }
+                            else{
+                            }
+                            break;
+                        //distingue o busca solo palabras completas
+                        case 1:
+                            //distingue
+                            if(mayusvsminus){
+                                if((textArray[i]==textoABuscar)||(textArray[i].includes(textoABuscar))){
+                                    console.log("Palabra encontrada")
+                                    document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
+                                    console.log(i)
+                                }
+                                else{
+                                }
+                            }
+                            //palabras completas
+                            else{
+                                if(textArray[i].toLowerCase()==textoABuscar.toLowerCase()){
+                                    console.log("Palabra encontrada")
+                                    document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
+                                    console.log(i)
+                                }
+                                else{
+                                }
+                            }
                             
-                        }
+                            break;
+                        //distingue y busca solo palabras completas
+    
+                        case 2:
+                            if(textArray[i]==textoABuscar){
+                                console.log("Palabra encontrada")
+                                document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
+                                console.log(i)
+                            }
+                            else{
+                            }
+                            break;
                     }
-                    else if(!mayusvsminus){
-                        if(textArray[i].toLowerCase()==textoABuscar.toLowerCase()){
-                            console.log("Palabra encontrada")
-                            console.log(i)
-                        }
-                        else{
-
-                        }
-                    }
-                }
+                }    
                 
             }
         </script> 
@@ -54,10 +104,11 @@
         <input type="text" placeholder="Texto a buscar" id="textoABuscar" name="textoABuscar">
         <input type="button" value="Buscar" onclick="buscar()">
         
-        <label for="mayus">Buscar solo palabras completas</label>
-        <input type="radio" id="mayus" name="mayus" value="Buscar solo palabras completas">
+        <label for="completas">Buscar solo palabras completas</label>
+        <input type="radio" id="completas" name="completas" value="Buscar solo palabras completas">
         <label for="mayusvsminus">Distinguir entre mayusculas y minusculas</label>
         <input type="radio" id="mayusvsminus" name="mayusvsminus" value="Distinguir entre mayusculas y minusculas">
+        <p id="palabrasEncontradas">Palabras encontradas:</p>
        
     </body>
 </html>
