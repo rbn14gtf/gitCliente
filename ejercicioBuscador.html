@@ -17,17 +17,15 @@
         <label for="mayusvsminus">Distinguir entre mayusculas y minusculas</label>
         <input type="radio" id="mayusvsminus" name="mayusvsminus" value="Distinguir entre mayusculas y minusculas">
         <p id="palabrasEncontradas">Palabras encontradas:</p>
-        
+
        <script>
-            document.getElementById("mayusvsminus").addEventListener("change",radioFunction,false)
-            document.getElementById("completas").addEventListener("change",radioFunction,false)
+            document.getElementById("mayusvsminus").addEventListener("change",radioFunction)
+            document.getElementById("completas").addEventListener("change",radioFunction)
             function radioFunction(){
                 if(this.checked){
-                    console.log(this.value)
-                    document.getElementById(this.value).checked=false
+                    this.checked=false;
                 }else{
-                    document.getElementById(this).checked=true
-
+                    this.checked=true;
                 }
             }
 
