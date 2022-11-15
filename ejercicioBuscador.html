@@ -27,7 +27,7 @@
                 }
                 for(let i=0;i<arrayALimpiar.length;i++){
                     for(let j=0;j<arrayALimpiar[i].length;j++){
-                        if(arrayALimpiar[i].charAt(j)==","){
+                        if((arrayALimpiar[i].charAt(j)==","||(arrayALimpiar[i].charAt(j)=="."))){
                             arrayALimpiar[i]=arrayALimpiar[i].slice(0, -1);
                         }
                     }
