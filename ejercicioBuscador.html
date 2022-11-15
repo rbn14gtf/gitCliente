@@ -13,25 +13,12 @@
         <input type="button" value="Buscar" onclick="buscar()">
         
         <label for="completas">Buscar solo palabras completas</label>
-        <input type="radio" id="completas" name="completas" value="Buscar solo palabras completas">
+        <input type="checkbox" id="completas" name="completas" value="Buscar solo palabras completas">
         <label for="mayusvsminus">Distinguir entre mayusculas y minusculas</label>
-        <input type="radio" id="mayusvsminus" name="mayusvsminus" value="Distinguir entre mayusculas y minusculas">
+        <input type="checkbox" id="mayusvsminus" name="mayusvsminus" value="Distinguir entre mayusculas y minusculas">
         <p id="palabrasEncontradas">Palabras encontradas:</p>
 
        <script>
-            document.getElementById("mayusvsminus").addEventListener("change",radioFunction)
-            document.getElementById("completas").addEventListener("change",radioFunction)
-            function radioFunction(){
-                if(this.checked){
-                    console.log(this.checked)
-                    this.checked=false;
-                }else{
-                    console.log(this.checked)
-
-                    this.checked=true;
-                }
-            }
-
             function limpiaArray(arrayALimpiar){
                 for(let i=0;i<arrayALimpiar.length;i++){
                     if((arrayALimpiar[i]=="\n")||(arrayALimpiar[i]=="")||(arrayALimpiar[i]==".")||(arrayALimpiar[i]==",")){
