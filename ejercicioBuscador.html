@@ -23,8 +23,11 @@
             document.getElementById("completas").addEventListener("change",radioFunction)
             function radioFunction(){
                 if(this.checked){
+                    console.log(this.checked)
                     this.checked=false;
                 }else{
+                    console.log(this.checked)
+
                     this.checked=true;
                 }
             }
