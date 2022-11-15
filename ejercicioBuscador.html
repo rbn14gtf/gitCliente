@@ -11,17 +11,14 @@
                         i--;
                     }
                 }
-                /*
                 for(let i=0;i<arrayALimpiar.length;i++){
                     for(let j=0;j<arrayALimpiar[i].length;j++){
-                        if((arrayALimpiar[i].charAt[j]==",")||(arrayALimpiar[i].charAt[j]==".")){
-                            arrayALimpiar[i].replace(",","");
-                            arrayALimpiar[i].replace(".","");
-                            console.log("encontrada")
+                        if(arrayALimpiar[i].charAt(j)==","){
+                            arrayALimpiar[i]=arrayALimpiar[i].slice(0, -1);
                         }
                     }
                     
-                }*/
+                }
                 return arrayALimpiar;
             }
             function buscar(){
