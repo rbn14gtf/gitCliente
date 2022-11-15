@@ -20,22 +20,22 @@
                 alert("Has sacado un sobresaliente.");   
             }
             */
-            let nota=9;
+            let nota=Math.round(Math. random()*10);
             switch (nota){
                 case 1: case 2:case 3:case 4:
-                    alert("Has suspendido.");
+                    alert(nota+" Has suspendido.");
                     break;
                 case 5:
-                    alert("Has sacado un suficiente.");
+                    alert(nota+" Has sacado un suficiente.");
                     break;
                 case 6:
-                    alert("Has sacado un bien.");
+                    alert(nota+" Has sacado un bien.");
                     break;
                 case 7:case 8:
-                    alert("Has sacado un notable.");
+                    alert(nota+" Has sacado un notable.");
                     break;
                 case 9: case 10:
-                    alert("Has sacado un sobresaliente.");
+                    alert(nota+" Has sacado un sobresaliente.");
                     break;
                 default:
                     alert("Nota no válida");
