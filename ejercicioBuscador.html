@@ -42,7 +42,7 @@
 
                 for(let i=0;i<textArray.length;i++){
                     switch(numberOfOptions){
-                        //no distingue y palabras no completas
+                        //no distingue mayusculas y minusculas y palabras no completas
                         case 0:
                             if((textArray[i].toLowerCase()==textoABuscar.toLowerCase())||(textArray[i].includes(textoABuscar))){
                                 console.log("Palabra encontrada")
@@ -54,7 +54,7 @@
                         break;
                         //distingue o busca solo palabras completas
                         case 1:
-                            //distingue
+                            //distingue mayusculas y minusculas
                             if(mayusvsminus){
                                 if((textArray[i]==textoABuscar)||(textArray[i].includes(textoABuscar))){
                                     console.log("Palabra encontrada")
@@ -75,8 +75,8 @@
                                 }
                             }
                         break;
-                        //distingue y busca solo palabras completas
-    
+
+                        //distingue mayusculas y minusculas y busca solo palabras completas
                         case 2:
                             if(textArray[i]==textoABuscar){
                                 console.log("Palabra encontrada")
