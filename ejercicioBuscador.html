@@ -22,12 +22,13 @@
             }
             function buscar(){
                 let textoABuscar=document.getElementById("textoABuscar").value;
-                let text=document.getElementById("texto").textContent;
+                let text=document.getElementById("texto").innerHTML;
                 let completas=document.getElementById("completas").checked;
                 let mayusvsminus=document.getElementById("mayusvsminus").checked;
                 let textArray=text.split(" ")
                 textArray=limpiaArray(textArray)
-                
+                document.getElementById("palabrasEncontradas").innerHTML="Palabras encontradas:"
+
                 let numberOfOptions=0
                 if(completas&&mayusvsminus){
                     numberOfOptions=2
