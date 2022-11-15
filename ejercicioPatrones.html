@@ -54,7 +54,14 @@
                 console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronHO);
             }
         }
-
+        function generaCadena(paterns){
+            let cadena="";
+            for(let i=0;i<10;i++){
+                cadena+=paterns[Number(Math.abs((Math.round(Math.random() * paterns.length-1))))]
+            }
+            console.log(cadena)
+            return cadena.toUpperCase();
+        }
         function countNumeroPatronesEncontrados(){
             if(vecesPatron00!=0){
                 numPatronesEncontrados++;
@@ -72,20 +79,17 @@
             console.log("Numero de patrones encontrados: "+numPatronesEncontrados)
         }
         let cadena="";
-        let patron00="00";
-        let patron101="101";
-        let patronABC="ABC";
-        let patronHO="HO";
         let patrones=["00","101","ABC","HO"]
         let numPatronesEncontrados=0;
         let vecesPatron00=0;
         let vecesPatron101=0;
         let vecesPatronABC=0;
         let vecesPatronHO=0;
-        
+        cadena=generaCadena(patrones)
+        /*
         do{
             cadena=String(prompt("Introduzca una cadena de caracteres","")).toUpperCase();
-        }while(cadena=="");
+        }while(cadena=="");*/
         console.log(cadena);
         for(let i=0;i<patrones.length;i++){
             countPatron(patrones[i])
