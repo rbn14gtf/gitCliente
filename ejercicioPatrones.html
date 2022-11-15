@@ -5,8 +5,9 @@
         <title>Ejercicio Patrones</title>
     </head>
     <body>
-        <script>
+        <p id="patrones"></p>               
 
+        <script>
         function countPatron(cadenaPatron){
             let array=cadena.split("");
             for(let i=0;i<array.length;i++){
@@ -40,12 +41,16 @@
                 }
             }
             if(cadenaPatron=="00"){
+                document.getElementById("patrones").innerHTML+="Veces que aparece el patron "+cadenaPatron+": "+vecesPatron00+"<br>";
                 console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatron00);
             }else if(cadenaPatron=="101"){
+                document.getElementById("patrones").innerHTML+="Veces que aparece el patron "+cadenaPatron+": "+vecesPatron101+"<br>";
                 console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatron101);
             }else if(cadenaPatron=="ABC"){
+                document.getElementById("patrones").innerHTML+="Veces que aparece el patron "+cadenaPatron+": "+vecesPatronABC+"<br>";
                 console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronABC);
             }else{
+                document.getElementById("patrones").innerHTML+="Veces que aparece el patron "+cadenaPatron+": "+vecesPatronHO+"<br>";
                 console.log("Veces que aparece el patron "+cadenaPatron+": "+vecesPatronHO);
             }
         }
@@ -63,6 +68,7 @@
             if(vecesPatronHO!=0){
                 numPatronesEncontrados++;
             }
+            document.getElementById("patrones").innerHTML+="Numero de patrones encontrados: "+numPatronesEncontrados+"<br>"
             console.log("Numero de patrones encontrados: "+numPatronesEncontrados)
         }
         let cadena="";
@@ -70,6 +76,7 @@
         let patron101="101";
         let patronABC="ABC";
         let patronHO="HO";
+        let patrones=["00","101","ABC","HO"]
         let numPatronesEncontrados=0;
         let vecesPatron00=0;
         let vecesPatron101=0;
@@ -80,12 +87,12 @@
             cadena=String(prompt("Introduzca una cadena de caracteres","")).toUpperCase();
         }while(cadena=="");
         console.log(cadena);
-        countPatron(patron00);
-        countPatron(patron101);
-        countPatron(patronABC);
-        countPatron(patronHO);
+        for(let i=0;i<patrones.length;i++){
+            countPatron(patrones[i])
+        }
+        
         countNumeroPatronesEncontrados();
         
-        </script>                
+        </script>
     </body>
 </html>
