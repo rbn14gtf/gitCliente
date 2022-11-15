@@ -45,9 +45,8 @@
                         //no distingue mayusculas y minusculas y palabras no completas
                         case 0:
                             if((textArray[i].toLowerCase()==textoABuscar.toLowerCase())||(textArray[i].includes(textoABuscar))){
-                                console.log("Palabra encontrada")
+                                console.log(i+" Palabra encontrada")
                                 document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
-                                console.log(i)
                             }
                             else{
                             }
@@ -57,9 +56,8 @@
                             //distingue mayusculas y minusculas
                             if(mayusvsminus){
                                 if((textArray[i]==textoABuscar)||(textArray[i].includes(textoABuscar))){
-                                    console.log("Palabra encontrada")
+                                    console.log(i+" Palabra encontrada")
                                     document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
-                                    console.log(i)
                                 }
                                 else{
                                 }
@@ -67,9 +65,8 @@
                             //palabras completas
                             else{
                                 if(textArray[i].toLowerCase()==textoABuscar.toLowerCase()){
-                                    console.log("Palabra encontrada")
+                                    console.log(i+" Palabra encontrada")
                                     document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
-                                    console.log(i)
                                 }
                                 else{
                                 }
@@ -79,9 +76,8 @@
                         //distingue mayusculas y minusculas y busca solo palabras completas
                         case 2:
                             if(textArray[i]==textoABuscar){
-                                console.log("Palabra encontrada")
+                                console.log(i+" Palabra encontrada")
                                 document.getElementById("palabrasEncontradas").innerHTML+="\n"+textArray[i]
-                                console.log(i)
                             }
                             else{
                             }
