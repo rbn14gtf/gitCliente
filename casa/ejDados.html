@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJ Dados</title>
+    </head>
+    <body>
+        <script>
+            let arraySumas={}
+
+            function tirarDados(){
+                let suma=Math.floor(Math.random()*6)+1
+                suma+=Math.floor(Math.random()*6)+1
+                return suma;
+            }
+            function sumaVeces(suma){
+                if(isNaN(arraySumas[suma])){
+                    arraySumas[suma]=1
+                }else{
+                    arraySumas[suma]=arraySumas[suma]+1
+                }
+            }
+            // console.log(tirarDados())
+            for(let i=0;i<36000;i++){
+                
+                sumaVeces(tirarDados())
+            }
+            console.table(arraySumas)
+        </script>                
+    </body>
+</html>
