@@ -15,21 +15,8 @@
                     i--
                 }
             }
-            console.log(array)
-            /*
-            for(let i=0;i<array.length/2;i++){
-                for(let j=array.length-1;;j--){
-                    console.log("i "+array[i]+" j "+array[j])
-                    if(array[i]!=array[j]){
-                        esPalindromo=false
-                        break;
-                    }
-                }
-            }*/
-            
 
             let arrayInvertido=array.reverse()
-            console.log(arrayInvertido)
             for(let i=0;i<array.length;i++){
                 if(array[i]!=arrayInvertido[arrayInvertido.length-i-1]){
                     esPalindromo=false
