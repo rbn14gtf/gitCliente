@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJ Lista</title>
+    </head>
+    <body>
+        <label for="cadenaAGuardar">Cadena a guardar</label>
+        <input type="text" id="cadenaAGuardar" name="cadenaAGuardar" value="dfsd" />
+        <input type="submit" id="guardar" name="cadena" value="GUARDAR" />
+        <p id="cadenas"></p>
+        
+        <script>
+            let arrayCadenas=[]
+            document.getElementById("guardar").addEventListener("click",guardar)
+            function guardar(){
+                document.getElementById("cadenas").innerHTML+=document.getElementById("cadenaAGuardar").value+"<br/>"
+            }
+        </script>                
+    </body>
+</html>
