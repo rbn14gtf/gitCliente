@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJ Palindromo</title>
+    </head>
+    <body>
+        <script>
+            let cadenaIntroducido=String(prompt("Introduce una cadena","race car")).toUpperCase()
+            let array=cadenaIntroducido.split("")
+            let esPalindromo=true
+            for(let i=0;i<array.length;i++){
+                if((array[i]==" ")||(array[i]==",")||(array[i]==".")){
+                    array.splice(i, 1); 
+                    i--
+                }
+            }
+            console.log(array)
+            /*
+            for(let i=0;i<array.length/2;i++){
+                for(let j=array.length-1;;j--){
+                    console.log("i "+array[i]+" j "+array[j])
+                    if(array[i]!=array[j]){
+                        esPalindromo=false
+                        break;
+                    }
+                }
+            }*/
+            
+
+            let arrayInvertido=array.reverse()
+            console.log(arrayInvertido)
+            for(let i=0;i<array.length;i++){
+                if(array[i]!=arrayInvertido[arrayInvertido.length-i-1]){
+                    esPalindromo=false
+                    break
+                }
+            }
+            if(esPalindromo){
+                console.log("Si es")
+            }else{
+                console.log("No es")
+            }
+            
+            
+        </script>                
+    </body>
+</html>
