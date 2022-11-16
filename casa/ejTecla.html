@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJ Tecla</title>
+        <style>
+            #letra{
+                border: 1px solid black;
+                width: fit-content;
+                padding: 10px;
+            }
+        </style>
+        <script>
+            
+            document.addEventListener('keypress', (event) => {
+                document.getElementById("letra").innerHTML="Letra Pulsada: "+event.key
+            }, false);
+        </script>
+    </head>
+    <body>
+        <div class="letra">
+            <p id="letra">Letra Pulsada:</p>
+        </div>            
+    </body>
+</html>
