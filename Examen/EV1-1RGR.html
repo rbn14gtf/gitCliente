@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJ 1</title>
+    </head>
+    <body>
+        <script>
+            const player = {
+                nombre:"Juan",
+                apellido:"García",
+                edad:34
+            }
+            player.sexo="hombre"
+            player.foto=function(){
+                console.log("Esto es un método "+ player.edad)
+            }
+            
+            const player2 = {
+                nombre: "Juan Garcia",          
+                aprobadas: 4,                   
+                asignaturas: 6,             
+                toString: function() {
+                    return (`${this.nombre} (${this.aprobadas}/${this.asignaturas})`)
+                }
+            };
+            console.log("Resumen de " + player2.toString()); 
+
+        </script>
+
+        <!--
+            Linea 11 (Línea 2 del documento word): el datos apellido debe ir entre comillas y le falta una coma despues de este porque si no tomará garcía como un objeto y no como un string
+            Linea 15 (Línea 5 del documento word): El atributo foto falta el parentesis de cierre al declarar la funcion, siguiendo la sintáxis de la declaración de funciones
+            Linea 16 (Línea 5 del documento word): hay que quitar las comillas para poder mostrar la edad de player
+            Linea 24 (Línea 12 del documento word): hay que cambiar las comillas simples por estas `
+
+        -->
+    </body>
+</html>

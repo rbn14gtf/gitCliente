@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF,8">
+        <title>EJ 2</title>
+    </head>
+    <body>
+        <p id="jornada"></p>
+        
+        <script>
+            //ARRAY CON LOS EQUIPOS EXISTENTES
+            let equipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
+            const numJornadas=22;
+            const numPartidosPorJornada=6
+            let partidosJugados=[]
+            //FUNCION QUE GENERA UN RESULTADO ALEATORIO
+            function generarResultado(){
+                let posiblesResultados=["1","X","2"]
+                return posiblesResultados[Math.floor(Math.random()*3)]
+            }
+            //OBJETO PARTIDO USADO EN LA FUNCION guardaJornada
+            function partido(equipo1,equipo2,resultado,numJornada){
+                this.equipo1=equipo1;
+                this.equipo2=equipo2;
+                this.resultado=resultado;
+                this.numJornada=numJornada;
+            }
+
+            //TO DO
+            //ESTA FUNCION VA GUARDANDO CADA JORNADA CON LOS EQUIPOS ENFRENTADOS, EL RESULTADO Y LA JORNADA
+            //EL FIN DE ESTE METODO ERA QUE AL GENERAR LOS EQUIPOS, LLAMAR A OTRO METODO QUE COMPRUEBE LOS PARTIDOS YA JUGADOS CON EL FIN DE QUE DOS EQUIPOS NO SE VUEVAN A ENFRENTAR
+            ///ESTO SE CONSEGUIRIA GUARDANDO EN UN ARRAY CLAVE (NUMERO DE JORNADA) VALOR (EQUIPOS ENFRETADOS "REAL-UNION"). ASI SE EVITARIA QUE DOS EQUIPOS SE ENFRENTASEN ENTRE ELLOS Y ADEMAS
+            //SE PODRIA IMPLENTAR EL BUSCAR POR NUMERO DE JORNADA
+            function guardaJornada(equipo1,equipo2,resultado,numJornada){
+                
+                partidosJugados.push(new partido(equipo1,equipo2,resultado,numJornada))
+                
+
+            }
+
+            //COPIA LOS EQUIPOS EN UN ARRAY AUXILIAR
+            function copyEquipos(){
+                let array=[]
+                for(let k=0;k<equipos.length;k++){
+                    array.push(equipos[k])
+                }
+                return array;
+            }
+            //BUSCA LA JORNADA INTRODUCIDA
+            function muestraJornada(){
+                let jornadaIntroducida=0
+                do{
+                    jornadaIntroducida=Number(prompt("Introduce un numero","5"));
+                }while((isNaN(jornadaIntroducida))||(jornadaIntroducida==0));
+                alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equipo1+" vs "+partidosJugados[jornadaIntroducida].equipo2+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)
+
+            }
+            //FUNCION QUE GENERA LAS 22 JORNADAS
+            //GUARDA LOS EQUIPOS EXISTENTES EN UN ARRAY AUXILIAR DE LA QUE SE COJERÁN DOS EQUIPOS ALEATORIOS
+            //CADA VEZ QUE SE GUARDA UN EQUIPO DE ESTA, SE SACA DEL ARRAY PARA EVITAR QUE UN EQUIPO TENGA DE CONTRINCANTE A SI MISMO
+            //EL RESULTADO SE GENERA LLAMANDO A LA FUNCION generarResultado
+            function generarJornadas(){
+                let arrayPartidos=[];
+                let equipo1;
+                let equipo2;
+                //BUCLE PARA LA ESCRITURA DE LAS 22 JORNADAS
+                for(let jornada=1;jornada<=numJornadas;jornada++){
+                    document.getElementById("jornada").innerHTML+="Jornada "+jornada+"<br/>"
+                    //BUCLE PARA LA GENERACION DE LOS PARTIDOS
+                    for(let j=1;j<=numPartidosPorJornada;j++){
+                        let resultado=generarResultado()
+                        arrayPartidos=copyEquipos();
+                        equipo1=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        arrayPartidos.splice(arrayPartidos.indexOf(equipo1),1)
+                        equipo2=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        
+                        arrayPartidos.splice(arrayPartidos.indexOf(equipo2),1)
+                        document.getElementById("jornada").innerHTML+=equipo1+"-"+equipo2+" ______________ "+resultado+"<br/>"
+                        guardaJornada(equipo1,equipo2,resultado,jornada)
+
+                    }
+                    document.getElementById("jornada").innerHTML+="<br/>"
+                }
+            }
+            
+           
+            generarJornadas();
+            muestraJornada();
+            console.table(partidosJugados)
+
+
+
+        </script>
+    </body>
+</html>
