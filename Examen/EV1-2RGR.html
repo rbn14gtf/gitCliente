@@ -5,10 +5,10 @@
         <title>EJ 2</title>
     </head>
     <body>
-        <p id="jornada"></p>
         <label for="jornadaIntroducida">Buscar Jornada</label>
         <input type="text" name="jornadaIntroducida" id="jornadaIntroducida" placeholder="Numero jornada">
         <input type="button" onclick="muestraJornada()" value="Buscar">
+        <p id="jornada"></p>
         
         <script>
             //ARRAY CON LOS EQUIPOS EXISTENTES
@@ -49,6 +49,12 @@
             //BUSCA LA JORNADA INTRODUCIDA
             function muestraJornada(){
                 let jornadaIntroducida=document.getElementById("jornadaIntroducida").value;
+                // for(let i=0;i<partidosJugados.length;i++){
+                //     if(i==jornadaIntroducida){
+                //         console.log("Jornada "+jornadaIntroducida+"\n"+partidosJugados[i].equipo1+" vs "+partidosJugados[i].equipo2+"\nResultado: "+partidosJugados[i].resultado)
+                //     }
+                    
+                // }
                 alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equipo1+" vs "+partidosJugados[jornadaIntroducida].equipo2+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)
 
             }
