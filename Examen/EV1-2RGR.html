@@ -6,6 +6,9 @@
     </head>
     <body>
         <p id="jornada"></p>
+        <label for="jornadaIntroducida">Buscar Jornada</label>
+        <input type="text" name="jornadaIntroducida" id="jornadaIntroducida" placeholder="Numero jornada">
+        <input type="button" onclick="muestraJornada()" value="Buscar">
         
         <script>
             //ARRAY CON LOS EQUIPOS EXISTENTES
@@ -45,10 +48,7 @@
             }
             //BUSCA LA JORNADA INTRODUCIDA
             function muestraJornada(){
-                let jornadaIntroducida=0
-                do{
-                    jornadaIntroducida=Number(prompt("Introduce un numero","5"));
-                }while((isNaN(jornadaIntroducida))||(jornadaIntroducida==0));
+                let jornadaIntroducida=document.getElementById("jornadaIntroducida").value;
                 alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equipo1+" vs "+partidosJugados[jornadaIntroducida].equipo2+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)
 
             }
@@ -83,5 +83,7 @@
             // muestraJornada();
             console.table(partidosJugados)
         </script>
+        
+        
     </body>
 </html>
