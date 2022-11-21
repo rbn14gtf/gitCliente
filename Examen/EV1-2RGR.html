@@ -32,10 +32,7 @@
             ///ESTO SE CONSEGUIRIA GUARDANDO EN UN ARRAY CLAVE (NUMERO DE JORNADA) VALOR (EQUIPOS ENFRETADOS "REAL-UNION"). ASI SE EVITARIA QUE DOS EQUIPOS SE ENFRENTASEN ENTRE ELLOS Y ADEMAS
             //SE PODRIA IMPLENTAR EL BUSCAR POR NUMERO DE JORNADA
             function guardaJornada(equipo1,equipo2,resultado,numJornada){
-                
                 partidosJugados.push(new partido(equipo1,equipo2,resultado,numJornada))
-                
-
             }
 
             //COPIA LOS EQUIPOS EN UN ARRAY AUXILIAR
@@ -83,7 +80,7 @@
                 }
             }
             generarJornadas();
-            //muestraJornada();
+            // muestraJornada();
             console.table(partidosJugados)
         </script>
     </body>
