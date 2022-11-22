@@ -11,7 +11,6 @@
         <p id="jornada"></p>
         
         <script>
-            document.getElementById("jornadaIntroducida").focus();
             //ARRAY CON LOS EQUIPOS EXISTENTES
             let equipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
             const numJornadas=22;
@@ -23,9 +22,8 @@
                 return posiblesResultados[Math.floor(Math.random()*3)]
             }
             //OBJETO PARTIDO USADO EN LA FUNCION guardaJornada
-            function partido(equipo1,equipo2,resultado,numJornada){
-                this.equipo1=equipo1;
-                this.equipo2=equipo2;
+            function partido(equiposEnfrentados,resultado,numJornada){
+                this.equiposEnfrentados=equiposEnfrentados;
                 this.resultado=resultado;
                 this.numJornada=numJornada;
             }
@@ -35,8 +33,8 @@
             //EL FIN DE ESTE METODO ERA QUE AL GENERAR LOS EQUIPOS, LLAMAR A OTRO METODO QUE COMPRUEBE LOS PARTIDOS YA JUGADOS CON EL FIN DE QUE DOS EQUIPOS NO SE VUEVAN A ENFRENTAR
             ///ESTO SE CONSEGUIRIA GUARDANDO EN UN ARRAY CLAVE (NUMERO DE JORNADA) VALOR (EQUIPOS ENFRETADOS "REAL-UNION"). ASI SE EVITARIA QUE DOS EQUIPOS SE ENFRENTASEN ENTRE ELLOS Y ADEMAS
             //SE PODRIA IMPLENTAR EL BUSCAR POR NUMERO DE JORNADA
-            function guardaJornada(equipo1,equipo2,resultado,numJornada){
-                partidosJugados.push(new partido(equipo1,equipo2,resultado,numJornada))
+            function guardaJornada(equiposEnfrentados,resultado,numJornada){
+                partidosJugados.push(new partido(equiposEnfrentados,resultado,numJornada))
             }
 
             //COPIA LOS EQUIPOS EN UN ARRAY AUXILIAR
@@ -47,15 +45,17 @@
                 }
                 return array;
             }
+            function yaHanJugado(equipo1,equipo2){
+                for(let i=0;i<partidosJugados.length;i++){
+                    if(partidosJugados[i].equiposEnfrentados==(equipo1+"-"+equipo2)){
+                        return true
+                    }
+                }
+                return false;
+            }
             //BUSCA LA JORNADA INTRODUCIDA
             function muestraJornada(){
                 let jornadaIntroducida=document.getElementById("jornadaIntroducida").value;
-                // for(let i=0;i<partidosJugados.length;i++){
-                //     if(i==jornadaIntroducida){
-                //         console.log("Jornada "+jornadaIntroducida+"\n"+partidosJugados[i].equipo1+" vs "+partidosJugados[i].equipo2+"\nResultado: "+partidosJugados[i].resultado)
-                //     }
-                    
-                // }
                 alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equipo1+" vs "+partidosJugados[jornadaIntroducida].equipo2+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)
 
             }
@@ -80,17 +80,20 @@
                         
                         arrayPartidos.splice(arrayPartidos.indexOf(equipo2),1)
                         document.getElementById("jornada").innerHTML+=equipo1+"-"+equipo2+" ______________ "+resultado+"<br/>"
-                        guardaJornada(equipo1,equipo2,resultado,jornada)
+                        guardaJornada(equipo1+"-"+equipo2,resultado,jornada)
 
                     }
                     document.getElementById("jornada").innerHTML+="<br/>"
                 }
             }
+            
+           
             generarJornadas();
-            // muestraJornada();
+            muestraJornada();
             console.table(partidosJugados)
+
+
+
         </script>
-        
-        
     </body>
 </html>
