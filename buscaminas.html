@@ -5,11 +5,40 @@
         <title>Buscaminas</title>
     </head>
     <body>
+        <form>
+            <fieldset>
+                <input type="radio" id="facil" name="dificultad" value="10">
+                <label for="facil">Facil</label>
+                <input type="radio" id="medio" name="dificultad" value="50">
+                <label for="medio">Medio</label>
+                <input type="radio" id="dificil" name="dificultad" value="100">
+                <label for="dificil">Dificil</label>
+                <input type="button" id="generar" onclick="generarMarco()" value="Generar">
+            </fieldset>
+        </form>
+        <p id="marco"></p>
         <script>
 
-            const numFilas=numColumnas =10
-            console.log(numFilas)
-            console.log(numColumnas)
+            
+            function generarMarco(){
+                let numColumnas,numFilas;
+                if(document.getElementById("facil").checked){
+                    numFilas=numColumnas=document.getElementById("facil").value;
+                }else if(document.getElementById("medio").checked){
+                    numFilas=numColumnas=document.getElementById("medio").value;
+                }else{
+                    numFilas=numColumnas=document.getElementById("dificil").value;
+                }
+                console.log(numColumnas)
+                for (let i=0;i<numFilas;i++){
+                    for (let j=0;j<numColumnas;j++){
+                        document.getElementById("marco").innerHTML+="|&nbsp_"
+
+                    }
+                document.getElementById("marco").innerHTML+="|<br/>"
+                }
+            }
+            
 
         </script>
     </body>
