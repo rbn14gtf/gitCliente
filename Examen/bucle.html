@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bucle</title>
+    </head>
+    <body>
+        <p id="texto"></p>
+        <script>
+            let equipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
+            let totalJornadas=(equipos.length-1)*2
+            let totalPartidos=equipos.length*(equipos.length-1)
+            for(let i=0;i<(equipos.length/2);i++){
+                document.getElementById("texto").innerHTML+=i+1+"-"+equipos.length-i
+                console.log(i+1,equipos.length-i)
+            }
+            document.getElementById("texto").innerHTML+="<br/>"
+
+
+        </script>
+    </body>
+</html>
