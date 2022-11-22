@@ -57,7 +57,6 @@
             function muestraJornada(){
                 let jornadaIntroducida=document.getElementById("jornadaIntroducida").value;
                 alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equiposEnfrentados+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)
-
             }
             //FUNCION QUE GENERA LAS 22 JORNADAS
             //GUARDA LOS EQUIPOS EXISTENTES EN UN ARRAY AUXILIAR DE LA QUE SE COJERÁN DOS EQUIPOS ALEATORIOS
@@ -76,8 +75,10 @@
                         arrayPartidos=copyEquipos();
                         equipo1=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
                         arrayPartidos.splice(arrayPartidos.indexOf(equipo1),1)
-                        equipo2=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
-                        
+                        do{
+                            equipo2=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        }while(yaHanJugado(equipo1,equipo2))
+                        console.log(yaHanJugado(equipo1,equipo2)+" Jornada:"+jornada+" Equipo 1:"+equipo1+" Equipo 2:"+equipo2)
                         arrayPartidos.splice(arrayPartidos.indexOf(equipo2),1)
                         document.getElementById("jornada").innerHTML+=equipo1+"-"+equipo2+" ______________ "+resultado+"<br/>"
                         guardaJornada(equipo1+"-"+equipo2,resultado,jornada)

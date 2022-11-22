@@ -35,10 +35,7 @@
             ///ESTO SE CONSEGUIRIA GUARDANDO EN UN ARRAY CLAVE (NUMERO DE JORNADA) VALOR (EQUIPOS ENFRETADOS "REAL-UNION"). ASI SE EVITARIA QUE DOS EQUIPOS SE ENFRENTASEN ENTRE ELLOS Y ADEMAS
             //SE PODRIA IMPLENTAR EL BUSCAR POR NUMERO DE JORNADA
             function guardaJornada(equipo1,equipo2,resultado,numJornada){
-                
-                partidosJugados.push(new partido(equipo1,equipo2,resultado,jornada))
-                
-
+                partidosJugados.push(new partido(equipo1,equipo2,resultado,numJornada))
             }
 
             //COPIA LOS EQUIPOS EN UN ARRAY AUXILIAR
@@ -52,9 +49,7 @@
             //BUSCA LA JORNADA INTRODUCIDA
             function muestraJornada(){
                 let jornadaIntroducida=document.getElementById("jornadaIntroducida").value;
-                alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equipo1+" vs "+partidosJugados[jornadaIntroducida].equipo2+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)
-
-            }
+                alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equipo1+" vs "+partidosJugados[jornadaIntroducida].equipo2+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)            }
             //FUNCION QUE GENERA LAS 22 JORNADAS
             //GUARDA LOS EQUIPOS EXISTENTES EN UN ARRAY AUXILIAR DE LA QUE SE COJERÁN DOS EQUIPOS ALEATORIOS
             //CADA VEZ QUE SE GUARDA UN EQUIPO DE ESTA, SE SACA DEL ARRAY PARA EVITAR QUE UN EQUIPO TENGA DE CONTRINCANTE A SI MISMO
@@ -82,9 +77,14 @@
                     document.getElementById("jornada").innerHTML+="<br/>"
                 }
             }
+            
+           
             generarJornadas();
             //muestraJornada();
             console.table(partidosJugados)
+
+
+
         </script>
     </body>
 </html>
