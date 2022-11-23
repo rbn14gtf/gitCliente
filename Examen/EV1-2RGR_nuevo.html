@@ -16,17 +16,22 @@
             const totalPartidos=totalEquipos*(totalEquipos-1)/2;
             const totalJornadas=totalEquipos-1;
             
+            function generarResultado(){
+                let posiblesResultados=[1,1,1,"X","X",2]
+                return posiblesResultados[Math.floor(Math.random()*posiblesResultados.length)]
+            }
             function generarJornadasIda(){
                 for(let i=1;i<=totalJornadas;i++){
                     let tabla=""
                     document.getElementById("jornada").innerHTML+="<b>Jornada "+i+"</b><br/>"
                     for(let j=i-1;j<=arrayEquipos.length-1;j+=2){
+                        let resultado=generarResultado()
                         console.log("Jornada "+i+" "+j)
                         if(j==arrayEquipos.length-1){
-                            tabla+=arrayEquipos[j]+"-"+arrayEquipos[0]+"  "+1+"<br/>"
+                            tabla+=arrayEquipos[j]+"-"+arrayEquipos[0]+"  "+resultado+"<br/>"
                         }
                         else{
-                            tabla+=arrayEquipos[j]+"-"+arrayEquipos[j+1]+"  "+1+"<br/>"
+                            tabla+=arrayEquipos[j]+"-"+arrayEquipos[j+1]+"  "+resultado+"<br/>"
                         }
                     }
                     console.log(" ")
