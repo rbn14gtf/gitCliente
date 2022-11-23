@@ -71,10 +71,11 @@
                 for(let jornada=1;jornada<=numJornadas/2;jornada++){
                     document.getElementById("jornada").innerHTML+="Jornada "+jornada+"<br/>"
                     //BUCLE PARA LA GENERACION DE LOS PARTIDOS
+                    
                     for(let j=1;j<=numPartidosPorJornada;j++){
                         let resultado=generarResultado()
                         arrayPartidos=copyEquipos();
-                        arrayPartidosJornada=[]
+                        
                         do{
                             equipo1=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
                         }while(arrayPartidosJornada.indexOf(equipo1)!=-1);
@@ -90,7 +91,7 @@
                         guardaJornada(equipo1+"-"+equipo2,resultado,jornada)
                     }
                     document.getElementById("jornada").innerHTML+="<br/>"
-                    
+                    arrayPartidosJornada=[]
 
                 }
             }
