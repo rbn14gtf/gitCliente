@@ -11,13 +11,11 @@
         <p id="jornada"></p>
         
         <script>
-            //ARRAY CON LOS EQUIPOS EXISTENTES
             let arrayEquipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
             const totalEquipos=8
             const totalPartidos=totalEquipos*(totalEquipos-1)/2;
             const totalJornadas=totalEquipos-1;
             
-            //COPIA LOS EQUIPOS EN UN ARRAY AUXILIAR
             function copyEquipos(){
                 let array=[]
                 for(let k=0;k<arrayEquipos.length;k++){
@@ -25,12 +23,8 @@
                 }
                 return array;
             }
-            //FUNCION QUE GENERA LAS 22 JORNADAS
-            //GUARDA LOS EQUIPOS EXISTENTES EN UN ARRAY AUXILIAR DE LA QUE SE COJERÁN DOS EQUIPOS ALEATORIOS
-            //CADA VEZ QUE SE GUARDA UN EQUIPO DE ESTA, SE SACA DEL ARRAY PARA EVITAR QUE UN EQUIPO TENGA DE CONTRINCANTE A SI MISMO
-            //EL RESULTADO SE GENERA LLAMANDO A LA FUNCION generarResultado
+           
             function generarJornadas(){
-                //BUCLE PARA LA ESCRITURA DE LAS 22 JORNADAS
                 for(let i=1;i<=totalJornadas;i++){
                     let tabla=""
                     document.getElementById("jornada").innerHTML+="<b>Jornada "+i+"</b><br/>"
@@ -45,7 +39,6 @@
                 }
             }//generarJornadas
             generarJornadas();
-            //muestraJornada();
         </script>
     </body>
 </html>
