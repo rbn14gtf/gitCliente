@@ -16,14 +16,6 @@
             const totalPartidos=totalEquipos*(totalEquipos-1)/2;
             const totalJornadas=totalEquipos-1;
             
-            function copyEquipos(){
-                let array=[]
-                for(let k=0;k<arrayEquipos.length;k++){
-                    array.push(arrayEquipos[k])
-                }
-                return array;
-            }
-           
             function generarJornadasIda(){
                 for(let i=1;i<=totalJornadas;i++){
                     let tabla=""
