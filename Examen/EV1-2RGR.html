@@ -68,7 +68,7 @@
                 let equipo1;
                 let equipo2;
                 //BUCLE PARA LA ESCRITURA DE LAS 22 JORNADAS
-                for(let jornada=1;jornada<=numJornadas/2;jornada++){
+                for(let jornada=1;jornada<=numJornadas/12;jornada++){
                     document.getElementById("jornada").innerHTML+="Jornada "+jornada+"<br/>"
                     //BUCLE PARA LA GENERACION DE LOS PARTIDOS
                     
@@ -81,14 +81,18 @@
                         }while(arrayPartidosJornada.indexOf(equipo1)!=-1);
                         arrayPartidosJornada.push(equipo1);
                         arrayPartidos.splice(arrayPartidos.indexOf(equipo1),1)
+                        console.log("Equipo 1 "+arrayPartidosJornada.indexOf(equipo1))
+
                         do{
                             equipo2=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
                         }while((yaHanJugado(equipo1,equipo2))&&(arrayPartidosJornada.indexOf(equipo2)!=-1));
                         arrayPartidosJornada.push(equipo2);
                         //console.log(yaHanJugado(equipo1,equipo2)+" Jornada:"+jornada+" Equipo 1:"+equipo1+" Equipo 2:"+equipo2)
                         arrayPartidos.splice(arrayPartidos.indexOf(equipo2),1)
+
                         document.getElementById("jornada").innerHTML+=equipo1+"-"+equipo2+" ______________ "+resultado+"<br/>"
                         guardaJornada(equipo1+"-"+equipo2,resultado,jornada)
+                        console.log("Equipo 2 "+arrayPartidosJornada.indexOf(equipo2))
                     }
                     document.getElementById("jornada").innerHTML+="<br/>"
                     arrayPartidosJornada=[]
