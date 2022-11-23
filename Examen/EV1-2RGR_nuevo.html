@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF,8">
+        <title>EJ 2 Nuevo</title>
+    </head>
+    <body>
+        <label for="jornadaIntroducida">Buscar Jornada</label>
+        <input type="text" name="jornadaIntroducida" id="jornadaIntroducida" placeholder="Numero jornada">
+        <input type="button" onclick="muestraJornada()" value="Buscar">
+        <p id="jornada"></p>
+        
+        <script>
+            //ARRAY CON LOS EQUIPOS EXISTENTES
+            let arrayEquipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
+            const numJornadas=22;
+            const numPartidosPorJornada=6
+            
+            //COPIA LOS EQUIPOS EN UN ARRAY AUXILIAR
+            function copyEquipos(){
+                let array=[]
+                for(let k=0;k<arrayEquipos.length;k++){
+                    array.push(arrayEquipos[k])
+                }
+                return array;
+            }
+            //FUNCION QUE GENERA LAS 22 JORNADAS
+            //GUARDA LOS EQUIPOS EXISTENTES EN UN ARRAY AUXILIAR DE LA QUE SE COJERÁN DOS EQUIPOS ALEATORIOS
+            //CADA VEZ QUE SE GUARDA UN EQUIPO DE ESTA, SE SACA DEL ARRAY PARA EVITAR QUE UN EQUIPO TENGA DE CONTRINCANTE A SI MISMO
+            //EL RESULTADO SE GENERA LLAMANDO A LA FUNCION generarResultado
+            function generarJornadas(){
+                let arrayPartidos=[];
+                let equipo1;
+                let equipo2;
+                
+                //BUCLE PARA LA ESCRITURA DE LAS 22 JORNADAS
+                for(let jornada=1;jornada<=numJornadas;jornada++){
+                    let tabla=""
+                    document.getElementById("jornada").innerHTML+="<b>Jornada "+jornada+"</b><br/>"
+                    //BUCLE PARA LA GENERACION DE LOS PARTIDOS
+                    for(let j=jornada-1;j<=arrayEquipos.length-1;j=j+2){
+                        tabla+=arrayEquipos[j]+"-"+arrayEquipos[j+1]+"  "+1+"<br/>"
+                        if(j==7){
+                            tabla+=arrayEquipos[j]+"-"+arrayEquipos[0]+"  "+1+"<br/>"
+                        }
+
+                    }
+                    document.getElementById("jornada").innerHTML+=tabla
+
+                    document.getElementById("jornada").innerHTML+="<br/>"
+                }
+            }
+            generarJornadas();
+            //muestraJornada();
+        </script>
+    </body>
+</html>

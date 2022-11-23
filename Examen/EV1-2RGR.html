@@ -64,20 +64,26 @@
             //EL RESULTADO SE GENERA LLAMANDO A LA FUNCION generarResultado
             function generarJornadas(){
                 let arrayPartidos=[];
+                let arrayPartidosJornada=[];
                 let equipo1;
                 let equipo2;
                 //BUCLE PARA LA ESCRITURA DE LAS 22 JORNADAS
-                for(let jornada=1;jornada<=numJornadas;jornada++){
+                for(let jornada=1;jornada<=numJornadas/2;jornada++){
                     document.getElementById("jornada").innerHTML+="Jornada "+jornada+"<br/>"
                     //BUCLE PARA LA GENERACION DE LOS PARTIDOS
                     for(let j=1;j<=numPartidosPorJornada;j++){
                         let resultado=generarResultado()
                         arrayPartidos=copyEquipos();
-                        equipo1=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        do{
+                            equipo1=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                            console.log()
+                        }while(arrayPartidosJornada.indexOf(equipo1)!=-1);
+                        arrayPartidosJornada.push(equipo1);
                         arrayPartidos.splice(arrayPartidos.indexOf(equipo1),1)
                         do{
                             equipo2=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
-                        }while(yaHanJugado(equipo1,equipo2))
+                        }while((yaHanJugado(equipo1,equipo2))&&(arrayPartidosJornada.indexOf(equipo2)!=-1));
+                        arrayPartidosJornada.push(equipo2);
                         console.log(yaHanJugado(equipo1,equipo2)+" Jornada:"+jornada+" Equipo 1:"+equipo1+" Equipo 2:"+equipo2)
                         arrayPartidos.splice(arrayPartidos.indexOf(equipo2),1)
                         document.getElementById("jornada").innerHTML+=equipo1+"-"+equipo2+" ______________ "+resultado+"<br/>"
