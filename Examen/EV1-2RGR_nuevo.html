@@ -21,7 +21,7 @@
                     let tabla=""
                     document.getElementById("jornada").innerHTML+="<b>Jornada "+i+"</b><br/>"
                     for(let j=i-1;j<=arrayEquipos.length-1;j+=2){
-                        console.log(j)
+                        console.log("Jornada "+i+" "+j)
                         if(j==arrayEquipos.length-1){
                             tabla+=arrayEquipos[j]+"-"+arrayEquipos[0]+"  "+1+"<br/>"
                         }
@@ -29,6 +29,7 @@
                             tabla+=arrayEquipos[j]+"-"+arrayEquipos[j+1]+"  "+1+"<br/>"
                         }
                     }
+                    console.log(" ")
                     document.getElementById("jornada").innerHTML+=tabla+"<br/>"
                 }
             }//generarJornadasIda
