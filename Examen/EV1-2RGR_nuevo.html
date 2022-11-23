@@ -12,7 +12,7 @@
         
         <script>
             let arrayEquipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
-            const totalEquipos=8
+            const totalEquipos=arrayEquipos.length
             const totalPartidos=totalEquipos*(totalEquipos-1)/2;
             const totalJornadas=totalEquipos-1;
             
@@ -29,10 +29,12 @@
                     let tabla=""
                     document.getElementById("jornada").innerHTML+="<b>Jornada "+i+"</b><br/>"
                     for(let j=i-1;j<=arrayEquipos.length-1;j+=2){
-                        tabla+=arrayEquipos[j]+"-"+arrayEquipos[j+1]+"  "+1+"<br/>"
                         console.log(j)
-                        if(j==(arrayEquipos.length/2)+1){
+                        if(j==arrayEquipos.length-1){
                             tabla+=arrayEquipos[j]+"-"+arrayEquipos[0]+"  "+1+"<br/>"
+                        }
+                        else{
+                            tabla+=arrayEquipos[j]+"-"+arrayEquipos[j+1]+"  "+1+"<br/>"
                         }
                     }
                     document.getElementById("jornada").innerHTML+=tabla+"<br/>"
