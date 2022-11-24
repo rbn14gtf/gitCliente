@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Buscaminas</title>
+        <script src="./buscaminas_v0.js"></script>
+
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <input type="text" id="numBombas" name="numBombas" placeholder="Inserte el numero de bombas" value="10">
+                <input type="radio" id="facil" name="dificultad" value="10">
+                <label for="facil">Facil</label>
+                <input type="radio" id="medio" name="dificultad" value="50">
+                <label for="medio">Medio</label>
+                <input type="radio" id="dificil" name="dificultad" value="100">
+                <label for="dificil">Dificil</label>
+                <input type="button" id="generar" onclick="generarMarco()" value="Generar">
+            </fieldset>
+        </form>
+        <p id="marco"></p>
+        
+    </body>
+</html>
