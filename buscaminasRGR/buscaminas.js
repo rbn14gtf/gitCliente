@@ -1,16 +1,17 @@
-
 let numFilas=10;
-let numBombas;
+let numBombas= document.getElementById("numBombas").value;
 function generar(){
-    document.getElementById("tabla").innerHTML+="<table><tbody>"
-
-    for(let i=0;i<document.getElementById("numBombas").value;i++){
-        document.getElementById("tabla").innerHTML+="<tr>"
+    document.open()
+    document.write("<div class='tablero'><table><tbody>")
+    let cont=0;
+    for(let i=0;i<numFilas;i++){
+        document.write("<tr>")
         for(let j=0;j<numFilas;j++){
-            document.getElementById("tabla").innerHTML+="<td>"+j+"</td>"
+            document.write("<td id="+cont+">["+cont+"]</td>")
+            cont++;
         }
-        document.getElementById("tabla").innerHTML+="</tr>"
+        document.write("</tr>")
     }
-    document.getElementById("tabla").innerHTML+="</tbody></table>"
-
-}
+    document.write("</tbody></table></div>")
+    document.close()
+}   
