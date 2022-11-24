@@ -11,7 +11,7 @@
         <p id="jornada"></p>
         
         <script>
-            let arrayEquipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
+            let arrayEquipos=["Recreativo","Atletico","Sporting","Real","Union","Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo","Internacional"]
             const totalEquipos=arrayEquipos.length
             const totalPartidos=totalEquipos*(totalEquipos-1)/2;
             const totalJornadas=totalEquipos-1;
@@ -27,7 +27,7 @@
                     for(let j=i-1;j<=arrayEquipos.length-1;j+=2){
                         let resultado=generarResultado()
                         console.log("Jornada "+i+" "+j)
-                        if(j>arrayEquipos.length-1){
+                        if(j>arrayEquipos.length){
                             tabla+=arrayEquipos[j]+"-"+arrayEquipos[j-arrayEquipos.length]+"  "+resultado+"<br/>"
                         }
                         else{
