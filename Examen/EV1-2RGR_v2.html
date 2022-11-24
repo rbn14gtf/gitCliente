@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF,8">
+        <title>EJ 2</title>
+    </head>
+    <body>
+        <label for="jornadaIntroducida">Buscar Jornada</label>
+        <input type="text" name="jornadaIntroducida" id="jornadaIntroducida" placeholder="Numero jornada">
+        <input type="button" onclick="muestraJornada()" value="Buscar">
+        <p id="jornada"></p>
+        
+        <script>
+            //ARRAY CON LOS EQUIPOS EXISTENTES
+            let equipos=["Recreativo","Atletico","Sporting", "Real","Union", "Adarve","Marino","Juventud","Rayo","Diocesano","Deportivo", "Internacional"]
+            const numJornadas=22;
+            const numPartidosPorJornada=6
+            let partidosJugados=[]
+            //FUNCION QUE GENERA UN RESULTADO ALEATORIO
+            function generarResultado(){
+                let posiblesResultados=["1","X","2"]
+                return posiblesResultados[Math.floor(Math.random()*3)]
+            }
+            //OBJETO PARTIDO USADO EN LA FUNCION guardaJornada
+            function partido(equiposEnfrentados,resultado,numJornada){
+                this.equiposEnfrentados=equiposEnfrentados;
+                this.resultado=resultado;
+                this.numJornada=numJornada;
+            }
+
+            //TO DO
+            //ESTA FUNCION VA GUARDANDO CADA JORNADA CON LOS EQUIPOS ENFRENTADOS, EL RESULTADO Y LA JORNADA
+            //EL FIN DE ESTE METODO ERA QUE AL GENERAR LOS EQUIPOS, LLAMAR A OTRO METODO QUE COMPRUEBE LOS PARTIDOS YA JUGADOS CON EL FIN DE QUE DOS EQUIPOS NO SE VUEVAN A ENFRENTAR
+            ///ESTO SE CONSEGUIRIA GUARDANDO EN UN ARRAY CLAVE (NUMERO DE JORNADA) VALOR (EQUIPOS ENFRETADOS "REAL-UNION"). ASI SE EVITARIA QUE DOS EQUIPOS SE ENFRENTASEN ENTRE ELLOS Y ADEMAS
+            //SE PODRIA IMPLENTAR EL BUSCAR POR NUMERO DE JORNADA
+            function guardaJornada(equiposEnfrentados,resultado,numJornada){
+                partidosJugados.push(new partido(equiposEnfrentados,resultado,numJornada))
+            }
+
+            //COPIA LOS EQUIPOS EN UN ARRAY AUXILIAR
+            function copyEquipos(){
+                let array=[]
+                for(let k=0;k<equipos.length;k++){
+                    array.push(equipos[k])
+                }
+                return array;
+            }
+            function yaHanJugado(equipo1,equipo2){
+                for(let i=0;i<partidosJugados.length;i++){
+                    if(partidosJugados[i].equiposEnfrentados==(equipo1+"-"+equipo2)){
+                        return true
+                    }
+                }
+                return false;
+            }
+            //BUSCA LA JORNADA INTRODUCIDA
+            function muestraJornada(){
+                let jornadaIntroducida=document.getElementById("jornadaIntroducida").value;
+                alert("Jornada "+jornadaIntroducida+"\n"+partidosJugados[jornadaIntroducida].equiposEnfrentados+"\nResultado: "+partidosJugados[jornadaIntroducida].resultado)
+            }
+            //FUNCION QUE GENERA LAS 22 JORNADAS
+            //GUARDA LOS EQUIPOS EXISTENTES EN UN ARRAY AUXILIAR DE LA QUE SE COJERÁN DOS EQUIPOS ALEATORIOS
+            //CADA VEZ QUE SE GUARDA UN EQUIPO DE ESTA, SE SACA DEL ARRAY PARA EVITAR QUE UN EQUIPO TENGA DE CONTRINCANTE A SI MISMO
+            //EL RESULTADO SE GENERA LLAMANDO A LA FUNCION generarResultado
+            function generarJornadas(){
+                let arrayPartidos=[];
+                let arrayPartidosJornada=[];
+                let equipo1;
+                let equipo2;
+                let resultado;
+                //BUCLE PARA LA ESCRITURA DE LAS 22 JORNADAS
+                for(let jornada=1;jornada<=numJornadas/12;jornada++){
+                    document.getElementById("jornada").innerHTML+="<b>Jornada "+jornada+"<b><br/>"
+                    //BUCLE PARA LA GENERACION DE LOS PARTIDOS
+                    
+                    for(let j=0;j<numPartidosPorJornada;j++){
+                        resultado=generarResultado()
+                        arrayPartidos=copyEquipos();
+
+                        equipo1=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        //arrayPartidosJornada.push(equipo1);
+                        while(arrayPartidosJornada.indexOf(equipo1)!=-1){
+                            arrayPartidosJornada.splice(arrayPartidosJornada.indexOf(equipo1),1)
+                            equipo1=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        }
+                        arrayPartidosJornada.push(equipo1);
+                        arrayPartidos.splice(arrayPartidos.indexOf(equipo1),1)
+
+                        equipo2=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        while((arrayPartidosJornada.indexOf(equipo2)!=-1)&&(equipo1==equipo2)){
+                            arrayPartidosJornada.splice(arrayPartidosJornada.indexOf(equipo2),1)
+                            equipo2=arrayPartidos[Math.floor(Math.random()*arrayPartidos.length)]
+                        }
+                        arrayPartidosJornada.push(equipo2);
+                        arrayPartidos.splice(arrayPartidos.indexOf(equipo2),1)
+
+                        document.getElementById("jornada").innerHTML+=equipo1+"-"+equipo2+"  "+resultado+"<br/>"
+                        guardaJornada(equipo1+"-"+equipo2,resultado,jornada)
+                    }
+                    document.getElementById("jornada").innerHTML+="<br/>"
+                    arrayPartidosJornada=[]
+                }
+            }
+            generarJornadas();
+            //muestraJornada();
+            //console.table(partidosJugados)
+        </script>
+    </body>
+</html>
