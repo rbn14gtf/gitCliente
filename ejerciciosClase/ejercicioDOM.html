@@ -8,7 +8,12 @@
 </head>
 <body>
     <script>
-        
+        window.addEventListener("load",inicio);
+        function inicio(){
+            document.getElementById("cambiarTextos").addEventListener=cambiarTextos("click",cambiarTextos);
+            document.getElementById("cambiarClases").addEventListener=cambiarClases("click",cambiarClases);
+            document.getElementById("quitarClases").addEventListener=quitarClases("click",quitarClases);
+        }
 
 
     </script>
