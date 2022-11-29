@@ -24,14 +24,20 @@
                 document.getElementsByTagName("p")[i].innerHTML="Parrafo cambiado a traves de la etiqueta"
             }
             document.getElementById("parrafo1").innerHTML="Parrafo 1 cambiado a traves del id"
+            document.getElementById("parrafo2").innerHTML="Parrafo 2 cambiado a traves del id"
         }
         function cambiarClases(){
+            document.getElementById("parrafo1").setAttribute("class","miClase")
+            document.getElementById("parrafo2").setAttribute("class","miClase")
             for(let i=0;i<document.getElementsByClassName("miClase").length;i++){
                 document.getElementsByClassName("miClase")[i].innerHTML="Parrafo cambiado a traves de la clase"
             }
         }
         function quitarClases(){
-            console.log("Clases quitadas")
+            document.getElementById("parrafo3").removeAttribute("class")
+            //document.getElementById("parrafo3").setAttribute("class","")
+            document.getElementById("parrafo3").innerHTML="Parrafo sin clase"
+
         }
 
     </script>
