@@ -10,11 +10,19 @@
     <script>
         window.addEventListener("load",inicio);
         function inicio(){
-            document.getElementById("cambiarTextos").addEventListener=cambiarTextos("click",cambiarTextos);
-            document.getElementById("cambiarClases").addEventListener=cambiarClases("click",cambiarClases);
-            document.getElementById("quitarClases").addEventListener=quitarClases("click",quitarClases);
+            document.getElementById("cambiarTextos").addEventListener("click",cambiarTextos);
+            document.getElementById("cambiarClases").addEventListener("click",cambiarClases);
+            document.getElementById("quitarClases").addEventListener("click",quitarClases);
         }
-
+        function cambiarTextos(){
+            console.log("Textos cambiados")
+        }
+        function cambiarClases(){
+            console.log("Clases cambiadas")
+        }
+        function quitarClases(){
+            console.log("Clases quitadas")
+        }
 
     </script>
     <div class="main">
