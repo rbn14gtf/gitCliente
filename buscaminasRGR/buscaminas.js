@@ -1,6 +1,7 @@
-let numFilas=10;
-let numBombas= document.getElementById("numBombas").value;
+
 function generar(){
+    let numFilas=10;
+    let numBombas= document.getElementById("numBombas").value;
     document.open()
     document.write("<div class='tablero'><table><tbody>")
     let cont=0;
