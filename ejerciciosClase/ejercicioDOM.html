@@ -30,13 +30,16 @@
             document.getElementById("parrafo1").setAttribute("class","miClase")
             document.getElementById("parrafo2").setAttribute("class","miClase")
             for(let i=0;i<document.getElementsByClassName("miClase").length;i++){
-                document.getElementsByClassName("miClase")[i].innerHTML="Parrafo cambiado a traves de la clase"
+                document.getElementsByClassName("miClase")[i].setAttribute("class","miClase")
             }
         }
         function quitarClases(){
-            document.getElementById("parrafo3").removeAttribute("class")
-            //document.getElementById("parrafo3").setAttribute("class","")
-            document.getElementById("parrafo3").innerHTML="Parrafo sin clase"
+            for(let i=0;i<document.getElementsByClassName("miClase").length;i++){
+                //document.getElementsByClassName("miClase")[i].setAttribute("class","")
+                if(document.getElementsByClassName("miClase").length!=0){
+                    document.getElementsByClassName("miClase")[i].removeAttribute("class")
+                }
+            }
 
         }
 
