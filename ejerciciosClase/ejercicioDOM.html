@@ -15,13 +15,14 @@
             document.getElementById("quitarClases").addEventListener("click",quitarClases);
         }
         function cambiarTextos(){
-            document.getElementById("parrafo1").innerHTML="Cambiado solo un parrafo"
-            //document.getElementsByTagName("p")[0].innerHTML="Cambiados todos los parrafos"
-            document.getElementsByTagName("p")[1].innerHTML="Cambiados todos los parrafos"
-            //document.getElementsByTagName("p")[2].innerHTML="Cambiados todos los parrafos"
+            for(let i=0;i<document.getElementsByTagName("p").length;i++){
+                document.getElementsByTagName("p")[i].innerHTML="Parrafo cambiado a traves del id"
+            }
         }
         function cambiarClases(){
-            console.log("Clases cambiadas")
+            for(let i=0;i<document.getElementsByTagName("p").length;i++){
+                document.getElementsByClassName("miClase")[0].innerHTML="Parrafo cambiado a traves de la clase"
+            }
         }
         function quitarClases(){
             console.log("Clases quitadas")
