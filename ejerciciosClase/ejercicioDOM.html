@@ -21,12 +21,13 @@
         }
         function cambiarTextos(){
             for(let i=0;i<document.getElementsByTagName("p").length;i++){
-                document.getElementsByTagName("p")[i].innerHTML="Parrafo cambiado a traves del id"
+                document.getElementsByTagName("p")[i].innerHTML="Parrafo cambiado a traves de la etiqueta"
             }
+            document.getElementById("parrafo1").innerHTML="Parrafo 1 cambiado a traves del id"
         }
         function cambiarClases(){
-            for(let i=0;i<document.getElementsByTagName("p").length;i++){
-                document.getElementsByClassName("miClase")[0].innerHTML="Parrafo cambiado a traves de la clase"
+            for(let i=0;i<document.getElementsByClassName("miClase").length;i++){
+                document.getElementsByClassName("miClase")[i].innerHTML="Parrafo cambiado a traves de la clase"
             }
         }
         function quitarClases(){
