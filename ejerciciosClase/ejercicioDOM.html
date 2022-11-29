@@ -15,7 +15,7 @@
             document.getElementById("quitarClases").addEventListener("click",quitarClases);
         }
         function cambiarTextos(){
-            console.log("Textos cambiados")
+            document.getElementById("parrafo1").innerHTML="Cambiado el primer parrafo"
         }
         function cambiarClases(){
             console.log("Clases cambiadas")
@@ -26,9 +26,9 @@
 
     </script>
     <div class="main">
-        <p id="parafo1">Este es el primer parrafo</p>
-        <p id="parafo2">Este es el segundo parrafo</p>
-        <p id="parafo3" class="miClase">Este es el tercer parrafo</p>
+        <p id="parrafo1">Este es el primer parrafo</p>
+        <p id="parrafo2">Este es el segundo parrafo</p>
+        <p id="parrafo3" class="miClase">Este es el tercer parrafo</p>
     </div>
     <br/>
     <button id="cambiarTextos">Cambiar texto de los parrafos</button>
