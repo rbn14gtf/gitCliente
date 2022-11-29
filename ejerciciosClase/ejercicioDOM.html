@@ -35,11 +35,16 @@
         }
         function quitarClases(){
             for(let i=0;i<document.getElementsByClassName("miClase").length;i++){
-                //document.getElementsByClassName("miClase")[i].setAttribute("class","")
-                if(document.getElementsByClassName("miClase").length!=0){
+                while(document.getElementsByClassName("miClase").length!=0){
                     document.getElementsByClassName("miClase")[i].removeAttribute("class")
                 }
             }
+            /*
+            for(let i=0;i<document.getElementsByTagName("p").length;i++){
+                if(document.getElementsByTagName("p").length!=0){
+                    document.getElementsByTagName("p")[i].removeAttribute("class")
+                }
+            }*/
 
         }
 
