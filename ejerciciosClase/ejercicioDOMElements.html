@@ -31,6 +31,11 @@
         }
         function crearImagen(){
             console.log("Crear imagen")
+            var imagen=document.createElement("img")
+            imagen.setAttribute("src","logo.jpg")
+            imagen.setAttribute("alt","Logo Rugarri")
+            var cont=document.getElementById("miDiv")
+            cont.appendChild(imagen)
         }
         function borrarUltimo(){
             console.log("Borrar ultimo")
@@ -44,9 +49,9 @@
 
     </script>
 
-    <div class="miDiv"></div>
+    <div id="miDiv"></div>
     <br/>
-    <textarea id="texto">Texto Añadido</textarea>
+    <textarea id="texto"></textarea>
     <br/>
     <button id="crearParrafo">Crear Párrafo</button>
     <button id="crearImagen">Crear Imagen</button>
