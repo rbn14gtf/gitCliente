@@ -19,6 +19,7 @@
             document.getElementById("crearImagen").addEventListener("click",crearImagen);
             document.getElementById("borrarUltimo").addEventListener("click",borrarUltimo);
             document.getElementById("borrarPrimero").addEventListener("click",borrarPrimero);
+            document.getElementById("borrarN").addEventListener("click",borrarN);
             document.getElementById("sustituirPrimerVacio").addEventListener("click",sustituirPrimerVacio);
         }
         function crearParrafo(){
@@ -31,16 +32,36 @@
         }
         function crearImagen(){
             var imagen=document.createElement("img")
-            imagen.setAttribute("src",prompt("Introduce el nombre de la foto sin la extension")+".jpg")
+            //imagen.setAttribute("src",prompt("Introduce el nombre de la foto sin la extension")+".jpg")
+            imagen.setAttribute("src","logo.jpg")
             imagen.setAttribute("alt","Logo Rugarri")
             var cont=document.getElementById("miDiv")
             cont.appendChild(imagen)
         }
         function borrarUltimo(){
-            console.log("Borrar ultimo")
+            var cont=document.getElementById("miDiv")
+            var hijo=cont.lastChild
+            cont.removeChild(hijo)
         }
         function borrarPrimero(){
-            console.log("Borrar primero")
+            var cont=document.getElementById("miDiv")
+            var hijo=cont.firstChild
+            cont.removeChild(hijo)  
+                 
+        }
+        function borrarN(){
+            var cont=document.getElementById("miDiv")
+            var hijos=cont.children
+            console.log(hijos)
+            let numHijoABorrar;
+            while((numHijoABorrar>hijos.length-1)||isNaN(numHijoABorrar)){
+                numHijoABorrar=Number(prompt("Introduce el numero del hijo a borrar\n",""))-1
+            }
+            for(let i=0;i<hijos.length;i++){
+                if(i==numHijoABorrar){
+                    cont.removeChild(hijos[i])
+                }
+            }
         }
         function sustituirPrimerVacio(){
             console.log("Sustituir primer parrafo por vacio")
@@ -48,8 +69,9 @@
     </script>
     <button id="crearParrafo">Crear Párrafo</button>
     <button id="crearImagen">Crear Imagen</button>
-    <button id="borrarUltimo">Borrar Último</button>
     <button id="borrarPrimero">Borrar Primero</button>
+    <button id="borrarUltimo">Borrar Último</button>
+    <button id="borrarN">Borrar N</button>
     <button id="sustituirPrimerVacio">Sustituir primer parrafo por vacio</button>
     <br/>
     <textarea id="texto"></textarea>
