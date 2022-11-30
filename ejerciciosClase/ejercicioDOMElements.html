@@ -8,7 +8,42 @@
 </head>
 <body>
     <script>
+        window.addEventListener("load",inicio);
+        function inicio(){
+            document.getElementById("crearParrafo").addEventListener("click",crearParrafo);
+            document.getElementById("crearImagen").addEventListener("click",crearImagen);
+            document.getElementById("borrarUltimo").addEventListener("click",borrarUltimo);
+            document.getElementById("borrarPrimero").addEventListener("click",borrarPrimero);
+            document.getElementById("sustituirPrimerVacio").addEventListener("click",sustituirPrimerVacio);
+        }
+        function crearParrafo(){
+            console.log("Crear parrafo")
+            
+        }
+        function crearImagen(){
+            console.log("Crear imagen")
+        }
+        function borrarUltimo(){
+            console.log("Borrar ultimo")
+        }
+        function borrarPrimero(){
+            console.log("Borrar primero")
+        }
+        function sustituirPrimerVacio(){
+            console.log("Sustituir primer parrafo por vacio")
+        }
 
     </script>
+    <div class="miDiv"></div>
+    <br/>
+    <textarea id=""texto></textarea>
+    <br/>
+    <button id="crearParrafo">Crear parrafo</button>
+    <button id="crearImagen">Crear imagen</button>
+    <button id="borrarUltimo">Borrar Ultimo</button>
+    <button id="borrarPrimero">Borrar Primero</button>
+    <button id="sustituirPrimerVacio">Sustituir primer parrafo por vacio</button>
+    
+    
 </body>
 </html>
