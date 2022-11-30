@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Posicion Mouse</title>
+       <script src="Act2.js" defer></script>
+
+    </head>
+    <style>
+        div {
+            height: 100vh;
+            
+        }
+    </style>
+    <body>
+        <div onmousemove="getMouseCordenadas(event)">
+            <h1> Posición ratón en tiempo real</h1>
+            <ul>
+                <li> Posicion X : <span id="idInfoX"> </span></li>
+                <li> Posicion Y : <span id="idInfoY"> </span></li>
+            </ul>  	
+        </div>
+	</body>
+</html>
