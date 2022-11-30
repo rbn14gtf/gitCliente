@@ -64,7 +64,13 @@
             }
         }
         function sustituirPrimerVacio(){
-            console.log("Sustituir primer parrafo por vacio")
+            var cont=document.getElementById("miDiv")
+            var miParrafo=document.createElement("p")
+            var texto=document.createTextNode("Vacio")
+            miParrafo.appendChild(texto)
+
+            cont.replaceChild(texto,cont.firstChild)
+
         }
     </script>
     <button id="crearParrafo">Crear Párrafo</button>
