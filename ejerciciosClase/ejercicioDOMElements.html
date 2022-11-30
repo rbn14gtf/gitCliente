@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio DOM Elements</title>
+    <style>
+        .miClase{
+            color: rgb(0, 255, 0);
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -17,8 +22,12 @@
             document.getElementById("sustituirPrimerVacio").addEventListener("click",sustituirPrimerVacio);
         }
         function crearParrafo(){
-            console.log("Crear parrafo")
-            
+            var miParrafo=document.createElement("p")
+            var texto=document.createTextNode(document.getElementById("texto").value)
+            miParrafo.appendChild(texto)
+            miParrafo.setAttribute("class","miClase")
+            var cont=document.getElementById("miDiv")
+            cont.appendChild(miParrafo)
         }
         function crearImagen(){
             console.log("Crear imagen")
@@ -34,16 +43,15 @@
         }
 
     </script>
+
     <div class="miDiv"></div>
     <br/>
-    <textarea id=""texto></textarea>
+    <textarea id="texto">Texto Añadido</textarea>
     <br/>
-    <button id="crearParrafo">Crear parrafo</button>
-    <button id="crearImagen">Crear imagen</button>
-    <button id="borrarUltimo">Borrar Ultimo</button>
+    <button id="crearParrafo">Crear Párrafo</button>
+    <button id="crearImagen">Crear Imagen</button>
+    <button id="borrarUltimo">Borrar Último</button>
     <button id="borrarPrimero">Borrar Primero</button>
     <button id="sustituirPrimerVacio">Sustituir primer parrafo por vacio</button>
-    
-    
 </body>
 </html>
