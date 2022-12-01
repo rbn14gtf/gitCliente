@@ -1,8 +1,23 @@
-td,tr{
+td{
     border: 1px solid black;
     width: 1.5em;
     height: 1.5em;
+    background-color: #BBBBBB;
+	border-left: 2px solid #D3D3D3;
+	border-top: 2px solid #D3D3D3;
+	border-right: 2px solid #A9A9A9;
+	border-bottom: 2px solid #A9A9A9;
+	text-align: center;
 }
 td:active{
-    background-color: red;
+    background-color: rgb(70, 70, 70);
+}
+.tablero{
+    width: fit-content;
+    padding: 10px;
+    background-color: rgb(184, 184, 184);
+    background-color: #BBBBBB;
+	border-left: 2px solid #D3D3D3;
+	border-top: 2px solid #D3D3D3;
+	border-right: 2px solid #A9A9A9;
 }

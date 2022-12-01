@@ -34,7 +34,7 @@ function pintarTablero(){
             tablero.appendChild(newDiv);
         }
     }
-}
+}//pintarTablero
 
 function generarCampoMinasVacio(){
     //generamos el campo de minas
@@ -273,10 +273,10 @@ function inicio(){
     buscaminas.numColumnas = 10;
     buscaminas.numMinasTotales = 12;
     pintarTablero();
-    generarCampoMinasVacio();
-    esparcirMinas();
-    contarMinas();
-    actualizarNumMinasRestantes();
+    // generarCampoMinasVacio();
+    // esparcirMinas();
+    // contarMinas();
+    // actualizarNumMinasRestantes();
 }
 
 window.onload = inicio;
