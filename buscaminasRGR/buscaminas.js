@@ -9,5 +9,14 @@ function generarBombas(){
         document.getElementById(posBomba).setAttribute("class","bomba")
         console.log(posBomba)
     }
-}
 
+    hideInput()
+}
+function hideInput(){
+    var x = document.getElementById("inputBombas");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
