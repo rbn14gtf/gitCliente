@@ -273,10 +273,10 @@ function inicio(){
     buscaminas.numColumnas = 10;
     buscaminas.numMinasTotales = 12;
     pintarTablero();
-    // generarCampoMinasVacio();
-    // esparcirMinas();
-    // contarMinas();
-    // actualizarNumMinasRestantes();
+    generarCampoMinasVacio();
+    esparcirMinas();
+    contarMinas();
+    actualizarNumMinasRestantes();
 }
 
 window.onload = inicio;
