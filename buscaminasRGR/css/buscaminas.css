@@ -13,18 +13,16 @@ td{
     padding: 10px;
     background-color: #BBBBBB;
 	border-left: 2px solid #D3D3D3;
-	border-top: 2px solid #D3D3D3;
 	border-right: 2px solid #A9A9A9;
 }
 #minas{
-    padding: 2px 10px 2px 10px;
+    padding: 10px 10px 2px 10px;
     background-color: #BBBBBB;
     border-left: 2px solid #D3D3D3;
     border-right: 2px solid #A9A9A9;
     border-bottom: 2px solid #A9A9A9;
     color: #333333;
     text-align: right;
-    width: 88.5%;
 
 }
 #minas div{
@@ -39,6 +37,7 @@ td{
     padding: 4px;
     
 }
+
 #content{
     width: fit-content;
 }
@@ -61,7 +60,7 @@ td{
     
 }
 #numBombas{
-    width: 35%;
+    width: 47%;
 }
 @font-face {
     font-family: 'fontello';
