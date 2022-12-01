@@ -28,12 +28,12 @@ function generarMinas(){
     console.log(arrayMinas)
     document.getElementById("minasRestantes").innerHTML=arrayMinas.length
     generado=true;    
-    generarNumeros();
+    //generarNumeros();
 }
 function generarNumeros(){ 
     for(let i=0;i<100;i+=10){
         if(arrayMinas[i]-document.getElementById(i)>3){
-            
+
         }
     }
 }
