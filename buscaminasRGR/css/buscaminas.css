@@ -19,7 +19,7 @@ td{
 	border-left: 2px solid #D3D3D3;
 	border-right: 2px solid #A9A9A9;
 }
-#minas{
+#numMinas{
     padding: 10px 10px 2px 10px;
     background-color: #BBBBBB;
     border-left: 2px solid #D3D3D3;
@@ -27,9 +27,9 @@ td{
     border-bottom: 2px solid #A9A9A9;
     color: #333333;
     text-align: right;
-    width: 88.5%;
+    /*width: 91.5%;*/
 }
-#minas div{
+#numMinas div{
     text-align: right;
     font-family: sans-serif;
     font-size: 14px;
@@ -43,7 +43,8 @@ td{
 }
 
 #content{
-    width: fit-content;
+    width: 18.5%;
+
 }
 .destapado{
 	font-family: "Lucida Console","Courier New", Courier, monospace;
@@ -54,16 +55,14 @@ td{
 	border-bottom: 1px solid #D3D3D3;
 	text-shadow: 1px 1px 2px #999999;
 }
-#inputBombas{
+#inputMinas{
     padding: 2px 10px 2px 10px;
     background-color: #BBBBBB;
     border-left: 2px solid #D3D3D3;
     border-right: 2px solid #A9A9A9;
     color: #333333;
-    width: 88.5%;
-    
 }
-#numBombas{
+#numBombasInput{
     width: 47%;
 }
 @font-face {
