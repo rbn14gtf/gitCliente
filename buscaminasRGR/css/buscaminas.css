@@ -62,3 +62,17 @@ td{
 #numBombas{
     width: 45%;
 }
+@font-face {
+    font-family: 'fontello';
+    src: url('./fontello.eot');
+    src: url('./fontello.woff2') format('woff2'),
+         url('./fontello.woff') format('woff'),
+         url('./fontello.ttf') format('truetype'),
+         url('./fontello.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+.bomba{
+    font-family: "fontello";
+}
