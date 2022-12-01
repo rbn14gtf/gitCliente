@@ -1,14 +1,21 @@
 const numFilas=10;
 let arrayMinas=[]
+let generado=false
 function tdClick(id){ 
-    if(arrayMinas.includes(Number(id))){
-        document.getElementById(id).innerHTML="💣"
-        finDelJuego();
-        document.getElementById(id).setAttribute("class","minaEncontrada")
-    }else{
-        document.getElementById(id).setAttribute("class","destapado")
-
+    if(!generado){
+        generarMinas()
     }
+    else{
+        if(arrayMinas.includes(Number(id))){
+            document.getElementById(id).innerHTML="💣"
+            finDelJuego();
+            document.getElementById(id).setAttribute("class","minaEncontrada")
+        }else{
+            document.getElementById(id).setAttribute("class","destapado")
+    
+        }
+    }
+    
 };  
 function generarMinas(){ 
     arrayMinas=[]
@@ -20,8 +27,7 @@ function generarMinas(){
     //hideInput()
     console.log(arrayMinas)
     document.getElementById("minasRestantes").innerHTML=arrayMinas.length
-
-    
+    generado=true;    
 }
 function hideInput(){
     var x = document.getElementById("inputMinas");
