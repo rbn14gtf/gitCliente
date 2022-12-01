@@ -55,6 +55,16 @@ td{
 	border-bottom: 1px solid #D3D3D3;
 	text-shadow: 1px 1px 2px #999999;
 }
+.minaEncontrada{
+	font-family: "Lucida Console","Courier New", Courier, monospace;
+	font-weight: bold;
+	border-left: 1px solid #A9A9A9;
+	border-top: 1px solid #A9A9A9;
+	border-right: 1px solid #D3D3D3;
+	border-bottom: 1px solid #D3D3D3;
+	text-shadow: 1px 1px 2px #999999;
+    background-color: red;
+}
 #inputMinas{
     padding: 2px 10px 2px 10px;
     background-color: #BBBBBB;

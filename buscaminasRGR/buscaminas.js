@@ -4,7 +4,7 @@ function tdClick(id){
     if(arrayMinas.includes(Number(id))){
         document.getElementById(id).innerHTML="💣"
         finDelJuego();
-        document.getElementById(id).setAttribute("class","destapado")
+        document.getElementById(id).setAttribute("class","minaEncontrada")
     }else{
         document.getElementById(id).setAttribute("class","destapado")
 
