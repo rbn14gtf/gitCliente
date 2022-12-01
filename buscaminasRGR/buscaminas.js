@@ -12,7 +12,7 @@ function tdClick(id){
             document.getElementById(id).setAttribute("class","minaEncontrada")
         }else{
             document.getElementById(id).setAttribute("class","destapado")
-    
+            cleanCasillas(id)
         }
     }
     
@@ -44,6 +44,9 @@ function hideInput(){
     } else {
         x.style.display = "none";
     }
+}
+function cleanCasillas(id){
+
 }
 function finDelJuego(){
     for(let i=0;i<arrayMinas.length;i++){
