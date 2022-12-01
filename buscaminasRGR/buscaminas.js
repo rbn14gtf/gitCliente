@@ -1,5 +1,7 @@
 
-
+function tdClick(id){ 
+    console.log(id)
+};  
 
 function generarTablero(){
     let numFilas=10;
@@ -8,7 +10,7 @@ function generarTablero(){
     document.write("<div class='tablero'><table><tbody>")
     let cont=0;
     for(let i=0;i<numFilas+1;i++){
-        document.write("<tr class='td' style='border: 1px solid black width: 1.5em height: 1.5em;'>")
+        document.write("<tr class='tr' style='border: 1px solid black width: 1.5em height: 1.5em;'>")
         for(let j=0;j<numFilas;j++){
             document.write("<td class='td' style='border: 1px solid black; width: 1.5em; height: 1.5em;' id="+cont+"></td>")
             cont++;
