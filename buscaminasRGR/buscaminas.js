@@ -1,7 +1,8 @@
 const numFilas=10;
 let arrayMinas=[]
 function tdClick(id){ 
-    console.log(arrayMinas.indexOf(id))
+    console.log(id)
+    console.log(arrayMinas)
     if(arrayMinas.indexOf(id)!=-1){
         document.getElementById(id).innerHTML="💣"
     }else{
@@ -18,7 +19,7 @@ function generarMinas(){
         //console.log(posBomba)
     }
     //hideInput()
-    console.table(arrayMinas)
+    console.log(arrayMinas)
 }
 function hideInput(){
     var x = document.getElementById("inputMinas");
