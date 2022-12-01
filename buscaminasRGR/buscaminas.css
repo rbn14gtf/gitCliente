@@ -49,3 +49,16 @@ td{
 	border-bottom: 1px solid #D3D3D3;
 	text-shadow: 1px 1px 2px #999999;
 }
+#generarBombas{
+    padding: 2px 10px 2px 10px;
+    background-color: #BBBBBB;
+    border-left: 2px solid #D3D3D3;
+    border-right: 2px solid #A9A9A9;
+    border-bottom: 2px solid #A9A9A9;
+    color: #333333;
+    width: 17.30%;
+    
+}
+#numBombas{
+    width: 45%;
+}
