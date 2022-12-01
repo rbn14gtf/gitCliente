@@ -34,6 +34,11 @@ function hideInput(){
 function finDelJuego(){
     for(let i=0;i<arrayMinas.length;i++){
         document.getElementById(arrayMinas[i]).innerHTML="💣"
-
     }
+    generatePopUp()
 }   
+function generatePopUp() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  
