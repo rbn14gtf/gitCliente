@@ -19,6 +19,9 @@ function generarMinas(){
     }
     //hideInput()
     console.log(arrayMinas)
+    document.getElementById("minasRestantes").innerHTML=arrayMinas.length
+
+    
 }
 function hideInput(){
     var x = document.getElementById("inputMinas");
