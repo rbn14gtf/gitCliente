@@ -1,16 +1,24 @@
 const numFilas=10;
+let arrayMinas=[]
 function tdClick(id){ 
-    document.getElementById(id).setAttribute("class","destapado")
+    console.log(arrayMinas.indexOf(id))
+    if(arrayMinas.indexOf(id)!=-1){
+        document.getElementById(id).innerHTML="💣"
+    }else{
+        document.getElementById(id).setAttribute("class","destapado")
+
+    }
 };  
 function generarMinas(){ 
-    //let numBombas=document.getElementById("numBombas").value
+    arrayMinas=[]
     for(let i=0;i<100;i+=10){
         posBomba=i+Math.round(Math.random() * 10);
+        arrayMinas.push(posBomba)
         document.getElementById(posBomba).setAttribute("class","mina")
-        console.log(posBomba)
+        //console.log(posBomba)
     }
-
-    hideInput()
+    //hideInput()
+    console.table(arrayMinas)
 }
 function hideInput(){
     var x = document.getElementById("inputMinas");
