@@ -1,9 +1,9 @@
 const numFilas=10;
 let arrayMinas=[]
 function tdClick(id){ 
-    
     if(arrayMinas.includes(Number(id))){
         document.getElementById(id).innerHTML="💣"
+        finDelJuego();
         document.getElementById(id).setAttribute("class","destapado")
     }else{
         document.getElementById(id).setAttribute("class","destapado")
@@ -28,3 +28,9 @@ function hideInput(){
         x.style.display = "none";
     }
 }
+function finDelJuego(){
+    for(let i=0;i<arrayMinas.length;i++){
+        document.getElementById(arrayMinas[i]).innerHTML="💣"
+
+    }
+}   
