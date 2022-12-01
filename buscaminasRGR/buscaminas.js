@@ -1,6 +1,6 @@
 
 function tdClick(id){ 
-    console.log(id)
+    document.getElementById(id).setAttribute("class","destapado")
 };  
 
 function generarTablero(){

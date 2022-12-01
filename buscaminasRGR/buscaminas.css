@@ -7,9 +7,7 @@ td{
 	border-bottom: 2px solid #A9A9A9;
 	text-align: center;
 }
-td:active{
-    background-color: rgb(70, 70, 70);
-}
+
 #tablero{
     width: fit-content;
     padding: 10px;
@@ -41,4 +39,13 @@ td:active{
 }
 #content{
     width: fit-content;
+}
+.destapado{
+	font-family: "Lucida Console","Courier New", Courier, monospace;
+	font-weight: bold;
+	border-left: 1px solid #A9A9A9;
+	border-top: 1px solid #A9A9A9;
+	border-right: 1px solid #D3D3D3;
+	border-bottom: 1px solid #D3D3D3;
+	text-shadow: 1px 1px 2px #999999;
 }
