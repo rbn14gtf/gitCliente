@@ -2,8 +2,7 @@ const numFilas=10;
 let arrayMinas=[]
 function tdClick(id){ 
     
-    console.log(arrayMinas.includes(toString(id)))
-    if(arrayMinas.includes(toString(id))){
+    if(arrayMinas.includes(Number(id))){
         document.getElementById(id).innerHTML="💣"
         document.getElementById(id).setAttribute("class","destapado")
     }else{
@@ -17,7 +16,6 @@ function generarMinas(){
         posBomba=i+Math.round(Math.random() * 10);
         arrayMinas.push(posBomba)
         document.getElementById(posBomba).setAttribute("class","mina")
-        document.getElementById(posBomba).innerHTML="💣"
     }
     //hideInput()
     console.log(arrayMinas)
