@@ -4,6 +4,7 @@ let generado=false
 function tdClick(id){ 
     if(!generado){
         generarMinas()
+        tdClick(id);
     }
     else{
         if(arrayMinas.includes(Number(id))){
@@ -20,7 +21,11 @@ function tdClick(id){
 function generarMinas(){ 
     arrayMinas=[]
     for(let i=0;i<100;i+=10){
+        
         posBomba=i+Math.round(Math.random() * 10);
+        if(posBomba>100){
+            posBomba--;
+        }
         arrayMinas.push(posBomba)
         document.getElementById(posBomba).setAttribute("class","mina")
     }
