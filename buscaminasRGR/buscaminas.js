@@ -9,8 +9,8 @@ function tdClick(id){
     else{
         if(arrayMinas.includes(Number(id))){
             document.getElementById(id).innerHTML="💣"
-            finDelJuego();
             document.getElementById(id).setAttribute("class","minaEncontrada")
+            finDelJuego();
         }else{
             document.getElementById(id).setAttribute("class","destapado")
             cleanCasillas(id)
