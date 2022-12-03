@@ -29,7 +29,7 @@ function generarMinas(){
         arrayMinas.push(posBomba)
         document.getElementById(posBomba).setAttribute("class","mina")
     }
-    //hideInput()
+    hideInput()
     console.log(arrayMinas)
     document.getElementById("minasRestantes").innerHTML=arrayMinas.length
     generado=true;    
