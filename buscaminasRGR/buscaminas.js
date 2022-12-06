@@ -28,6 +28,7 @@ function generarMinas(){
         }
         arrayMinas.push(posBomba)
         document.getElementById(posBomba).setAttribute("class","mina")
+        document.getElementById(posBomba).innerHTML="💣"
     }
     hideInput()
     console.log(arrayMinas)
@@ -50,7 +51,32 @@ function hideInput(){
         x.style.display = "none";
     }
 }
+function getNumberOfNearBombs(id){
+    let cont=0
+    if(document.getElementById(Number(id)+1).getAttribute("class")=="mina"){
+        cont++
+    }
+    if(document.getElementById(Number(id)+10).getAttribute("class")=="mina"){
+        cont++
+    }
+    if(document.getElementById(Number(id)-1).getAttribute("class")=="mina"){
+        cont++
+    }
+    if(document.getElementById(Number(id)-10).getAttribute("class")=="mina"){
+        cont++
+    }
+
+    if(cont==0){
+        return "";
+    }else{
+        return cont;
+    }
+
+}
+
 function cleanCasillas(id){
+    document.getElementById(id).innerHTML=getNumberOfNearBombs(id)
+    /*
     if(document.getElementById(Number(id)+1).getAttribute("class")=="mina"){
         console.log(Number(id)+1)
         document.getElementById(id).innerHTML="1"
@@ -67,7 +93,8 @@ function cleanCasillas(id){
     if(document.getElementById(Number(id)-10).getAttribute("class")=="mina"){
         console.log(Number(id)-10)
         document.getElementById(id).innerHTML="1"
-    }
+    }*/
+    
 
 }
 function finDelJuego(){
