@@ -51,6 +51,23 @@ function hideInput(){
     }
 }
 function cleanCasillas(id){
+    if(document.getElementById(Number(id)+1).getAttribute("class")=="mina"){
+        console.log(Number(id)+1)
+        document.getElementById(id).innerHTML="1"
+    }
+    
+    if(document.getElementById(Number(id)+10).getAttribute("class")=="mina"){
+        console.log(Number(id)+10)
+        document.getElementById(id).innerHTML="1"
+    }
+    if(document.getElementById(Number(id)-1).getAttribute("class")=="mina"){
+        console.log(Number(id)-1)
+        document.getElementById(id).innerHTML="1"
+    }
+    if(document.getElementById(Number(id)-10).getAttribute("class")=="mina"){
+        console.log(Number(id)-10)
+        document.getElementById(id).innerHTML="1"
+    }
 
 }
 function finDelJuego(){
