@@ -44,7 +44,7 @@ function generarNumeros(){
     }
 }
 function hideInput(){
-    var x = document.getElementById("inputMinas");
+    let x = document.getElementById("inputMinas");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
@@ -104,7 +104,7 @@ function finDelJuego(){
     generatePopUp()
 }   
 function generatePopUp() {
-    var popup = document.getElementById("myPopup");
+    let popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
   }
   
