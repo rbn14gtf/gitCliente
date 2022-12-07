@@ -3,7 +3,7 @@ let arrayMinas=[]
 let generado=false
 function tdClick(id){ 
     if(!generado){
-        generarMinas()
+        generarMinas();
         tdClick(id);
     }
     else{
@@ -30,7 +30,7 @@ function generarMinas(){
         document.getElementById(posBomba).setAttribute("class","mina")
         document.getElementById(posBomba).innerHTML="💣"
     }
-    hideInput()
+    //shideInput()
     console.log(arrayMinas)
     document.getElementById("minasRestantes").innerHTML=arrayMinas.length
     generado=true;    
@@ -56,15 +56,18 @@ function getNumberOfNearBombs(id){
     if(document.getElementById(Number(id)+1).getAttribute("class")=="mina"){
         cont++
     }
+    /*
     if(document.getElementById(Number(id)+10).getAttribute("class")=="mina"){
         cont++
     }
+    */
     if(document.getElementById(Number(id)-1).getAttribute("class")=="mina"){
         cont++
     }
+    /*
     if(document.getElementById(Number(id)-10).getAttribute("class")=="mina"){
         cont++
-    }
+    }*/
 
     if(cont==0){
         return "";
