@@ -28,7 +28,9 @@ function generarMinas(){
         }
         arrayMinas.push(posBomba)
         document.getElementById(posBomba).setAttribute("class","mina")
-        document.getElementById(posBomba).innerHTML="💣"
+        
+        //muestra las minas una vez generadas
+        //document.getElementById(posBomba).innerHTML="💣"
     }
     //shideInput()
     console.log(arrayMinas)
