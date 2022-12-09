@@ -1,4 +1,5 @@
 const numFilas=10;
+//let casillasLimpiasPorDesmarcar=numFilas*10-arrayMinas.length
 let arrayMinas=[]
 let generado=false
 function tdClick(id){ 
@@ -12,8 +13,16 @@ function tdClick(id){
             document.getElementById(id).setAttribute("class","minaEncontrada")
             finDelJuego();
         }else{
-            document.getElementById(id).setAttribute("class","destapado")
-            cleanCasillas(id)
+            if(casillasLimpiasPorDesmarcar==0){
+                finDelJuego()
+            }
+            else{
+                document.getElementById(id).setAttribute("class","destapado")
+                cleanCasillas(id)
+                casillasLimpiasPorDesmarcar--
+                console.log(casillasLimpiasPorDesmarcar)
+            }
+            
         }
     }
     
@@ -30,12 +39,14 @@ function generarMinas(){
         document.getElementById(posBomba).setAttribute("class","mina")
         
         //muestra las minas una vez generadas
-        //document.getElementById(posBomba).innerHTML="💣"
+        document.getElementById(posBomba).innerHTML="💣"
     }
-    //shideInput()
+    //hideInput()
     console.log(arrayMinas)
     document.getElementById("minasRestantes").innerHTML=arrayMinas.length
     generado=true;    
+    casillasLimpiasPorDesmarcar=numFilas*10-arrayMinas.length
+    console.log(casillasLimpiasPorDesmarcar)
     //generarNumeros();
 }
 function generarNumeros(){ 
