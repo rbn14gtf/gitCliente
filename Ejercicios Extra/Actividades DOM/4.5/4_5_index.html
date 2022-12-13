@@ -43,13 +43,18 @@
         </p>
       </form>
       <button id="firstParrafo">Primer Parrafo dentro de div limpsum</button>
+      <button id="secondParrafo">Segundo Parrafo dentro de div limpsum</button>
 
       <script>
         document.getElementById("firstParrafo").addEventListener("click",firstParrafo);
+        document.getElementById("secondParrafo").addEventListener("click",secondParrafo);
         
 
         function firstParrafo(){
           console.log(document.getElementById("lipsum").firstElementChild.innerHTML)
+        }
+        function secondParrafo(){
+          console.log(document.getElementById("lipsum").firstChild.nextSibling.innerHTML)
         }
         
       </script>
