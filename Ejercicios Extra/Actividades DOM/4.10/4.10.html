@@ -39,10 +39,17 @@
           else if(cont==2){
             document.getElementById("gastos").children[cont].innerHTML+=document.getElementById("price").value
             cont++
+            let total=0
+            for(let i=0;i<3;i++){
+              total+=Number(document.getElementById("gastos").children[i].textContent.split(":")[1])
+            }
+            
+            alert("Importe total: "+total+"€")
           }
           else {
             document.getElementById("gastos").children[cont%3].innerHTML+=document.getElementById("price").value
             cont++
+            
           }
           console.log(cont)
         }
