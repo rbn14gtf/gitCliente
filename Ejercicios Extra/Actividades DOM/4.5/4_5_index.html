@@ -45,11 +45,13 @@
       <button id="firstParrafo">Primer Parrafo dentro de div limpsum</button>
       <button id="secondParrafo">Segundo Parrafo dentro de div limpsum</button>
       <button id="lastElement">Último elemento de la lista</button>
+      <button id="labelSexo">Label de Escoge sexo</button>
 
       <script>
         document.getElementById("firstParrafo").addEventListener("click",firstParrafo);
         document.getElementById("secondParrafo").addEventListener("click",secondParrafo);
         document.getElementById("lastElement").addEventListener("click",lastElement);
+        document.getElementById("labelSexo").addEventListener("click",labelSexo);
         
 
         function firstParrafo(){
@@ -60,6 +62,16 @@
         }
         function lastElement(){
           console.log(document.getElementsByTagName("ul")[0].getElementsByTagName("li")[document.getElementsByTagName("ul")[0].getElementsByTagName("li").length-1].innerHTML)
+        }
+        function labelSexo(){
+          let labels=document.getElementsByTagName("label")
+          //otra solucion
+          //console.log(labels[labels.length-1].textContent)
+          for(let i=0;i<labels.length;i++){
+            if(labels[i].textContent.includes("Escoge el sexo:")){
+              console.log(labels[i].textContent)
+            }
+          }
         }
         
       </script>
