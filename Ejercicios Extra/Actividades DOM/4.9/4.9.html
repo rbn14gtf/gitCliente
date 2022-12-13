@@ -12,7 +12,6 @@
           margin: 10px;
         }
         .eliminado{
-          color: red;
           display: none;
         }
       </style>
@@ -60,9 +59,7 @@
               nuevoLi.setAttribute("onclick","eliminar(id)")
               document.getElementById("list").appendChild(nuevoLi)
             }
-            
           }
-          
         }
         function eliminar(id){
           document.getElementById(id).setAttribute("class","eliminado")
