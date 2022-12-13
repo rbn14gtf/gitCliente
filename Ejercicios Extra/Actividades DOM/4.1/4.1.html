@@ -3,10 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <title>Ejercicio DOM 4.1</title>
+        <style>
+
+            div{
+                border: 1px black solid;
+                width: fit-content;
+                padding: 10px;
+            }
+        </style>
     </head>
     <body>
+        <div id="divParrafos">
+            <p>Este es el parrafo 1</p>
+            <p>Este es el parrafo 2</p>
+            <p>Este es el parrafo 3</p>
+            <button id="displayNumberOfChilds">Cantidad de Hijos del DIV</button>
+        </div>
         <script>
-
+            document.getElementById("displayNumberOfChilds").addEventListener("click",countChildren);
+            function countChildren(){
+                let numberOfChilds = document.getElementById("divParrafos").childElementCount;
+                alert("El div tiene "+numberOfChilds+" nodos hijos")
+                let arrayChildren=document.getElementById("divParrafos").children
+                let nodes=""
+                for(let i=0;i<arrayChildren.length;i++){
+                    nodes+=arrayChildren[i].nodeName+"\n"
+                }
+                alert(nodes)
+            }
         </script>
     </body>
 </html>
