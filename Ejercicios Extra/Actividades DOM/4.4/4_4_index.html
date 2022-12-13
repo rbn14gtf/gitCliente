@@ -4,23 +4,6 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ejercicio DOM 4.4</title>
-      <style>
-        #resultadoInput{
-          border: 1px black solid;
-          width: fit-content;
-          padding: 10px;
-          margin: 10px;
-          display: none;
-        }
-        #resultadoParrafos,#resultadoParrafos2{
-          border: 1px black solid;
-          width: fit-content;
-          padding: 10px;
-          margin: 10px;
-          display: none;
-
-        }
-      </style>
   </head>
   <body>
       <h1 class="important">Ejemplo de DOM</h1>
@@ -63,6 +46,7 @@
       <button id="botonParrafos2">Mostrar Parrafos Dentro del Div</button>
       <button id="botonTodosInput">Mostrar todos los inputs</button>
       <button id="botonTodosInputSexo">Mostrar todos los inputs Sexo</button>
+      <button id="liImportant">Elementos de la clase Important</button>
 
       <script>
         document.getElementById("botonTodosInput").addEventListener("click",todosLosInput);
@@ -70,6 +54,7 @@
         document.getElementById("botonInput").addEventListener("click",resultadoInput);
         document.getElementById("botonParrafos").addEventListener("click",mostrarParrafos);
         document.getElementById("botonParrafos2").addEventListener("click",mostrarParrafos2);
+        document.getElementById("liImportant").addEventListener("click",mostrarLiImportant);
 
         function resultadoInput(){
           console.log("Valor del input con el id input2 "+document.getElementById("input2").value);
@@ -99,6 +84,15 @@
             resultado+=(i+1)+" "+arrayParrafos[i].innerText+"\n"
           }
           console.log("Todos los parrafos\n"+resultado)
+         
+        }
+        function mostrarLiImportant(){
+          let arrayParrafos=document.getElementsByTagName("ul")
+          let resultado=""
+          for(let i=0;i<arrayParrafos.length;i++){
+            resultado+=arrayParrafos[i].innerText+"\n"
+          }
+          console.log("Todos los li de la clase important\n"+resultado)
          
         }
         function mostrarParrafos2(){

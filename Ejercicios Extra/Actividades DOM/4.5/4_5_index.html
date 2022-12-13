@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ejercicio DOM 4.5</title>
-    </head>
+</head>
   <body>
       <h1 class="important">Ejemplo de DOM</h1>
       <p>Vamos a ver una página de ejemplo para poder "jugar" con el DOM</p>
@@ -24,13 +25,13 @@
       <h2>Un formulario</h2>
       <form action="#">
         <label for="input1">Dato 1
-        <input id="input1" type="text" size="20"><br>
+        <input id="input1" type="text" name="dato 1" size="20"><br>
         </label>
         <label for="input2">Dato 2
-        <input id="input2" type="text" size="20"><br>
+        <input id="input2" type="text" name="dato 2" size="20"><br>
         </label>
         <label for="input3">Dato 3
-        <input id="input3" type="text" size="20"><br>
+        <input id="input3" type="text" name="dato 3" size="20"><br>
         </label>
         <label>Escoge el sexo:<br>
         <input type="radio" name="sexo" value="H">Hombre<br>
@@ -41,5 +42,17 @@
           <input type="button" id="button2" value="Button 2">
         </p>
       </form>
+      <button id="firstParrafo">Primer Parrafo dentro de div limpsum</button>
+
+      <script>
+        document.getElementById("firstParrafo").addEventListener("click",firstParrafo);
+        
+
+        function firstParrafo(){
+          console.log(document.getElementById("lipsum").firstChild.innerHtml)
+          console.table(document.getElementById("lipsum").firstChild)
+        }
+        
+      </script>
   </body>
 </html>
