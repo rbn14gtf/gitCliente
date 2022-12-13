@@ -3,9 +3,37 @@
     <head>
         <meta charset="UTF-8">
         <title>Ejercicio DOM 4.3</title>
+        <style>
+
+            div{
+                border: 1px black solid;
+                width: fit-content;
+                padding: 10px;
+                margin: 10px;
+            }
+            #dinamicText{
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
+        <div class="divText">
+            <p id="dinamicText">Esto es un texto dinamico</p>
+            <button id="cambiarColor">Cambiar Color</button>
+            <button id="cambiarTamaño">Cambiar Tamaño Fuente</button>
+        </div>
         <script>
+            document.getElementById("cambiarColor").addEventListener("click",cambiarColor);
+            document.getElementById("cambiarTamaño").addEventListener("click",cambiarTamaño);
+            function cambiarColor(){
+                document.getElementById("dinamicText").style.color = "green";
+
+            }
+            function cambiarTamaño(){
+                document.getElementById("dinamicText").style.fontFamily = "Impact,Charcoal,sans-serif";
+
+            }
+
 
         </script>
     </body>
