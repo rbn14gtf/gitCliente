@@ -41,13 +41,13 @@
       <h2>Un formulario</h2>
       <form action="#">
         <label for="input1">Dato 1
-        <input id="input1" type="text" size="20"><br>
+        <input id="input1" type="text" name="dato 1" size="20"><br>
         </label>
         <label for="input2">Dato 2
-        <input id="input2" type="text" size="20"><br>
+        <input id="input2" type="text" name="dato 2" size="20"><br>
         </label>
         <label for="input3">Dato 3
-        <input id="input3" type="text" size="20"><br>
+        <input id="input3" type="text" name="dato 3" size="20"><br>
         </label>
         <label>Escoge el sexo:<br>
         <input type="radio" name="sexo" value="H">Hombre<br>
@@ -58,16 +58,39 @@
           <input type="button" id="button2" value="Button 2">
         </p>
       </form>
-      <button id="botonInput">Mostrar Input 2</button>
+      <button id="botonInput">Mostrar valor input 2</button>
       <button id="botonParrafos">Mostrar Parrafos</button>
       <button id="botonParrafos2">Mostrar Parrafos Dentro del Div</button>
+      <button id="botonTodosInput">Mostrar todos los inputs</button>
+      <button id="botonTodosInputSexo">Mostrar todos los inputs Sexo</button>
 
       <script>
+        document.getElementById("botonTodosInput").addEventListener("click",todosLosInput);
+        document.getElementById("botonTodosInputSexo").addEventListener("click",todosLosInputSexo);
         document.getElementById("botonInput").addEventListener("click",resultadoInput);
         document.getElementById("botonParrafos").addEventListener("click",mostrarParrafos);
         document.getElementById("botonParrafos2").addEventListener("click",mostrarParrafos2);
+
         function resultadoInput(){
           console.log("Valor del input con el id input2 "+document.getElementById("input2").value);
+        }
+        function todosLosInput(){
+          let arrayInputs=document.getElementsByTagName("input")
+          let resultado=""
+          for(let i=0;i<arrayInputs.length;i++){
+            resultado+=arrayInputs[i].name+"\n"
+          }
+          console.log("Todos los input\n"+resultado)
+        }
+        function todosLosInputSexo(){
+          let arrayInputs=document.getElementsByTagName("input")
+          let resultado=""
+          for(let i=0;i<arrayInputs.length;i++){
+            if(arrayInputs[i].name=="sexo"){
+              resultado+=arrayInputs[i].name+"\n"
+            }
+          }
+          console.log("Todos los input sexo\n"+resultado)
         }
         function mostrarParrafos(){
           let arrayParrafos=document.getElementsByTagName("p")
