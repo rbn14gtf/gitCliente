@@ -1,4 +1,3 @@
-
 //Numero aleatorio, minimo y maximo incluidos
 function numeroAleatorio(min, max) {
     return Math.round(Math.random() * (max - min) + min);
