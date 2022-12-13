@@ -44,10 +44,12 @@
       </form>
       <button id="firstParrafo">Primer Parrafo dentro de div limpsum</button>
       <button id="secondParrafo">Segundo Parrafo dentro de div limpsum</button>
+      <button id="lastElement">Último elemento de la lista</button>
 
       <script>
         document.getElementById("firstParrafo").addEventListener("click",firstParrafo);
         document.getElementById("secondParrafo").addEventListener("click",secondParrafo);
+        document.getElementById("lastElement").addEventListener("click",lastElement);
         
 
         function firstParrafo(){
@@ -55,6 +57,9 @@
         }
         function secondParrafo(){
           console.log(document.getElementById("lipsum").firstChild.nextSibling.innerHTML)
+        }
+        function lastElement(){
+          console.log(document.getElementsByTagName("ul")[0].getElementsByTagName("li")[document.getElementsByTagName("ul")[0].getElementsByTagName("li").length-1].innerHTML)
         }
         
       </script>

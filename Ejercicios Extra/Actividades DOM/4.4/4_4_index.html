@@ -33,8 +33,8 @@
         <input id="input3" type="text" name="dato 3" size="20"><br>
         </label>
         <label>Escoge el sexo:<br>
-        <input type="radio" name="sexo" value="H">Hombre<br>
-        <input type="radio" name="sexo" value="M">Mujer
+          <input type="radio" name="sexo" value="H">Hombre<br>
+          <input type="radio" name="sexo" value="M">Mujer
         </label>
         <p>
           <input type="button" id="button1" value="Button 1">
@@ -72,7 +72,7 @@
           let resultado=""
           for(let i=0;i<arrayInputs.length;i++){
             if(arrayInputs[i].name=="sexo"){
-              resultado+=arrayInputs[i].name+"\n"
+              resultado+=arrayInputs[i].value+"\n"
             }
           }
           console.log("Todos los input sexo\n"+resultado)
@@ -86,11 +86,23 @@
           console.log("Todos los parrafos\n"+resultado)
          
         }
-        function mostrarLiImportant(){
+        /*function mostrarLiImportant(){
           let arrayParrafos=document.getElementsByTagName("ul")
+          console.table(arrayParrafos)
           let resultado=""
           for(let i=0;i<arrayParrafos.length;i++){
             resultado+=arrayParrafos[i].innerText+"\n"
+          }
+          console.log("Todos los li de la clase important\n"+resultado)
+         
+        }*/
+        function mostrarLiImportant(){
+          let arrayParrafos=document.getElementsByClassName("important")
+          let resultado=""
+          for(let i=0;i<arrayParrafos.length;i++){
+            if(arrayParrafos[i].tagName.toLowerCase()=="li"){
+              resultado+=arrayParrafos[i].innerText+"\n"
+            }
           }
           console.log("Todos los li de la clase important\n"+resultado)
          
