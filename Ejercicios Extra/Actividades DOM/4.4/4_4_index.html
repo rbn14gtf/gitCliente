@@ -4,6 +4,23 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ejercicio DOM 4.4</title>
+      <style>
+        #resultadoInput{
+          border: 1px black solid;
+          width: fit-content;
+          padding: 10px;
+          margin: 10px;
+          display: none;
+        }
+        #resultadoParrafos,#resultadoParrafos2{
+          border: 1px black solid;
+          width: fit-content;
+          padding: 10px;
+          margin: 10px;
+          display: none;
+
+        }
+      </style>
   </head>
   <body>
       <h1 class="important">Ejemplo de DOM</h1>
@@ -41,5 +58,36 @@
           <input type="button" id="button2" value="Button 2">
         </p>
       </form>
+      <button id="botonInput">Mostrar Input 2</button>
+      <button id="botonParrafos">Mostrar Parrafos</button>
+      <button id="botonParrafos2">Mostrar Parrafos Dentro del Div</button>
+
+      <script>
+        document.getElementById("botonInput").addEventListener("click",resultadoInput);
+        document.getElementById("botonParrafos").addEventListener("click",mostrarParrafos);
+        document.getElementById("botonParrafos2").addEventListener("click",mostrarParrafos2);
+        function resultadoInput(){
+          console.log("Valor del input con el id input2 "+document.getElementById("input2").value);
+        }
+        function mostrarParrafos(){
+          let arrayParrafos=document.getElementsByTagName("p")
+          let resultado=""
+          for(let i=0;i<arrayParrafos.length;i++){
+            resultado+=(i+1)+" "+arrayParrafos[i].innerText+"\n"
+          }
+          console.log("Todos los parrafos\n"+resultado)
+         
+        }
+        function mostrarParrafos2(){
+          let arrayParrafos=document.getElementById("lipsum").getElementsByTagName("p")
+          let resultado=""
+          for(let i=0;i<arrayParrafos.length;i++){
+            resultado+=(i+1)+" "+arrayParrafos[i].innerText+"\n"
+          }
+          console.log("Todos los parrafos dentro del div lipsum\n"+resultado)
+
+        }
+
+      </script>
   </body>
 </html>
