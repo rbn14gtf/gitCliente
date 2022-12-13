@@ -11,22 +11,38 @@
           padding: 10px;
           margin: 10px;
         }
+        .eliminado{
+          color: red;
+          display: none;
+        }
       </style>
   
 </head>
   <body>
       <div id="elementos">Lista de la compra
         <ul id="list">
-          <li>Azucar</li>
-          <li>Cerveza</li>
-          <li>Pan</lin>
-          <li>Patatas</li>
+          <li onclick="eliminar(id)">Azucar</li>
+          <li onclick="eliminar(id)">Cerveza</li>
+          <li onclick="eliminar(id)">Pan</li>
+          <li onclick="eliminar(id)">Patatas</li>
         </ul>
         <input id="inputAlimento" value="Kiwi">
-        <button id="insertarAleatorio">Insertar Aleatorio</button>
+        <button id="insertarAleatorio">Insertar Producto</button>
 
       </div>
       <script>
+        window.onload=addId
+        function addId(){
+          let lista=document.getElementById("list").innerText.split("\n")
+          document.getElementById("list").innerHTML=""
+          for(let i=0;i<lista.length;i++){
+            let nuevoLi=document.createElement("li")
+              nuevoLi.innerHTML=lista[i]
+              nuevoLi.id=i
+              nuevoLi.setAttribute("onclick","eliminar(id)")
+              document.getElementById("list").appendChild(nuevoLi)
+          }
+        }
         document.getElementById("insertarAleatorio").addEventListener("click",addAlimento)
         function addAlimento(){
           let lista=document.getElementById("list").innerText.split("\n")
@@ -36,13 +52,20 @@
             document.getElementById("list").innerHTML=""
             lista.push(document.getElementById("inputAlimento").value)
             lista.sort()
+
             for(let i=0;i<lista.length;i++){
               let nuevoLi=document.createElement("li")
               nuevoLi.innerHTML=lista[i]
+              nuevoLi.setAttribute("id",i)
+              nuevoLi.setAttribute("onclick","eliminar(id)")
               document.getElementById("list").appendChild(nuevoLi)
             }
             
           }
+          
+        }
+        function eliminar(id){
+          document.getElementById(id).setAttribute("class","eliminado")
           
         }
       </script>
