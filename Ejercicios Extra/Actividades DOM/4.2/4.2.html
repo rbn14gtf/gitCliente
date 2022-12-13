@@ -1,12 +1,42 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Ejercicio DOM 4.2</title>
+        <style>
+
+            div{
+                border: 1px black solid;
+                width: fit-content;
+                padding: 10px;
+                margin: 10px;
+            }
+        </style>
     </head>
     <body>
+        <div id="divParrafos">
+            <h3>Primer bloque de parrafos</h3>
+            <p>Este es el parrafo 1</p>
+            <p>Este es el parrafo 2</p>
+            <p>Este es el parrafo 3</p>
+        
+            <h3>Segundo bloque de parrafos</h3>
+            <p class="bloque2">Este es el parrafo 1</p>
+            <p class="bloque2">Este es el parrafo 2</p>
+            <p class="bloque2">Este es el parrafo 3</p>
+            <button id="addDots">Añadir puntos al final de cada parrafo</button>
+        </div>
         <script>
+            document.getElementById("addDots").addEventListener("click",anadirPuntos);
+            function anadirPuntos(){
+                // let elements=document.getElementById("divParrafos").children;
+                let parrafos=document.getElementsByClassName("bloque2")
+                for(let i=0;i<parrafos.length;i++){
+                    parrafos[i].innerHTML+="."
+                }
 
+            }
         </script>
     </body>
 </html>
