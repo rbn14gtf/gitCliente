@@ -44,7 +44,7 @@
               total+=Number(document.getElementById("gastos").children[i].textContent.split(":")[1])
             }
             
-            alert("Importe total: "+total+"€")
+            console.log("Importe total: "+total+"€")
           }
           else {
             document.getElementById("gastos").children[cont%3].innerHTML+=document.getElementById("price").value
