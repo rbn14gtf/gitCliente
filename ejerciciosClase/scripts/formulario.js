@@ -21,7 +21,6 @@ function validar(){
         alert("No Validado")
         return false
     }
-
 }
 
 function isValidName(){
