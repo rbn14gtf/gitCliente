@@ -31,7 +31,7 @@ function isValidName(){
     }
 }
 function isValidPhone(){
-    if(document.getElementById("telefono").value==""){
+    if((document.getElementById("telefono").value=="")||isNaN(document.getElementById("telefono").value)){
         return false
     }else{
         return true
@@ -45,13 +45,12 @@ function isMayorChecked(){
     }
 }
 function isSexoSelected(){
-    var radios = document.getElementsByName("sexo");
+    let radios = document.getElementsByName("sexo");
 
-    for (var i = 0, len = radios.length; i < len; i++) {
+    for (let i=0; i<radios.length;i++) {
         if (radios[i].checked) {
             return true;
         }
     }
-
     return false;
 }
