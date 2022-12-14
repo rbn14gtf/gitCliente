@@ -14,10 +14,11 @@ function iniciar(){
     document.getElementById("enviar").addEventListener("click",validar,false)
 }
 function validar(){
-    console.log("hola")
     if((isValidName())&&(isValidPhone())&&(isValidDate())&&(isMayorChecked())&&(isSexoSelected())){
+        alert("Validado")
         return true
     }else{
+        alert("No Validado")
         return false
     }
 
@@ -42,6 +43,9 @@ function isValidDate(){
     let mes=document.getElementById("mes").value
     let anyo=document.getElementById("anyo").value
     if(isNaN(dia)||(isNaN(mes)||(isNaN(anyo)))){
+        return false
+    }
+    else if((dia=="")||(mes=="")||(anyo=="")){
         return false
     }else{
         let fecha=new Date(anyo,mes,dia);
