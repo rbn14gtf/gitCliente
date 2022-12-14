@@ -5,4 +5,15 @@ let formulario3=document.getElementsByTagName("form")[0]
 let formulario4=document.forms[0]
 //selectionar elementos
 //formulario.elements[]
-formulario.getElementById("idElemento")
+// formulario.getElementById("idElemento")
+// formulario.getElementsByTagName("tag")
+
+window.onload=iniciar
+
+function iniciar(){
+    document.getElementById("enviar").addEventListener("click",validar,false)
+}
+function validar(){
+    console.log("hola")
+
+}
