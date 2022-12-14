@@ -15,7 +15,7 @@ function iniciar(){
 }
 function validar(){
     console.log("hola")
-    if(isValidName()&&isValidPhone()&&isMayorChecked()&&isSexoSelected){
+    if((isValidName())&&(isValidPhone())&&(isValidDate())&&(isMayorChecked())&&(isSexoSelected())){
         return true
     }else{
         return false
@@ -32,6 +32,16 @@ function isValidName(){
 }
 function isValidPhone(){
     if((document.getElementById("telefono").value=="")||isNaN(document.getElementById("telefono").value)){
+        return false
+    }else{
+        return true
+    }
+}
+function isValidDate(){
+    let dia=document.getElementById("dia").value
+    let mes=document.getElementById("mes").value
+    let anyo=document.getElementById("anyo").value
+    if(isNaN(dia)||(isNaN(mes)||(isNaN(anyo)))){
         return false
     }else{
         return true
