@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Formulario</h1>
-        <form action="procesar.php" method="post" id="miFormulario">
+        <form action="" method="post" id="miFormulario">
             <table>
                 <tr>
                     <td>Nombre:</td>
@@ -18,7 +18,7 @@
                 <tr>
                     <td>Telefono:</td>
                     <td>
-                        <input type="tel" name="telefono" id="telefono">
+                        <input type="tel" name="telefono" id="telefono" maxlength="9">
                     </td>
                 </tr>
                 <tr>
@@ -35,6 +35,10 @@
                     </td>
                 </tr>
             </table>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Reset">
+            </p>
         </form>
     </body>
 </html>
