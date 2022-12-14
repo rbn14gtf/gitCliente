@@ -44,7 +44,12 @@ function isValidDate(){
     if(isNaN(dia)||(isNaN(mes)||(isNaN(anyo)))){
         return false
     }else{
-        return true
+        let fecha=new Date(anyo,mes,dia);
+        if(isNaN(fecha)){
+            return false
+        }else{
+            return true
+        }
     }
 }
 function isMayorChecked(){
