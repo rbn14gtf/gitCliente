@@ -30,7 +30,7 @@
             <input type="radio" id="mujer" name="sexo" value="Mujer">
             <label for="mujer">Mujer</label><br>
 
-
+        </form>
             <select id="aprobar">
                 <option value="10">Saco un 10</option>
                 <option value="9">Saco un 9</option>
@@ -39,8 +39,20 @@
             </select>
 
             <button id="check">Check</button>
-            <script></script>
+            <script>
+                document.getElementById("check").addEventListener("click",show)
+
+                function show(){
+                    let elementos =document.getElementById("aprobar")
+                    for (let i=0;i<elementos.length;i++){
+                        if(elementos[i].isSelected()){
+                            console.log(elementos[i])
+                        }
+                    }
+                }
+                
+            </script>
             
-        </form>
+        
     </body>
 </html>
