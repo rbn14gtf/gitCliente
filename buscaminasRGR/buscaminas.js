@@ -163,7 +163,9 @@ function cleanCasillas(id){
 
 }
 function finDelJuego(){
+    destaparTodas()
     for(let i=0;i<arrayMinas.length;i++){
+        document.getElementById(arrayMinas[i]).removeAttribute("class")
         document.getElementById(arrayMinas[i]).innerHTML="💣"
     }
     generatePopUp()
@@ -171,5 +173,10 @@ function finDelJuego(){
 function generatePopUp() {
     let popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
-  }
+}
+function destaparTodas(){
+    for(let i=1;i<=100;i++){
+        document.getElementById(i).setAttribute("class","destapado")
+    }
+}
   
