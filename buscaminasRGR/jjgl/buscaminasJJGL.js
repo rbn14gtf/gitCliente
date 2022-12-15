@@ -18,7 +18,7 @@ function mostrarTablero(){
 }
 function crearCasillero(fila,i,j){
     let casilla=document.createElement("td")
-    casilla.setAttribute("id",10*i+j+1)
+    casilla.setAttribute("id",10*i+j)
     casilla.setAttribute("onclick","tdClick(id)")
     // casilla.innerHTML=10*i+j+1
     casilla.style.backgroundColor="grey"
@@ -29,8 +29,12 @@ function generarMinas(){
     arrayMinas=[]
     for(let i=0;i<100;i+=10){
         posBomba=i+Math.round(Math.random() * 10);
+        if(posBomba==100){
+            posBomba--
+        }
         
         arrayMinas.push(posBomba)
+        console.log(posBomba)
         document.getElementById(posBomba).setAttribute("class","minaOculta")
         
         //muestra las minas una vez generadas
