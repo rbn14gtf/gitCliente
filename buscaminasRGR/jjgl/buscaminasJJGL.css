@@ -15,6 +15,7 @@ td{
 }
 #content{
     width: fit-content;
+    margin: auto;
     background-color: #BBBBBB;
 }
 .destapado{
