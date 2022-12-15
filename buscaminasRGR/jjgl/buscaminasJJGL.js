@@ -128,7 +128,27 @@ function cleanCasilla(id){
             numMinasCasilla++
         }
     }
-    document.getElementById(id).innerHTML=numMinasCasilla
+    switch(numMinasCasilla){
+        case 0:
+            document.getElementById(id).innerHTML=numMinasCasilla
+            document.getElementById(id).style.color="black"
+            break;
+        case 1:
+            document.getElementById(id).innerHTML=numMinasCasilla
+            document.getElementById(id).style.color="blue"
+            break;
+        case 2:
+            document.getElementById(id).innerHTML=numMinasCasilla
+            document.getElementById(id).style.color="green"
+            break;
+        case 3:
+            document.getElementById(id).innerHTML=numMinasCasilla
+            document.getElementById(id).style.color="red"
+            break;
+        default:
+            document.getElementById(id).innerHTML=numMinasCasilla
+            break;
+    }
 }
 function finDelJuego(){
     destaparTodas()
