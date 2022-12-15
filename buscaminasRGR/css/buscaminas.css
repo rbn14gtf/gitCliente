@@ -10,11 +10,9 @@ td{
 
 #tablero{
     padding: 10px;
-    
 }
 #numMinas{
     padding: 10px;
-    
 }
 #numMinas div{
     text-align: right;
@@ -46,5 +44,4 @@ td{
 
 #inputMinas{
     padding: 10px;
-    
 }
