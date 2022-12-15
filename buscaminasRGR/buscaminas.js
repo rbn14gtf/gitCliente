@@ -101,14 +101,14 @@ function getNumberOfNearBombs(id){
 function cleanCasillas(id){
     let fila=1;
     for(let i=1;i<100;i++){
-        //console.log(i)
+        console.log(i)
         
         if(document.getElementById(i+1).getAttribute("class")=="mina"){
             if(document.getElementById(i).innerHTML==""){
                 document.getElementById(i).innerHTML="1"
             }else{
                 document.getElementById(i).innerHTML=Number(document.getElementById(i).innerHTML)+1
-                i--
+                i++
             }
             for(let j=i;j<100;j++){
                 if(document.getElementById(i+1).getAttribute("class")=="mina"){
