@@ -7,16 +7,10 @@ td{
 	border-bottom: 2px solid #A9A9A9;
 	text-align: center;
 }
-#tablero{
+#idTablero{
     padding: 10px;
 }
-#numMinas{
-    padding: 10px;
-}
-#content{
-    width: fit-content;
-    background-color: #BBBBBB;
-}
+
 .destapado{
 	border-left: 1px solid #A9A9A9;
 	border-top: 1px solid #A9A9A9;
@@ -33,22 +27,19 @@ td{
     font-weight: bold;
     font-family: "Goudy Old Style";
 }
-#numMinas div{
-    text-align: right;
-    font-family: sans-serif;
-    font-size: 14px;
-    color: #333333;
+#header div{
+    text-align: center;
+    font-family: "Goudy Old Style";
     border-left: 1px solid #A9A9A9;
     border-top: 1px solid #A9A9A9;
     border-right: 1px solid #D3D3D3;
     border-bottom: 1px solid #D3D3D3;
     padding: 4px;
+    
 }
-h1{
-    font-family: "Goudy Old Style";
 
-    text-align: center;
-}
 #content{
     margin: auto;
+    width: fit-content;
+    background-color: #BBBBBB;
 }
