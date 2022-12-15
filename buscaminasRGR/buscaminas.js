@@ -11,8 +11,10 @@ function tdClick(id){
         if(arrayMinas.includes(Number(id))){
             document.getElementById(id).innerHTML="💣"
             document.getElementById(id).setAttribute("class","minaEncontrada")
-            finDelJuego()
+            finDelJuego(id)
         }else{
+            casillasLimpiasPorDesmarcar=100-arrayMinas.length
+
             if(casillasLimpiasPorDesmarcar==0){
                 finDelJuego()
             }
@@ -22,9 +24,6 @@ function tdClick(id){
             else{
                 document.getElementById(id).setAttribute("class","destapado")
                 //cleanCasillas(id)
-                
-                casillasLimpiasPorDesmarcar--
-                console.log(casillasLimpiasPorDesmarcar)
             }
             
         }
@@ -40,7 +39,7 @@ function generarMinas(){
             posBomba--;
         }
         arrayMinas.push(posBomba)
-        document.getElementById(posBomba).setAttribute("class","mina")
+        document.getElementById(posBomba).setAttribute("class","minaOculta")
         
         //muestra las minas una vez generadas
         document.getElementById(posBomba).innerHTML="💣"
@@ -162,11 +161,14 @@ function cleanCasillas(id){
     
 
 }
-function finDelJuego(){
+function finDelJuego(id){
     destaparTodas()
     for(let i=0;i<arrayMinas.length;i++){
-        document.getElementById(arrayMinas[i]).removeAttribute("class")
+        //document.getElementById(arrayMinas[i]).removeAttribute("class")
         document.getElementById(arrayMinas[i]).innerHTML="💣"
+        document.getElementById(arrayMinas[i]).setAttribute("class","mina")
+        document.getElementById(id).setAttribute("class","minaEncontrada")
+
     }
     generatePopUp()
 }   
@@ -193,11 +195,12 @@ function mostrarTablero(){
         tabla.appendChild(fila)
     }
     document.getElementById("idTablero").appendChild(tabla)
+    generado=true
 }
 function crearCasillero(fila,i,j){
     let casilla=document.createElement("td")
-    casilla.setAttribute("id",`idCelda_${i}_${j}`)
-    //casilla.innerHTML=`[${10*i}+${j}]`
+    casilla.setAttribute("id",10*i+j)
+    casilla.setAttribute("onclick","tdClick(id)")
     casilla.innerHTML=10*i+j
     casilla.style.backgroundColor="grey"
     fila.appendChild(casilla)
