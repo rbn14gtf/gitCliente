@@ -5,7 +5,8 @@ let generado=false
 window.onload=inicio
 
 function inicio(){
-    document.getElementById("botonEnviar").addEventListener("click",generarMinas)
+    generarMinas()
+    hideInput()
 }
 
 function tdClick(id){ 
@@ -64,7 +65,7 @@ function generarNumeros(){
     }
 }
 function hideInput(){
-    let x = document.getElementById("inputMinas");
+    let x = document.getElementById("botonEnviar");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {

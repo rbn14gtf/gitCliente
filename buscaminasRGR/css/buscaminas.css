@@ -44,4 +44,8 @@ td{
 
 #inputMinas{
     padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Goudy Old Style";
+
 }
