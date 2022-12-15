@@ -3,7 +3,7 @@ let generado=false
 window.onload=inicio
 let number=100-arrayMinas.length
 function inicio(){
-    soloMinasMenosUna()
+    //soloMinasMenosUna()
     generarMinas()
     hideInput()
 }

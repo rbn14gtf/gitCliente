@@ -20,7 +20,7 @@ function crearCasillero(fila,i,j){
     let casilla=document.createElement("td")
     casilla.setAttribute("id",10*i+j+1)
     casilla.setAttribute("onclick","tdClick(id)")
-    casilla.innerHTML=10*i+j+1
+    // casilla.innerHTML=10*i+j+1
     casilla.style.backgroundColor="grey"
     fila.appendChild(casilla)
 }
@@ -36,5 +36,36 @@ function generarMinas(){
         //muestra las minas una vez generadas
         document.getElementById(posBomba).innerHTML="💣"
     }
-    console.log(arrayMinas)
 }
+function getCasillasLimpiasPorDesmarcar(){
+    number=100-arrayMinas.length
+    for(let i=1;i<=100;i++){
+        if(document.getElementById(i).getAttribute("class")=="destapado"){
+            number--
+        }
+
+    }
+    return number
+}
+
+function tdClick(id){ 
+    if(arrayMinas.includes(Number(id))){
+        document.getElementById(id).innerHTML="💣"
+        document.getElementById(id).setAttribute("class","minaEncontrada")
+        finDelJuegoPerdiste(id)
+    }else{
+        if(getCasillasLimpiasPorDesmarcar()==0){
+            finDelJuego()
+        }
+        else if(document.getElementById(id).getAttribute("class")=="destapado"){
+            Event.preventDefault
+        }
+        else{
+            document.getElementById(id).setAttribute("class","destapado")
+            console.log(getCasillasLimpiasPorDesmarcar())
+            if(getCasillasLimpiasPorDesmarcar()==0){
+                finDelJuego()
+            }
+        }
+    }
+};  
