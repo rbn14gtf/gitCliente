@@ -1,4 +1,5 @@
 window.onload=inicio
+let arrayMinas=[]
 function inicio(){
     mostrarTablero()
     generarMinas()
