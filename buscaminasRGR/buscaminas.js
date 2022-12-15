@@ -16,11 +16,15 @@ function tdClick(id){
             if(casillasLimpiasPorDesmarcar==0){
                 finDelJuego()
             }
+            else if(document.getElementById(id).getAttribute("class")=="destapado"){
+                Event.preventDefault
+            }
             else{
                 document.getElementById(id).setAttribute("class","destapado")
-                cleanCasillas(id)
+                //cleanCasillas(id)
+                
                 casillasLimpiasPorDesmarcar--
-                //console.log(casillasLimpiasPorDesmarcar)
+                console.log(casillasLimpiasPorDesmarcar)
             }
             
         }
