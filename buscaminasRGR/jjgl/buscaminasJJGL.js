@@ -153,7 +153,6 @@ function cleanCasilla(id){
 function finDelJuego(){
     destaparTodas()
     for(let i=0;i<arrayMinas.length;i++){
-        //document.getElementById(arrayMinas[i]).removeAttribute("class")
         document.getElementById(arrayMinas[i]).innerHTML="💣"
         document.getElementById(arrayMinas[i]).setAttribute("class","mina")
     }
