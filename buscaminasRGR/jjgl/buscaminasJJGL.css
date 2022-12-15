@@ -1,6 +1,6 @@
 td{
-    width: 1.5em;
-    height: 1.5em;
+    width: 24px;
+    height: 24px;
 	border-left: 2px solid #D3D3D3;
 	border-top: 2px solid #D3D3D3;
     border-right: 2px solid #A9A9A9;
@@ -28,13 +28,20 @@ td{
     font-family: "Goudy Old Style";
 }
 #header div{
-    text-align: center;
-    font-family: "Goudy Old Style";
     border-left: 1px solid #A9A9A9;
     border-top: 1px solid #A9A9A9;
     border-right: 1px solid #D3D3D3;
     border-bottom: 1px solid #D3D3D3;
-    padding: 4px;
+    padding: 10px;
+    
+}
+#title{
+    background-color: darkgrey;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-family: "Goudy Old Style";
+    font-size: x-large;
     
 }
 
