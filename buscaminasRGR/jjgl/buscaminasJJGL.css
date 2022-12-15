@@ -26,27 +26,3 @@ td{
 .minaEncontrada{
     background-color: red;
 }
-
-#inputMinas{
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Goudy Old Style";
-}
-#numMinas div{
-    text-align: right;
-    font-family: sans-serif;
-    font-size: 14px;
-    color: #333333;
-    border-left: 1px solid #A9A9A9;
-    border-top: 1px solid #A9A9A9;
-    border-right: 1px solid #D3D3D3;
-    border-bottom: 1px solid #D3D3D3;
-    padding: 4px;
-}
-h1{
-    text-align: center;
-}
-#content{
-    margin: auto;
-}

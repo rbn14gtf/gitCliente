@@ -34,7 +34,7 @@ function generarMinas(){
         }
         
         arrayMinas.push(posBomba)
-        console.log(posBomba)
+        //console.log(posBomba)
         document.getElementById(posBomba).setAttribute("class","minaOculta")
         
         //muestra las minas una vez generadas
@@ -43,7 +43,7 @@ function generarMinas(){
 }
 function getCasillasLimpiasPorDesmarcar(){
     number=100-arrayMinas.length
-    for(let i=1;i<=100;i++){
+    for(let i=0;i<100;i++){
         if(document.getElementById(i).getAttribute("class")=="destapado"){
             number--
         }
@@ -73,3 +73,40 @@ function tdClick(id){
         }
     }
 };  
+
+function finDelJuego(){
+    destaparTodas()
+    for(let i=0;i<arrayMinas.length;i++){
+        //document.getElementById(arrayMinas[i]).removeAttribute("class")
+        document.getElementById(arrayMinas[i]).innerHTML="💣"
+        document.getElementById(arrayMinas[i]).setAttribute("class","mina")
+    }
+    generatePopUp(1)
+}   
+function finDelJuegoPerdiste(id){
+    destaparTodas()
+    for(let i=0;i<arrayMinas.length;i++){
+        //document.getElementById(arrayMinas[i]).removeAttribute("class")
+        document.getElementById(arrayMinas[i]).innerHTML="💣"
+        document.getElementById(arrayMinas[i]).setAttribute("class","mina")
+        document.getElementById(id).setAttribute("class","minaEncontrada")
+
+    }
+    generatePopUp(0)
+}   
+function generatePopUp(result) {
+    let popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+    if(result==0){
+        document.getElementById("myPopup").innerHTML="Has Perdido"
+    }else{
+        document.getElementById("myPopup").innerHTML="Has Ganado"
+
+    }
+}
+
+function destaparTodas(){
+    for(let i=0;i<100;i++){
+        document.getElementById(i).setAttribute("class","destapado")
+    }
+}
