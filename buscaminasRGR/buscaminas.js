@@ -92,24 +92,49 @@ function getNumberOfNearBombs(id){
 
 function cleanCasillas(id){
     let fila=1;
-    for(let i=0;i<100;i++){
-        console.log(i)
+    for(let i=1;i<100;i++){
+        //console.log(i)
         
         if(document.getElementById(i+1).getAttribute("class")=="mina"){
-            document.getElementById(i).innerHTML="1"
+            if(document.getElementById(i).innerHTML==""){
+                document.getElementById(i).innerHTML="1"
+            }else{
+                document.getElementById(i).innerHTML=Number(document.getElementById(i).innerHTML)+1
+                i--
+            }
+            for(let j=i;j<100;j++){
+                if(document.getElementById(i+1).getAttribute("class")=="mina"){
+                    i++
+                }else{
+                    break
+                }
+            }
+        }else{
+            document.getElementById(i).setAttribute("class","destapado")
         }
     }
-    
-    for(let i=numFilas^2;i>0;i--){
+    /*
+    for(let i=100;i>1;i--){
         console.log(i)
+        
         if(document.getElementById(i-1).getAttribute("class")=="mina"){
             if(document.getElementById(i).innerHTML==""){
                 document.getElementById(i).innerHTML="1"
             }else{
-
+                document.getElementById(i).innerHTML=Number(document.getElementById(i).innerHTML)+1
+                i--
             }
+            for(let j=i;j>1;j--){
+                if(document.getElementById(i-1).getAttribute("class")=="mina"){
+                    i--
+                }else{
+                    break
+                }
+            }
+        }else{
+            document.getElementById(i).setAttribute("class","destapado")
         }
-    }
+    }*/
     
    // document.getElementById(id).innerHTML=getNumberOfNearBombs(id)
     /*
