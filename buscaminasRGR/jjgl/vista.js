@@ -2,6 +2,7 @@ window.onload=inicio
 function inicio(){
     mostrarTablero()
     hideInput()
+    generarMinas()
 }
 function mostrarTablero(){
     let tabla=document.createElement("table")
@@ -14,7 +15,7 @@ function mostrarTablero(){
         tabla.appendChild(fila)
     }
     document.getElementById("idTablero").appendChild(tabla)
-    generado=true
+    console.log("Buscaminas creado")
 }
 function crearCasillero(fila,i,j){
     let casilla=document.createElement("td")
@@ -32,6 +33,16 @@ function hideInput(){
         x.style.display = "none";
     }
 }
-function tdClick(id){
-    console.log(id)
+function generarMinas(){ 
+    arrayMinas=[]
+    for(let i=0;i<100;i+=10){
+        posBomba=i+Math.round(Math.random() * 10);
+        
+        arrayMinas.push(posBomba)
+        document.getElementById(posBomba).setAttribute("class","minaOculta")
+        
+        //muestra las minas una vez generadas
+        document.getElementById(posBomba).innerHTML="💣"
+    }
+    console.log(arrayMinas)
 }
