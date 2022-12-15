@@ -1,7 +1,6 @@
 window.onload=inicio
 function inicio(){
     mostrarTablero()
-    hideInput()
     generarMinas()
 }
 function mostrarTablero(){
@@ -25,14 +24,7 @@ function crearCasillero(fila,i,j){
     casilla.style.backgroundColor="grey"
     fila.appendChild(casilla)
 }
-function hideInput(){
-    let x = document.getElementById("botonEnviar");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
+
 function generarMinas(){ 
     arrayMinas=[]
     for(let i=0;i<100;i+=10){
