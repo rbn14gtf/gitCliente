@@ -13,12 +13,16 @@ window.onload=iniciar
 function iniciar(){
     document.getElementById("enviar").addEventListener("click",validar,false)
 }
-function validar(){
-    if((isValidName())&&(isValidPhone())&&(isValidDate())&&(isMayorChecked())&&(isSexoSelected())){
+function validar(e){
+    if((isValidName())&&(isValidPhone())&&(isValidDate())&&(isMayorChecked())&&(isSexoSelected()&&(window.confirm("Deseas enviar el formulario?")))){
         alert("Validado")
+        e.preventDefault();
+
         return true
     }else{
         alert("No Validado")
+        //evita que se produzca la redireccion
+        e.preventDefault();
         return false
     }
 }

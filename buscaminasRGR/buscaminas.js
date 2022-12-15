@@ -20,7 +20,7 @@ function tdClick(id){
                 document.getElementById(id).setAttribute("class","destapado")
                 cleanCasillas(id)
                 casillasLimpiasPorDesmarcar--
-                console.log(casillasLimpiasPorDesmarcar)
+                //console.log(casillasLimpiasPorDesmarcar)
             }
             
         }
@@ -46,7 +46,7 @@ function generarMinas(){
     document.getElementById("minasRestantes").innerHTML=arrayMinas.length
     generado=true;    
     casillasLimpiasPorDesmarcar=numFilas*10-arrayMinas.length
-    console.log(casillasLimpiasPorDesmarcar)
+    //console.log(casillasLimpiasPorDesmarcar)
     //generarNumeros();
 }
 function generarNumeros(){ 
@@ -91,7 +91,27 @@ function getNumberOfNearBombs(id){
 }
 
 function cleanCasillas(id){
-    document.getElementById(id).innerHTML=getNumberOfNearBombs(id)
+    let fila=1;
+    for(let i=0;i<100;i++){
+        console.log(i)
+        
+        if(document.getElementById(i+1).getAttribute("class")=="mina"){
+            document.getElementById(i).innerHTML="1"
+        }
+    }
+    
+    for(let i=numFilas^2;i>0;i--){
+        console.log(i)
+        if(document.getElementById(i-1).getAttribute("class")=="mina"){
+            if(document.getElementById(i).innerHTML==""){
+                document.getElementById(i).innerHTML="1"
+            }else{
+
+            }
+        }
+    }
+    
+   // document.getElementById(id).innerHTML=getNumberOfNearBombs(id)
     /*
     if(document.getElementById(Number(id)+1).getAttribute("class")=="mina"){
         console.log(Number(id)+1)
