@@ -1,12 +1,34 @@
-const numFilas=10;
-//let casillasLimpiasPorDesmarcar=numFilas*10-arrayMinas.length
 let arrayMinas=[]
 let generado=false
 window.onload=inicio
-
+let number=100-arrayMinas.length
 function inicio(){
+    soloMinasMenosUna()
     generarMinas()
     hideInput()
+}
+function getCasillasLimpiasPorDesmarcar(){
+    number=100-arrayMinas.length
+    for(let i=1;i<=100;i++){
+        if(document.getElementById(i).getAttribute("class")=="destapado"){
+            number--
+        }
+
+    }
+    return number
+}
+function soloMinasMenosUna(){
+    for(let i=1;i<100;i++){
+        if(document.getElementById(i).getAttribute("class")=="minaOculta"){
+
+        }else{
+            document.getElementById(i).setAttribute("class","destapado")
+            document.getElementById(i).innerHTML=i
+
+        }
+    }
+    
+    document.getElementById(100).innerHTML=100
 }
 
 function tdClick(id){ 
@@ -18,11 +40,9 @@ function tdClick(id){
         if(arrayMinas.includes(Number(id))){
             document.getElementById(id).innerHTML="💣"
             document.getElementById(id).setAttribute("class","minaEncontrada")
-            finDelJuego(id)
+            finDelJuegoPerdiste(id)
         }else{
-            casillasLimpiasPorDesmarcar=100-arrayMinas.length
-
-            if(casillasLimpiasPorDesmarcar==0){
+            if(getCasillasLimpiasPorDesmarcar()==0){
                 finDelJuego()
             }
             else if(document.getElementById(id).getAttribute("class")=="destapado"){
@@ -30,6 +50,10 @@ function tdClick(id){
             }
             else{
                 document.getElementById(id).setAttribute("class","destapado")
+                console.log(getCasillasLimpiasPorDesmarcar())
+                if(getCasillasLimpiasPorDesmarcar()==0){
+                    finDelJuego()
+                }
                 //cleanCasillas(id)
             }
         }
@@ -38,7 +62,6 @@ function tdClick(id){
 function generarMinas(){ 
     arrayMinas=[]
     for(let i=1;i<=100;i+=10){
-        
         posBomba=i+Math.round(Math.random() * 10);
         if(posBomba>100){
             posBomba--;
@@ -53,16 +76,6 @@ function generarMinas(){
     console.log(arrayMinas)
     document.getElementById("minasRestantes").innerHTML=arrayMinas.length
     generado=true;    
-    casillasLimpiasPorDesmarcar=numFilas*10-arrayMinas.length
-    //console.log(casillasLimpiasPorDesmarcar)
-    //generarNumeros();
-}
-function generarNumeros(){ 
-    for(let i=0;i<100;i+=10){
-        if(arrayMinas[i]-document.getElementById(i)>3){
-
-        }
-    }
 }
 function hideInput(){
     let x = document.getElementById("botonEnviar");
@@ -166,7 +179,16 @@ function cleanCasillas(id){
     
 
 }
-function finDelJuego(id){
+function finDelJuego(){
+    destaparTodas()
+    for(let i=0;i<arrayMinas.length;i++){
+        //document.getElementById(arrayMinas[i]).removeAttribute("class")
+        document.getElementById(arrayMinas[i]).innerHTML="💣"
+        document.getElementById(arrayMinas[i]).setAttribute("class","mina")
+    }
+    generatePopUp(1)
+}   
+function finDelJuegoPerdiste(id){
     destaparTodas()
     for(let i=0;i<arrayMinas.length;i++){
         //document.getElementById(arrayMinas[i]).removeAttribute("class")
@@ -175,12 +197,19 @@ function finDelJuego(id){
         document.getElementById(id).setAttribute("class","minaEncontrada")
 
     }
-    generatePopUp()
+    generatePopUp(0)
 }   
-function generatePopUp() {
+function generatePopUp(result) {
     let popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
+    if(result==0){
+        document.getElementById("myPopup").innerHTML="Has Perdido"
+    }else{
+        document.getElementById("myPopup").innerHTML="Has Ganado"
+
+    }
 }
+
 function destaparTodas(){
     for(let i=1;i<=100;i++){
         document.getElementById(i).setAttribute("class","destapado")

@@ -7,12 +7,31 @@ td{
 	border-bottom: 2px solid #A9A9A9;
 	text-align: center;
 }
-
 #tablero{
     padding: 10px;
 }
 #numMinas{
     padding: 10px;
+}
+#content{
+    width: fit-content;
+    background-color: #BBBBBB;
+}
+.destapado{
+	border-left: 1px solid #A9A9A9;
+	border-top: 1px solid #A9A9A9;
+	border-right: 1px solid #D3D3D3;
+	border-bottom: 1px solid #D3D3D3;
+}
+.minaEncontrada{
+    background-color: red;
+}
+
+#inputMinas{
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Goudy Old Style";
 }
 #numMinas div{
     text-align: right;
@@ -24,28 +43,4 @@ td{
     border-right: 1px solid #D3D3D3;
     border-bottom: 1px solid #D3D3D3;
     padding: 4px;
-}
-
-#content{
-    width: fit-content;
-    background-color: #BBBBBB;
-}
-.destapado{
-	font-family: "Lucida Console","Courier New", Courier, monospace;
-	border-left: 1px solid #A9A9A9;
-	border-top: 1px solid #A9A9A9;
-	border-right: 1px solid #D3D3D3;
-	border-bottom: 1px solid #D3D3D3;
-	text-shadow: 1px 1px 2px #999999;
-}
-.minaEncontrada{
-    background-color: red;
-}
-
-#inputMinas{
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Goudy Old Style";
-
 }
