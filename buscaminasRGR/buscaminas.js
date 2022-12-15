@@ -2,6 +2,12 @@ const numFilas=10;
 //let casillasLimpiasPorDesmarcar=numFilas*10-arrayMinas.length
 let arrayMinas=[]
 let generado=false
+window.onload=inicio
+
+function inicio(){
+    document.getElementById("botonEnviar").addEventListener("click",generarMinas)
+}
+
 function tdClick(id){ 
     if(!generado){
         generarMinas();
@@ -25,10 +31,8 @@ function tdClick(id){
                 document.getElementById(id).setAttribute("class","destapado")
                 //cleanCasillas(id)
             }
-            
         }
     }
-    
 };  
 function generarMinas(){ 
     arrayMinas=[]
