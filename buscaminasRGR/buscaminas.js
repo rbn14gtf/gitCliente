@@ -11,7 +11,7 @@ function tdClick(id){
         if(arrayMinas.includes(Number(id))){
             document.getElementById(id).innerHTML="💣"
             document.getElementById(id).setAttribute("class","minaEncontrada")
-            finDelJuego();
+            finDelJuego()
         }else{
             if(casillasLimpiasPorDesmarcar==0){
                 finDelJuego()
@@ -33,7 +33,7 @@ function tdClick(id){
 };  
 function generarMinas(){ 
     arrayMinas=[]
-    for(let i=0;i<100;i+=10){
+    for(let i=1;i<=100;i+=10){
         
         posBomba=i+Math.round(Math.random() * 10);
         if(posBomba>100){
