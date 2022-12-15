@@ -14,13 +14,12 @@ function mostrarTablero(){
         tabla.appendChild(fila)
     }
     document.getElementById("idTablero").appendChild(tabla)
-    console.log("Buscaminas creado")
 }
 function crearCasillero(fila,i,j){
     let casilla=document.createElement("td")
-    casilla.setAttribute("id",10*i+j)
+    casilla.setAttribute("id",10*i+j+1)
     casilla.setAttribute("onclick","tdClick(id)")
-    casilla.innerHTML=10*i+j
+    casilla.innerHTML=10*i+j+1
     casilla.style.backgroundColor="grey"
     fila.appendChild(casilla)
 }
