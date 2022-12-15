@@ -22,7 +22,6 @@ function crearCasillero(fila,i,j){
     casilla.setAttribute("id",10*i+j)
     casilla.setAttribute("onclick","tdClick(id)")
     // casilla.innerHTML=10*i+j
-    // casilla.style.backgroundColor="grey"
     fila.appendChild(casilla)
 }
 function soloMinasMenosUna(){
