@@ -180,3 +180,25 @@ function destaparTodas(){
     }
 }
   
+
+
+function mostrarTablero(){
+    let tabla=document.createElement("table")
+    tabla.setAttribute("id","idTabla")
+    for(let i=0;i<10;i++){
+        let fila=document.createElement("tr");
+        for(let j=0;j<10;j++){
+            crearCasillero(fila,i,j)
+        }
+        tabla.appendChild(fila)
+    }
+    document.getElementById("idTablero").appendChild(tabla)
+}
+function crearCasillero(fila,i,j){
+    let casilla=document.createElement("td")
+    casilla.setAttribute("id",`idCelda_${i}_${j}`)
+    //casilla.innerHTML=`[${10*i}+${j}]`
+    casilla.innerHTML=10*i+j
+    casilla.style.backgroundColor="grey"
+    fila.appendChild(casilla)
+}
