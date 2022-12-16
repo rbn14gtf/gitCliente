@@ -1,3 +1,8 @@
+body{
+    zoom: normal;
+
+}
+
 td{
     width: 24px;
     height: 24px;
@@ -53,7 +58,8 @@ td{
     margin: auto;
     text-align: center;
     font-family: "Goudy Old Style";
-    font-size: x-large;
+    font-size: xx-large;
+    font-style: italic;
 }
 
 #content{

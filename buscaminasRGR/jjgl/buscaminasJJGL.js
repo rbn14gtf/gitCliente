@@ -3,8 +3,6 @@ let arrayMinas=[]
 function inicio(){
     mostrarTablero()
     escribirMinas()
-    //document.addEventListener('contextmenu', event => event.preventDefault());
-
     // soloMinasMenosUna()
 }
 function mostrarTablero(){
