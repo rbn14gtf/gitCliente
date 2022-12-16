@@ -82,22 +82,43 @@ function tdClick(id){
         else{
             document.getElementById(id).setAttribute("class","destapado")
             console.log(getCasillasLimpiasPorDesmarcar())
-            cleanCasilla(Number(id))
+            cleanCasillas(Number(id))
             if(getCasillasLimpiasPorDesmarcar()==0){
                 finDelJuego()
             }
         }
     }
 };  
+function cleanCasillas(id){
+    
+   // for(let i=0;i<100;i++){
+        //if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){
+            document.getElementById(id).innerHTML=getNumMinas(id)
+            
+        //}else{
+            
+        //}
 
-function cleanCasilla(id){
+    //}
+}
+function getNumMinas(id){
     let numMinasCasilla=0
-    if(id-1>=0){
+    /*if((id-1>=0)&&(!estaEnLaSiguienteLinea(id))){//izquierda
         if(document.getElementById(id-1).getAttribute("class")=="minaOculta"){//izquierda
             numMinasCasilla++
         }
-    }
-    if(id+1<100){
+    }   
+    if((id+1<100)&&(!estaEnLaSiguienteLinea(id))){//derecha
+        if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){//derecha
+            numMinasCasilla++
+        }
+    }*/
+    if(id-1>=0){//izquierda
+        if(document.getElementById(id-1).getAttribute("class")=="minaOculta"){//izquierda
+            numMinasCasilla++
+        }
+    }   
+    if(id+1<100){//derecha
         if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){//derecha
             numMinasCasilla++
         }
@@ -134,24 +155,29 @@ function cleanCasilla(id){
     }
     switch(numMinasCasilla){
         case 0:
-            document.getElementById(id).innerHTML=numMinasCasilla
             document.getElementById(id).style.color="black"
-            break;
+            return numMinasCasilla
         case 1:
-            document.getElementById(id).innerHTML=numMinasCasilla
             document.getElementById(id).style.color="blue"
-            break;
+            return numMinasCasilla
         case 2:
-            document.getElementById(id).innerHTML=numMinasCasilla
             document.getElementById(id).style.color="green"
-            break;
+            return numMinasCasilla
         case 3:
-            document.getElementById(id).innerHTML=numMinasCasilla
             document.getElementById(id).style.color="red"
-            break;
+            return numMinasCasilla
         default:
-            document.getElementById(id).innerHTML=numMinasCasilla
-            break;
+            return numMinasCasilla
+    }
+}
+function estaEnLaSiguienteLinea(id){
+    if(id+1>100||id-1<0){
+        return true
+    }
+    if((Math.floor(id/10))!=(Math.floor((id+1)/10))){
+        return true
+    }else{
+        return false
     }
 }
 function finDelJuego(){
