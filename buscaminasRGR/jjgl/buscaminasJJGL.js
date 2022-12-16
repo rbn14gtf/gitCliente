@@ -3,6 +3,8 @@ let arrayMinas=[]
 function inicio(){
     mostrarTablero()
     escribirMinas()
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
     // soloMinasMenosUna()
 }
 function mostrarTablero(){
@@ -21,6 +23,7 @@ function crearCasillero(fila,i,j){
     let casilla=document.createElement("td")
     casilla.setAttribute("id",10*i+j)
     casilla.setAttribute("onclick","tdClick(id)")
+    casilla.setAttribute("oncontextmenu","ponerBandera(id)")
     // casilla.innerHTML=10*i+j
     fila.appendChild(casilla)
 }
@@ -35,6 +38,17 @@ function soloMinasMenosUna(){
         }
     }
     document.getElementById(99).removeAttribute("class")
+}
+function ponerBandera(id){
+
+    if(document.getElementById(id).innerHTML=="🚩"){
+        document.getElementById(id).innerHTML=""
+    }else if(document.getElementById(id).getAttribute("class")=="destapado"){
+        
+    }
+    else{
+        document.getElementById(id).innerHTML="🚩"
+    }
 }
 function getMinasAleatorias(){
     let array=[]
@@ -68,6 +82,7 @@ function getCasillasLimpiasPorDesmarcar(){
 }
 
 function tdClick(id){ 
+    
     if(arrayMinas.includes(Number(id))){
         document.getElementById(id).innerHTML="💣"
         document.getElementById(id).setAttribute("class","minaEncontrada")
