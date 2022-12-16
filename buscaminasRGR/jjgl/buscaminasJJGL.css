@@ -22,10 +22,11 @@ td{
     background-color: red;
 }
 #header div{
-    border-left: 1px solid #A9A9A9;
+    border: 1px solid #D3D3D3;
+    /* border-left: 1px solid #A9A9A9;
     border-top: 1px solid #A9A9A9;
     border-right: 1px solid #D3D3D3;
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid #D3D3D3; */
     padding: 10px;
 
 }
