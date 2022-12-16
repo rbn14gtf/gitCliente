@@ -260,7 +260,6 @@ function generatePopUp(result) {
 
     }
 }
-
 function destaparTodas(){
     for(let i=0;i<100;i++){
         document.getElementById(i).setAttribute("class","destapado")
