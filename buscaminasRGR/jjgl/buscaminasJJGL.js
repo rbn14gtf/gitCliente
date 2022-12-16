@@ -39,16 +39,29 @@ function soloMinasMenosUna(){
     document.getElementById(99).removeAttribute("class")
 }
 function ponerBandera(id){
-
-    if(document.getElementById(id).innerHTML=="🚩"){
-        document.getElementById(id).innerHTML=""
+    if(clickSobreBandera(id)){
+        quitarBandera(id)
     }else if(document.getElementById(id).getAttribute("class")=="destapado"){
         
     }
     else{
         document.getElementById(id).innerHTML="🚩"
-        document.getElementById("numeroBanderas").innerHTML=Number(document.getElementById("numeroBanderas").innerHTML)+1
+        document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
     }
+}
+function quitarBandera(id){
+    document.getElementById(id).innerHTML=""
+    document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
+
+}
+function getNumberOfFlags(){
+    let num=0
+    for(let i=0;i<100;i++){
+        if(document.getElementById(i).innerHTML=="🚩"){
+            num++
+        }
+    }
+    return num
 }
 function getMinasAleatorias(){
     let array=[]
@@ -83,7 +96,7 @@ function getCasillasLimpiasPorDesmarcar(){
 }
 
 function tdClick(id){ 
-    
+    document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
     if(arrayMinas.includes(Number(id))){
         document.getElementById(id).innerHTML="💣"
         document.getElementById(id).setAttribute("class","minaEncontrada")
@@ -95,6 +108,9 @@ function tdClick(id){
         else if(document.getElementById(id).getAttribute("class")=="destapado"){
             Event.preventDefault
         }
+        else if(clickSobreBandera(id)){
+            quitarBandera(id)
+        }
         else{
             document.getElementById(id).setAttribute("class","destapado")
             console.log(getCasillasLimpiasPorDesmarcar())
@@ -105,9 +121,17 @@ function tdClick(id){
         }
     }
 };  
+function clickSobreBandera(id){
+    if(document.getElementById(id).innerHTML=="🚩"){
+        return true
+    }else{
+        return false
+    }
+
+}
 function cleanCasillas(id){
     if(getNumMinas(id)==0){
-
+        document.getElementById(id).innerHTML=""
     }else{
         document.getElementById(id).innerHTML=getNumMinas(id)
 
