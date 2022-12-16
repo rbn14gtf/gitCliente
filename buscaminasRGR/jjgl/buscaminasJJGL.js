@@ -90,16 +90,22 @@ function tdClick(id){
     }
 };  
 function cleanCasillas(id){
-    
-   // for(let i=0;i<100;i++){
-        //if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){
+    if(getNumMinas(id)==0){
+
+    }else{
+        document.getElementById(id).innerHTML=getNumMinas(id)
+
+    }
+    /*
+    for(let i=0;i<100;i++){
+        if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){
             document.getElementById(id).innerHTML=getNumMinas(id)
             
-        //}else{
+        }else{
             
-        //}
+        }
 
-    //}
+    }*/
 }
 function getNumMinas(id){
     let numMinasCasilla=0
