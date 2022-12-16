@@ -10,8 +10,26 @@ td{
 #idTablero{
     padding: 10px;
 }
+#recuento{
+    padding: 10px;
+    background-color: darkgrey;
+    border: 1px solid #A9A9A9;
+}
+#down{
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    font-weight: bold;
+    text-align: center;
 
-.destapado{
+}
+#banderas{
+    float: left;
+}
+#minas{
+    float: right;
+}
+s.destapado{
 	border-left: 1px solid #A9A9A9;
 	border-top: 1px solid #A9A9A9;
 	border-right: 1px solid #D3D3D3;
@@ -23,12 +41,7 @@ td{
 }
 #header div{
     border: 1px solid #D3D3D3;
-    /* border-left: 1px solid #A9A9A9;
-    border-top: 1px solid #A9A9A9;
-    border-right: 1px solid #D3D3D3;
-    border-bottom: 1px solid #D3D3D3; */
     padding: 10px;
-
 }
 #title{
     background-color: darkgrey;

@@ -3,7 +3,7 @@ let arrayMinas=[]
 function inicio(){
     mostrarTablero()
     escribirMinas()
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    //document.addEventListener('contextmenu', event => event.preventDefault());
 
     // soloMinasMenosUna()
 }
@@ -24,6 +24,7 @@ function crearCasillero(fila,i,j){
     casilla.setAttribute("id",10*i+j)
     casilla.setAttribute("onclick","tdClick(id)")
     casilla.setAttribute("oncontextmenu","ponerBandera(id)")
+    casilla.addEventListener('contextmenu', event => event.preventDefault())
     // casilla.innerHTML=10*i+j
     fila.appendChild(casilla)
 }
@@ -48,6 +49,7 @@ function ponerBandera(id){
     }
     else{
         document.getElementById(id).innerHTML="🚩"
+        document.getElementById("numeroBanderas").innerHTML=Number(document.getElementById("numeroBanderas").innerHTML)+1
     }
 }
 function getMinasAleatorias(){
@@ -69,6 +71,7 @@ function escribirMinas(){
         //muestra las minas una vez generadas
         document.getElementById(arrayMinas[i]).innerHTML="💣"
     }
+    document.getElementById("numeroBombas").innerHTML=arrayMinas.length
 }
 function getCasillasLimpiasPorDesmarcar(){
     number=100-arrayMinas.length
