@@ -54,6 +54,11 @@ function quitarBandera(id){
     document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
 
 }
+function pulsarBandera(id){
+    document.getElementById(id).innerHTML=""
+    document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
+    tdClick(id)
+}
 function getNumberOfFlags(){
     let num=0
     for(let i=0;i<100;i++){
@@ -109,7 +114,7 @@ function tdClick(id){
             Event.preventDefault
         }
         else if(clickSobreBandera(id)){
-            quitarBandera(id)
+            pulsarBandera(id)
         }
         else{
             document.getElementById(id).setAttribute("class","destapado")
