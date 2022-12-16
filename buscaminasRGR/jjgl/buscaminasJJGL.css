@@ -21,20 +21,13 @@ td{
 .minaEncontrada{
     background-color: red;
 }
-
-#inputMinas{
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Goudy Old Style";
-}
 #header div{
     border-left: 1px solid #A9A9A9;
     border-top: 1px solid #A9A9A9;
     border-right: 1px solid #D3D3D3;
     border-bottom: 1px solid #D3D3D3;
     padding: 10px;
-    
+
 }
 #title{
     background-color: darkgrey;
@@ -43,7 +36,6 @@ td{
     text-align: center;
     font-family: "Goudy Old Style";
     font-size: x-large;
-    
 }
 
 #content{

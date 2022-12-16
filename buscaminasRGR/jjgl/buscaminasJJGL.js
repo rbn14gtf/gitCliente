@@ -2,7 +2,7 @@ window.onload=inicio
 let arrayMinas=[]
 function inicio(){
     mostrarTablero()
-    generarMinas()
+    escribirMinas()
     // soloMinasMenosUna()
 }
 function mostrarTablero(){
@@ -36,20 +36,24 @@ function soloMinasMenosUna(){
     }
     document.getElementById(99).removeAttribute("class")
 }
-function generarMinas(){ 
-    arrayMinas=[]
+function getMinasAleatorias(){
+    let array=[]
     for(let i=0;i<100;i+=10){
         posBomba=i+Math.round(Math.random() * 10);
         if(posBomba==100){
             posBomba--
         }
-        
-        arrayMinas.push(posBomba)
-        //console.log(posBomba)
-        document.getElementById(posBomba).setAttribute("class","minaOculta")
-        
+        array.push(posBomba)
+    }
+    return array;
+}
+function escribirMinas(){ 
+    arrayMinas=getMinasAleatorias()
+    console.log(arrayMinas)
+    for(let i=0;i<arrayMinas.length;i++){
+        document.getElementById(arrayMinas[i]).setAttribute("class","minaOculta")
         //muestra las minas una vez generadas
-        document.getElementById(posBomba).innerHTML="💣"
+        document.getElementById(arrayMinas[i]).innerHTML="💣"
     }
 }
 function getCasillasLimpiasPorDesmarcar(){
