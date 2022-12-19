@@ -50,12 +50,20 @@ function ponerBandera(id){
     }
 }
 function quitarBandera(id){
+    document.getElementById(id).innerHTML=""
+    document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
+
+    /*
+    //solo valido si se ven las minas
     if(document.getElementById(id).getAttribute("class")=="minaOculta"){
         document.getElementById(id).innerHTML="💣"
     }else{
         document.getElementById(id).innerHTML=""
         document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
     }
+
+}
+    */
 
 }
 function pulsarBandera(id){
@@ -89,7 +97,7 @@ function escribirMinas(){
     for(let i=0;i<arrayMinas.length;i++){
         document.getElementById(arrayMinas[i]).setAttribute("class","minaOculta")
         //muestra las minas una vez generadas
-        document.getElementById(arrayMinas[i]).innerHTML="💣"
+        //document.getElementById(arrayMinas[i]).innerHTML="💣"
     }
     document.getElementById("numeroBombas").innerHTML=arrayMinas.length
 }
