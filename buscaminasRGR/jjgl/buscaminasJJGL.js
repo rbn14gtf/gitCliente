@@ -227,7 +227,7 @@ function getNumMinas(id){
             document.getElementById(id).style.color="green"
             return numMinasCasilla
         case 3:
-            document.getElementById(id).style.color="red"
+            document.getElementById(id).style.color="brown"
             return numMinasCasilla
         default:
             return numMinasCasilla
