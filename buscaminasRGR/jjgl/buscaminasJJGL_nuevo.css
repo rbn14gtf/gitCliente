@@ -56,6 +56,11 @@ td{
     font-style: italic;
     font-weight: bold;
 }
+#title:hover{
+    background-color: rgba(255, 145, 0, 0.37);
+    border-radius: 100px;
+    width: fit-content;
+}
 
 #content{
     margin: auto;
