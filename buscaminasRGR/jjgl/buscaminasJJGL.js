@@ -50,8 +50,12 @@ function ponerBandera(id){
     }
 }
 function quitarBandera(id){
-    document.getElementById(id).innerHTML=""
-    document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
+    if(document.getElementById(id).getAttribute("class")=="minaOculta"){
+        document.getElementById(id).innerHTML="💣"
+    }else{
+        document.getElementById(id).innerHTML=""
+        document.getElementById("numeroBanderas").innerHTML=getNumberOfFlags()
+    }
 
 }
 function pulsarBandera(id){
