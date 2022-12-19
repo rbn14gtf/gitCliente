@@ -15,8 +15,6 @@ td{
 }
 #recuento{
     padding: 10px;
-    background-color: darkgrey;
-    border: 1px solid #A9A9A9;
 }
 #down{
     padding: 10px;
@@ -37,21 +35,19 @@ td{
     visibility: hidden;
 }
 .destapado{
-	border-left: 1px solid #A9A9A9;
-	border-top: 1px solid #A9A9A9;
-	border-right: 1px solid #D3D3D3;
-	border-bottom: 1px solid #D3D3D3;
+	border-left: 0.5px solid #A9A9A9;
+	border-top: 0.5px solid #A9A9A9;
+	border-right: 0.5px solid #D3D3D3;
+	border-bottom: 0.5px solid #D3D3D3;
     font-weight: bold;
 }
 .minaEncontrada{
     background-color: red;
 }
 #header div{
-    border: 1px solid #D3D3D3;
     padding: 10px;
 }
 #title{
-    background-color: darkgrey;
     width: 90%;
     margin: auto;
     text-align: center;
@@ -63,6 +59,6 @@ td{
 #content{
     margin: auto;
     width: fit-content;
-    background-color: #BBBBBB;
-    border: 20px groove tomato;
+    border: 15px groove rgb(255, 77, 46);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
