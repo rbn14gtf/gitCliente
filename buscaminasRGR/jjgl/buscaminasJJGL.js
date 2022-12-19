@@ -97,7 +97,7 @@ function escribirMinas(){
     for(let i=0;i<arrayMinas.length;i++){
         document.getElementById(arrayMinas[i]).setAttribute("class","minaOculta")
         //muestra las minas una vez generadas
-        //document.getElementById(arrayMinas[i]).innerHTML="💣"
+        document.getElementById(arrayMinas[i]).innerHTML="💣"
     }
     document.getElementById("numeroBombas").innerHTML=arrayMinas.length
 }
