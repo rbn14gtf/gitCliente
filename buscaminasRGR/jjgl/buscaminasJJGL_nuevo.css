@@ -41,6 +41,30 @@ td{
 	border-bottom: 0.5px solid #D3D3D3;
     font-weight: bold;
 }
+.destapado.c1{
+    color: #00ffff;
+}
+.destapado.c2{
+    color: #0099ff;
+}
+.destapado.c3{
+    color: #0033ff;
+}
+.destapado.c4{
+    color: #00ff33;
+}
+.destapado.c5{
+    color: #ccff00;
+}
+.destapado.c6{
+    color: #ffcc00;
+}
+.destapado.c7{
+    color: #ff3300;
+}
+.destapado.c8{
+    color: #660000;
+}
 .minaEncontrada{
     background-color: red;
 }

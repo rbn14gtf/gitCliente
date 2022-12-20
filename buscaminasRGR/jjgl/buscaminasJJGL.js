@@ -265,7 +265,6 @@ function getNumMinas(id){
 function destaparCasillasVacias(id){
     let resto=0
     for(let j=0;j<100;j=j+10){
-
         for(let i=j;i<10;i++){
             console.log(i)
             resto=i%10
@@ -323,7 +322,7 @@ function destaparTodas(){
         if(document.getElementById(i).innerHTML==""){
             document.getElementById(i).setAttribute("class","destapado")
         }else{
-            
+
         }
     }
 }
