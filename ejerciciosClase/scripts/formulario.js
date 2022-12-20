@@ -26,7 +26,7 @@ function validar(e){
         return false
     }
 }
-
+/*
 function isValidName(){
     if((document.getElementById("nombre").value)==""){
         error(document.getElementById("nombre"))
@@ -35,12 +35,25 @@ function isValidName(){
         limpiarError(document.getElementById("nombre"))
         return true
     }
-}
-function isValidPhone(){
-    if((document.getElementById("telefono").value=="")||isNaN(document.getElementById("telefono").value)){
-        error(document.getElementById("telefono"))
+}*/
+function isValidName(){
+    let nombre=document.getElementById("nombre")
+    if(!nombre.checkValidity()){
+        error(nombre)
         return false
     }else{
+        limpiarError(nombre)
+        return true
+    }
+}
+function isValidPhone(){
+    let telefono=document.getElementById("telefono")
+
+    if((telefono.value=="")||isNaN(telefono.value)){
+        error(telefono)
+        return false
+    }else{
+        limpiarError(telefono)
         return true
     }
 }
