@@ -28,9 +28,10 @@ function validar(e){
 }
 
 function isValidName(){
-    if(document.getElementById("nombre").value==""){
+    if((document.getElementById("nombre").value)==""){
         return false
     }else{
+        error(document.getElementById("nombre"))
         return true
     }
 }
@@ -75,4 +76,12 @@ function isSexoSelected(){
         }
     }
     return false;
+}
+
+function error(elemento){
+    elemento.className="error"
+    elemento.focus()
+}
+function limpiarError(elemento){
+    elemento.className=""
 }
