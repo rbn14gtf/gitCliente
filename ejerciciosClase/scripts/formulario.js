@@ -29,14 +29,16 @@ function validar(e){
 
 function isValidName(){
     if((document.getElementById("nombre").value)==""){
+        error(document.getElementById("nombre"))
         return false
     }else{
-        error(document.getElementById("nombre"))
+        limpiarError(document.getElementById("nombre"))
         return true
     }
 }
 function isValidPhone(){
     if((document.getElementById("telefono").value=="")||isNaN(document.getElementById("telefono").value)){
+        error(document.getElementById("telefono"))
         return false
     }else{
         return true
@@ -47,13 +49,22 @@ function isValidDate(){
     let mes=document.getElementById("mes").value
     let anyo=document.getElementById("anyo").value
     if(isNaN(dia)||(isNaN(mes)||(isNaN(anyo)))){
+        error(document.getElementById("dia"))
+        error(document.getElementById("mes"))
+        error(document.getElementById("anyo"))
         return false
     }
     else if((dia=="")||(mes=="")||(anyo=="")){
+        error(document.getElementById("dia"))
+        error(document.getElementById("mes"))
+        error(document.getElementById("anyo"))
         return false
     }else{
         let fecha=new Date(anyo,mes,dia);
         if(isNaN(fecha)){
+            error(document.getElementById("dia"))
+            error(document.getElementById("mes"))
+            error(document.getElementById("anyo"))
             return false
         }else{
             return true
@@ -64,6 +75,7 @@ function isMayorChecked(){
     if(document.getElementById("mayor").checked){
         return true
     }else{
+        document.getElementById("mayor").focus()
         return false
     }
 }
