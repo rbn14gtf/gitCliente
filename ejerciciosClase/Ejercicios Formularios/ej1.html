@@ -15,15 +15,19 @@
             margin: auto;
             width: fit-content;
         }
+        .error{
+            border: 3px solid red;
+        }
+            
     </style>
     <body>
-        <form action="">
+        <form action="" method="post">
             <fieldset>
                 <legend style="text-align: left;">Datos Personales</legend>
                 <label for="nombre">Introduce tu nombre:</label>
-                <input type="text" name="nombre" id="nombre" required><br>
+                <input type="text" name="nombre" id="nombre" required value="Ruben"><br>
                 <label for="mensaje">Mensaje</label><br>
-                <textarea name="mensaje" id="" cols="70" rows="10" minlength="2" maxlength="500"></textarea>
+                <textarea name="mensaje" id="mensaje" cols="70" rows="10" minlength="2" maxlength="500">FDSF</textarea>
             </fieldset>
         <div id="radios">
             <label for="color">Elige un color</label><br>
@@ -43,19 +47,19 @@
         </div><br>
         <div id="dias">
             <label for="dias">Selecciona los dias de disponibilidad</label><br>
-            <input type="checkbox" name="lunes" id="lunes">
+            <input type="checkbox" name="dias" id="lunes">
             <label for="lunes">Lunes</label><br>
             
-            <input type="checkbox" name="martes" id="martes">
+            <input type="checkbox" name="dias" id="martes">
             <label for="martes">Martes</label><br>
 
-            <input type="checkbox" name="miercoles" id="miercoles">
+            <input type="checkbox" name="dias" id="miercoles">
             <label for="miercoles">Miércoles</label><br>
             
-            <input type="checkbox" name="jueves" id="jueves">
+            <input type="checkbox" name="dias" id="jueves">
             <label for="jueves">Jueves</label><br>
 
-            <input type="checkbox" name="viernes" id="viernes">
+            <input type="checkbox" name="dias" id="viernes">
             <label for="viernes">Viernes</label><br>
         </div><br>
         <div id="diasPref">

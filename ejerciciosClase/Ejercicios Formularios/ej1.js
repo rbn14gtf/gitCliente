@@ -8,9 +8,10 @@ function redirigir(){
     window.location.href = "https://google.com";
 }
 function validar(e){
-    if((isValidName())&&(isValidPhone())&&(isValidDate())&&(isMayorChecked())&&(isSexoSelected()&&(window.confirm("Deseas enviar el formulario?")))){
+    if((isValidName())&&(isValidTa())&&(isValidDias())&&(window.confirm("Deseas enviar el formulario?"))){
         alert("Validado")
-        e.preventDefault();
+        window.location.reload();
+        //e.preventDefault();
 
         return true
     }else{
@@ -28,6 +29,30 @@ function isValidName(){
     }else{
         limpiarError(nombre)
         return true
+    }
+}
+function isValidTa(){
+    let mensaje=document.getElementById("mensaje")
+    if(!mensaje.checkValidity()){
+        error(mensaje)
+        return false
+    }else{
+        limpiarError(mensaje)
+        return true
+    }
+}
+function isValidDias(){
+    let dias=document.getElementsByName("dias")
+    let cont=0
+    for (let i=0;i<dias.length;i++){
+        if(dias[i].checked){
+            cont++
+        }
+    }
+    if(cont>=2){
+        return true
+    }else{
+        return false
     }
 }
 
