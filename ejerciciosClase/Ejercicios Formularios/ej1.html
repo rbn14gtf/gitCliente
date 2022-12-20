@@ -25,9 +25,9 @@
             <fieldset>
                 <legend style="text-align: left;">Datos Personales</legend>
                 <label for="nombre">Introduce tu nombre:</label>
-                <input type="text" name="nombre" id="nombre" required value="Ruben"><br>
+                <input type="text" name="nombre" id="nombre" onclick="pideNombre()" required ><br>
                 <label for="mensaje">Mensaje</label><br>
-                <textarea name="mensaje" id="mensaje" cols="70" rows="10" minlength="2" maxlength="500">FDSF</textarea>
+                <textarea name="mensaje" id="mensaje" onclick="pideMensaje()" cols="70" rows="10" minlength="2" maxlength="500">FDSF</textarea>
             </fieldset>
         <div id="radios">
             <label for="color">Elige un color</label><br>
@@ -47,20 +47,20 @@
         </div><br>
         <div id="dias">
             <label for="dias">Selecciona los dias de disponibilidad</label><br>
-            <input type="checkbox" name="dias" id="lunes">
-            <label for="lunes">Lunes</label><br>
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Lunes">
+            <label for="Lunes">Lunes</label><br>
             
-            <input type="checkbox" name="dias" id="martes">
-            <label for="martes">Martes</label><br>
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Martes">
+            <label for="Martes">Martes</label><br>
 
-            <input type="checkbox" name="dias" id="miercoles">
-            <label for="miercoles">Miércoles</label><br>
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Miércoles">
+            <label for="Miércoles">Miércoles</label><br>
             
-            <input type="checkbox" name="dias" id="jueves">
-            <label for="jueves">Jueves</label><br>
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Jueves">
+            <label for="Jueves">Jueves</label><br>
 
-            <input type="checkbox" name="dias" id="viernes">
-            <label for="viernes">Viernes</label><br>
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Viernes">
+            <label for="Viernes">Viernes</label><br>
         </div><br>
         <div id="diasPref">
             <label for="diasPref">Selecciona el dia preferente</label>

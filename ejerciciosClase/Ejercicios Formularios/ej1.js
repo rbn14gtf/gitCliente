@@ -84,6 +84,20 @@ function cambiarFondo(id){
 }
 
 
+function pideNombre(){
+    document.getElementById("nombre").value=prompt("Introduce tu nombre","")
+}
+function pideMensaje(){
+    document.getElementById("mensaje").value=prompt("Introduce un mensaje","")
+}
+function updateDiaPref(){
+    let dias=document.getElementsByName("dias")
+    for(let i=0;i<dias.length;i++){
+        if(dias[i].checked){
+            document.getElementById("diaPref").value=dias[i]
+        }
+    }
+}
 function error(elemento){
     elemento.className="error"
     elemento.focus()
