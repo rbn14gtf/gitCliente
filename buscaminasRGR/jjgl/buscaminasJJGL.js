@@ -153,6 +153,7 @@ function cleanCasillas(id){
         document.getElementById(id).innerHTML=getNumMinas(id)
 
     }
+    destaparCasillasVacias(id)
     /*
     for(let i=0;i<100;i++){
         if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){
@@ -194,48 +195,48 @@ function getNumMinas(id){
     if(id+10<100){//abajo
         if(document.getElementById(id+10).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
-            console.log("id+10")
-            console.log(id+10)
+            // console.log("id+10")
+            // console.log(id+10)
 
         }
     }
     if(id-10>=0){//arriba
         if(document.getElementById(id-10).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
-            console.log("id-10")
-            console.log(id-10)
+            // console.log("id-10")
+            // console.log(id-10)
 
         }
     }
     if(id+9<100){//abajo izquierda
         if(document.getElementById(id+9).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
-            console.log("id+9")
-            console.log(id+9)
+            // console.log("id+9")
+            // console.log(id+9)
 
         }
     }
     if(id+11<100){//abajo derecha
         if(document.getElementById(id+11).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
-            console.log("id+11")
-            console.log(id+11)
+            // console.log("id+11")
+            // console.log(id+11)
 
         }
     }
     if(id-9>=0){//arriba derecha
         if(document.getElementById(id-9).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
-            console.log("id-9")
-            console.log(id-9)
+            // console.log("id-9")
+            // console.log(id-9)
 
         }
     }
     if(id-11>=0){//arriba izquierda
         if(document.getElementById(id-11).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
-            console.log("id-11")
-            console.log(id-11)
+            // console.log("id-11")
+            // console.log(id-11)
 
         }
     }
@@ -254,6 +255,23 @@ function getNumMinas(id){
             return numMinasCasilla
         default:
             return numMinasCasilla
+    }
+}
+function destaparCasillasVacias(id){
+    let resto=0
+    for(let j=0;j<100;j=j+10){
+
+        for(let i=j;i<10;i++){
+            console.log(i)
+            resto=i%10
+            if(document.getElementById(i+1).innerHTML==""){
+                document.getElementById(i).setAttribute("class","destapado")
+            }else{
+                break
+            }
+            // console.log(i)
+            // console.log(resto)
+        }
     }
 }
 function estaEnOtraLinea(id){
