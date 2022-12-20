@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validacion</title>
+</head>
+<body>
+    <input type="button" id="enviar" value="Enviar">
+    <script>
+        
+        window.onload=iniciar
+
+        function iniciar(){
+            document.getElementById("enviar").addEventListener("click",validar)
+        }
+        function validar(){
+            let elemento=document.getElementById("nombre")
+            if(!elemento.checkValidity()){
+                error(elemento)
+                return false
+            }
+            return true
+        }
+       
+    </script>
+    
+</body>
+</html>
