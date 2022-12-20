@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Ejercicio Formularios 1</title>
+        <script src="ej1.js"></script>
     </head>
     <style>
         form{
@@ -42,10 +43,10 @@
         </div><br>
         <div id="dias">
             <label for="dias">Selecciona los dias de disponibilidad</label><br>
-            <input type="checkbox" name="lunes" id="lunes" checked>
+            <input type="checkbox" name="lunes" id="lunes">
             <label for="lunes">Lunes</label><br>
             
-            <input type="checkbox" name="martes" id="martes" checked>
+            <input type="checkbox" name="martes" id="martes">
             <label for="martes">Martes</label><br>
 
             <input type="checkbox" name="miercoles" id="miercoles">
@@ -83,17 +84,5 @@
             
         </div>
     </form>
-        <script>
-
-            window.onload=inicio
-
-            function inicio(){
-                document.getElementById("google").addEventListener("click",redirigir)
-            }
-            function redirigir(){
-                window.location.href = "https://google.com";
-            }
-
-        </script>
     </body>
 </html>
