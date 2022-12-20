@@ -130,7 +130,7 @@ function tdClick(id){
         }
         else{
             document.getElementById(id).setAttribute("class","destapado")
-            console.log(getCasillasLimpiasPorDesmarcar())
+            // console.log(getCasillasLimpiasPorDesmarcar())
             cleanCasillas(Number(id))
             if(getCasillasLimpiasPorDesmarcar()==0){
                 finDelJuego()
@@ -166,14 +166,19 @@ function cleanCasillas(id){
 }
 function getNumMinas(id){
     let numMinasCasilla=0
-    /*if((id-1>=0)&&(!estaEnLaSiguienteLinea(id))){//izquierda
+    /*if((id-1>=0)&&(!estaEnOtraLinea(Number(id-1)))){//izquierda
         if(document.getElementById(id-1).getAttribute("class")=="minaOculta"){//izquierda
+            console.log("id-1")
+            console.log(id-1)
             numMinasCasilla++
         }
     }   
-    if((id+1<100)&&(!estaEnLaSiguienteLinea(id))){//derecha
+    if((id+1<100)&&(!estaEnOtraLinea(Number(id+1)))){//derecha
         if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){//derecha
             numMinasCasilla++
+            console.log("id+1")
+            console.log(id+1)
+
         }
     }*/
     if(id-1>=0){//izquierda
@@ -189,31 +194,49 @@ function getNumMinas(id){
     if(id+10<100){//abajo
         if(document.getElementById(id+10).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
+            console.log("id+10")
+            console.log(id+10)
+
         }
     }
     if(id-10>=0){//arriba
         if(document.getElementById(id-10).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
+            console.log("id-10")
+            console.log(id-10)
+
         }
     }
     if(id+9<100){//abajo izquierda
         if(document.getElementById(id+9).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
+            console.log("id+9")
+            console.log(id+9)
+
         }
     }
     if(id+11<100){//abajo derecha
         if(document.getElementById(id+11).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
+            console.log("id+11")
+            console.log(id+11)
+
         }
     }
     if(id-9>=0){//arriba derecha
         if(document.getElementById(id-9).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
+            console.log("id-9")
+            console.log(id-9)
+
         }
     }
     if(id-11>=0){//arriba izquierda
         if(document.getElementById(id-11).getAttribute("class")=="minaOculta"){
             numMinasCasilla++
+            console.log("id-11")
+            console.log(id-11)
+
         }
     }
     switch(numMinasCasilla){
@@ -233,7 +256,7 @@ function getNumMinas(id){
             return numMinasCasilla
     }
 }
-function estaEnLaSiguienteLinea(id){
+function estaEnOtraLinea(id){
     if(id+1>100||id-1<0){
         return true
     }
