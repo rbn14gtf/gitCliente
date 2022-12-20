@@ -153,7 +153,7 @@ function cleanCasillas(id){
         document.getElementById(id).innerHTML=getNumMinas(id)
 
     }
-    destaparCasillasVacias(id)
+    // destaparCasillasVacias(id)
     /*
     for(let i=0;i<100;i++){
         if(document.getElementById(id+1).getAttribute("class")=="minaOculta"){
@@ -245,13 +245,18 @@ function getNumMinas(id){
             document.getElementById(id).style.color="black"
             return numMinasCasilla
         case 1:
-            document.getElementById(id).style.color="blue"
+            // document.getElementById(id).style.color="blue"
+            document.getElementById(id).setAttribute("class","destapado c1")
             return numMinasCasilla
         case 2:
-            document.getElementById(id).style.color="green"
+            // document.getElementById(id).style.color="green"
+            document.getElementById(id).setAttribute("class","destapado c4")
+
             return numMinasCasilla
         case 3:
-            document.getElementById(id).style.color="brown"
+            // document.getElementById(id).style.color="brown"
+            document.getElementById(id).setAttribute("class","destapado c6")
+
             return numMinasCasilla
         default:
             return numMinasCasilla
@@ -315,6 +320,10 @@ function generatePopUp(result) {
 }
 function destaparTodas(){
     for(let i=0;i<100;i++){
-        document.getElementById(i).setAttribute("class","destapado")
+        if(document.getElementById(i).innerHTML==""){
+            document.getElementById(i).setAttribute("class","destapado")
+        }else{
+            
+        }
     }
 }
