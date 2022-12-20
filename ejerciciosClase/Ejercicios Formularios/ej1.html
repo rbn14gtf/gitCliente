@@ -31,10 +31,10 @@
             </fieldset>
         <div id="radios">
             <label for="color">Elige un color</label><br>
-            <input type="radio" name="color" value="Rojo">Rojo <br>
-            <input type="radio" name="color" value="Verde">Verde <br>
-            <input type="radio" name="color" value="Amarillo">Amarillo <br>
-            <input type="radio" name="color" value="Negro" checked>Negro <br>
+            <input type="radio" name="color" id="rojo" onchange="cambiarFondo(id)" value="Rojo">Rojo <br>
+            <input type="radio" name="color" id="verde" onchange="cambiarFondo(id)" value="Verde">Verde <br>
+            <input type="radio" name="color" id="amarillo" onchange="cambiarFondo(id)" value="Amarillo">Amarillo <br>
+            <input type="radio" name="color" id="negro" onchange="cambiarFondo(id)" value="Negro" checked>Negro <br>
         </div><br>
         <div id="asignaturas">
             <label for="asignaturas">Selecciona una asignatura</label>

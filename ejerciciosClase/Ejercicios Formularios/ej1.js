@@ -56,6 +56,32 @@ function isValidDias(){
     }
 }
 
+function cambiarFondo(id){
+    let radios=document.getElementById("radios")
+    if(id=="rojo"){
+        radios.style.backgroundColor = "red";
+        radios.style.border = "10px red";
+        radios.style.borderRadius = "5px";
+
+    }else if(id=="verde"){
+        radios.style.backgroundColor = "green";
+        radios.style.border = "10px green";
+        radios.style.borderRadius = "5px";
+
+    }else if(id=="amarillo"){
+        radios.style.backgroundColor = "yellow";
+        radios.style.border = "10px yellow";
+        radios.style.borderRadius = "5px";
+
+    }else if(id=="negro"){
+        radios.style.backgroundColor = "grey";
+        radios.style.border = "10px grey";
+        radios.style.borderRadius = "5px";
+
+    }else{
+
+    }
+}
 
 
 function error(elemento){
