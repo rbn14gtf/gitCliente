@@ -3,23 +3,61 @@ window.onload=inicio
 function inicio(){
     document.getElementById("google").addEventListener("click",redirigir)
     document.getElementById("enviar").addEventListener("click",validar)
+    document.getElementById("reset").addEventListener("click",limpiar)
 }
 function redirigir(){
     window.location.href = "https://google.com";
 }
 function validar(e){
     if((isValidName())&&(isValidTa())&&(isValidDias())&&(window.confirm("Deseas enviar el formulario?"))){
-        alert("Validado")
-        window.location.reload();
+        alert("Enviando Datos...")
+        window.open('mailto:3a.ruben.garciarivera@gmail.com?subject=Formulario&body='+getMensajeCorreo());
+        //window.location.reload();
         //e.preventDefault();
 
         return true
     }else{
-        alert("No Validado")
         //evita que se produzca la redireccion
+        alert("Error")
         e.preventDefault();
         return false
     }
+}
+function limpiar(e){
+    if(window.confirm("Empezamos de nuevo?")){
+        window.location.reload();
+
+    }else{
+        e.preventDefault();
+        return false
+    }
+}
+function getMensajeCorreo(e){
+    let text=""
+    text+="Nombre: "+document.getElementById("nombre").value+"\n"
+    text+="Mensaje: "+document.getElementById("mensaje").value+"\n"
+    
+    text+="Dias seleccionados: "+"\n"
+    let dias=document.getElementById("dias").children
+    for(let i=0;i<dias.length;i++){
+        if(dias[i].tagName=="INPUT"){
+            if(dias[i].checked){
+                text+=dias[i].id+"\n"
+                
+            }
+            
+        }
+    }
+
+    text+="Asignatura: "+document.getElementById("asignaturasSelect").options[document.getElementById("asignaturasSelect").selectedIndex].text+"\n"
+    for(let i=0;i<document.getElementById("radios").length;i++){
+        
+        if(document.getElementById("radios")[i].checked){
+            text+=document.getElementById("radios").id+" "
+        }
+    }
+    text+="Dia Preferido: "+(document.getElementById("diaPref").options[document.getElementById("diaPref").selectedIndex].text+"\n")
+    return text;
 }
 function isValidName(){
     let nombre=document.getElementById("nombre")
@@ -92,7 +130,6 @@ function pideMensaje(){
 }
 function updateDiaPref(){
     let dias=document.getElementById("dias").children
-    // console.table(dias)
     for(let i=0;i<dias.length;i++){
         if(dias[i].tagName=="INPUT"){
             if(dias[i].checked){

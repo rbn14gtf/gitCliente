@@ -21,17 +21,17 @@
             
     </style>
     <body>
-        <form action="" method="post">
+        <form action="#" method="post">
             <fieldset>
                 <legend style="text-align: left;">Datos Personales</legend>
                 <label for="nombre">Introduce tu nombre:</label>
-                <input type="text" name="nombre" id="nombre" onclick="pideNombre()" required ><br>
+                <input type="text" name="nombre" id="nombre" onclick="pideNombre()" value="Ruben" required ><br>
                 <label for="mensaje">Mensaje</label><br>
                 <textarea name="mensaje" id="mensaje" onclick="pideMensaje()" cols="70" rows="10" minlength="2" maxlength="500">FDSF</textarea>
             </fieldset>
         <div id="radios">
             <label for="color">Elige un color</label><br>
-            <input type="radio" name="color" id="rojo" onchange="cambiarFondo(id)" value="Rojo">
+            <input type="radio" name="color" id="rojo" onchange="cambiarFondo(id)" value="Rojo" checked>
             <label for="rojo">Rojo</label> <br>
             <input type="radio" name="color" id="verde" onchange="cambiarFondo(id)" value="Verde">
             <label for="verde">Verde</label> <br>
@@ -51,10 +51,10 @@
         </div><br>
         <div id="dias">
             <label for="dias">Selecciona los dias de disponibilidad</label><br>
-            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Lunes">
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Lunes" checked>
             <label for="Lunes">Lunes</label><br>
             
-            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Martes">
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Martes" checked>
             <label for="Martes">Martes</label><br>
 
             <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Miércoles">
@@ -78,7 +78,7 @@
         </div><br>
 
         <div id="botones">
-            <input type="submit" id="enviar" value="Enviar Informacion">
+            <input type="button" id="enviar" value="Enviar Informacion">
             <input type="reset" id="reset" value="Rellenar de nuevo">
             <input type="button" id="google" value="Clickame">
             
