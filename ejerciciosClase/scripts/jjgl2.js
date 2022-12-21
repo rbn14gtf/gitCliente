@@ -34,8 +34,11 @@ function validaEdad() {
         if(elemento.validity.valueMissing){
             error2(elemento,"Debe introducir una edad")
         }
-        if(elemento.validity.patternMismatch){
-            error2(elemento,"La edad debe estar entre 18 y 99")
+        if(elemento.validity.rangeOverflow){
+            error2(elemento,"La edad debe ser menor 99")
+        }
+        else if(elemento.validity.rangeUnderflow){
+            error2(elemento,"La edad debe ser mayor 18")
         }
 
         return false;
