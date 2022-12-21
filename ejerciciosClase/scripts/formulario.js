@@ -17,7 +17,6 @@ function validar(e){
     if((isValidName())&&(isValidPhone())&&(isValidDate())&&(isMayorChecked())&&(isSexoSelected()&&(window.confirm("Deseas enviar el formulario?")))){
         alert("Validado")
         e.preventDefault();
-
         return true
     }else{
         alert("No Validado")

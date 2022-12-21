@@ -7,6 +7,8 @@ function iniciar() {
 function validar(e) {
     borrarError();
     if (validaNombre() && validaEdad() && validaTelefono() && window.confirm("Pulsa aceptar si deseas enviar el formulario")) {
+        window.location.reload();
+
         return true
     } else {
         error(elemento)
