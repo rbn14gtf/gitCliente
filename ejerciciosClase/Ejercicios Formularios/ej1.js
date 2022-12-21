@@ -11,7 +11,8 @@ function redirigir(){
 function validar(e){
     if((isValidName())&&(isValidTa())&&(isValidDias())&&(window.confirm("Deseas enviar el formulario?"))){
         alert("Enviando Datos...")
-        window.open('mailto:3a.ruben.garciarivera@gmail.com?subject=Formulario&body='+getMensajeCorreo());
+        
+        window.open('mailto:3a.ruben.garciarivera@gmail.com?subject=Formulario&body=\"'+getMensajeCorreo()+'\"');
         //window.location.reload();
         //e.preventDefault();
 
