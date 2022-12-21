@@ -1,68 +1,78 @@
-window.onload=iniciar
+window.onload = iniciar;
 
-function iniciar(){
-    document.getElementById("enviar").addEventListener("click",validar,false)
+function iniciar() {
+    document.getElementById("enviar").addEventListener('click', validar, false);
 }
-function validar(e){
-    if((isValidName())&&(isValidPhone())&&(isValidAge())&&(window.confirm("Deseas enviar el formulario?"))){
-        alert("Validado")
+
+function validar(e) {
+    borrarError();
+    if (validaNombre() && validaEdad() && validaTelefono() && window.confirm("Pulsa aceptar si deseas enviar el formulario")) {
+        window.location.reload();
+        return true
+    } else {
+        error(elemento)
         e.preventDefault();
+        return false;
+    }
+}//validar
+function validaNombre() {
+    var elemento = document.getElementById("nombre");
+    if (!elemento.checkValidity()) {
+        if(elemento.validity.valueMissing){
+            error2(elemento,"Debe introducir un nombre")
+        }
+        if(elemento.validity.patternMismatch){
+            error2(elemento,"El nombre debe tener entre 2 y 15 caracteres")
+        }
+        return false;
+    }
+    return true;
+}//validaNombre
 
-        return true
-    }else{
-        alert("No Validado")
-        //evita que se produzca la redireccion
-        e.preventDefault();
-        return false
-    }
-}
-/*
-function isValidName(){
-    if((document.getElementById("nombre").value)==""){
-        error(document.getElementById("nombre"))
-        return false
-    }else{
-        limpiarError(document.getElementById("nombre"))
-        return true
-    }
-}*/
-function isValidName(){
-    let nombre=document.getElementById("nombre")
-    if(!nombre.checkValidity()){
-        error(nombre)
-        return false
-    }else{
-        limpiarError(nombre)
-        return true
-    }
-}
-function isValidPhone(){
-    let telefono=document.getElementById("telefono")
+function validaEdad() {
+    var elemento = document.getElementById("edad");
+    if (!elemento.checkValidity()) {
+        if(elemento.validity.valueMissing){
+            error2(elemento,"Debe introducir una edad")
+        }
+        if(elemento.validity.rangeOverflow){
+            error2(elemento,"La edad debe ser menor 99")
+        }
+        else if(elemento.validity.rangeUnderflow){
+            error2(elemento,"La edad debe ser mayor 18")
+        }
 
-    if(!telefono.checkValidity()){
-        error(telefono)
-        return false
-    }else{
-        limpiarError(telefono)
-        return true
+        return false;
     }
-}
-function isValidAge(){
-    let edad=document.getElementById("edad")
+    return true;
+}//validaEdad
 
-    if(!edad.checkValidity()){
-        error(edad)
-        return false
-    }else{
-        limpiarError(edad)
-        return true
+function validaTelefono() {
+    var elemento = document.getElementById("telefono");
+    if (!elemento.checkValidity()) {
+        if(elemento.validity.valueMissing){
+            error2(elemento,"Debe introducir un telefono")
+        }
+        if(elemento.validity.patternMismatch){
+            error2(elemento,"Introduce un telefono de 9 cifras")
+        }
+        return false;
     }
-}
+    return true;
+}//validaTelefono
 
-function error(elemento){
-    elemento.className="error"
-    elemento.focus()
-}
-function limpiarError(elemento){
-    elemento.className=""
-}
+
+function error2(elemento,mensaje) {
+    document.getElementById("mensajeError").innerHTML=mensaje
+    elemento.className = "error";
+    elemento.focus();
+}//error
+
+
+
+function borrarError() {
+    var formulario = document.forms[0];
+    for (var i = 0; i < formulario.elements.length; i++) {
+        formulario.elements[i].className = "";
+    }
+}//borrarError
