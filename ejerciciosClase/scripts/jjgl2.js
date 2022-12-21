@@ -6,7 +6,7 @@ function iniciar() {
 
 function validar(e) {
     borrarError();
-    if (validaNombre() && validaEdad() && validaTelefono() && confirm("Pulsa aceptar si deseas enviar el formulario")) {
+    if (validaNombre() && validaEdad() && validaTelefono() && window.confirm("Pulsa aceptar si deseas enviar el formulario")) {
         return true
     } else {
         error(elemento)
@@ -17,7 +17,12 @@ function validar(e) {
 function validaNombre() {
     var elemento = document.getElementById("nombre");
     if (!elemento.checkValidity()) {
-        error(elemento)
+        if(elemento.validity.valueMissing){
+            error2(elemento,"Debe introducir un nombre")
+        }
+        if(elemento.validity.patternMismatch){
+            error2(elemento,"El nombre debe tener entre 2 y 15 caracteres")
+        }
         return false;
     }
     return true;
@@ -26,7 +31,12 @@ function validaNombre() {
 function validaEdad() {
     var elemento = document.getElementById("edad");
     if (!elemento.checkValidity()) {
-        error(elemento)
+        if(elemento.validity.valueMissing){
+            error2(elemento,"Debe introducir una edad")
+        }
+        if(elemento.validity.patternMismatch){
+            error2(elemento,"La edad debe estar entre 18 y 99")
+        }
 
         return false;
     }
@@ -36,7 +46,12 @@ function validaEdad() {
 function validaTelefono() {
     var elemento = document.getElementById("telefono");
     if (!elemento.checkValidity()) {
-        error(elemento)
+        if(elemento.validity.valueMissing){
+            error2(elemento,"Debe introducir un telefono")
+        }
+        if(elemento.validity.patternMismatch){
+            error2(elemento,"Introduce un telefono de 9 cifras")
+        }
         return false;
     }
     return true;
@@ -45,6 +60,11 @@ function validaTelefono() {
 
 function error(elemento) {
     document.getElementById("mensajeError").innerHTML = elemento.validationMessage;
+    elemento.className = "error";
+    elemento.focus();
+}//error
+function error2(elemento,mensaje) {
+    document.getElementById("mensajeError").innerHTML=mensaje
     elemento.className = "error";
     elemento.focus();
 }//error
