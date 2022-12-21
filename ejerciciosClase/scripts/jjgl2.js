@@ -10,7 +10,8 @@ function validar(e) {
         window.location.reload();
 
         return true
-    } else {
+    } 
+    else {
         error(elemento)
         e.preventDefault();
         return false;

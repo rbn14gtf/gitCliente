@@ -90,4 +90,8 @@ td{
     width: fit-content;
     border: 15px groove rgb(255, 77, 46);
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
 }
