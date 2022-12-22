@@ -62,12 +62,11 @@ function getMensajeCorreo(e){
 function isValidName(){
     let nombre=document.getElementById("nombre")
     if(!nombre.checkValidity()){
-
-        if(nombre.validity.rangeOverflow){
-            error2(nombre,"El nombre debe tener menos de 15 letras")
+        if(nombre.validity.valueMissing){
+            error2(nombre,"Debe introducir un nombre")
         }
-        else if(nombre.validity.rangeUnderflow){
-            error2(nombre,"El nombre debe tener mas de 2 letras")
+        if(nombre.validity.patternMismatch){
+            error2(nombre,"El nombre debe tener entre 2 y 15 caracteres")
         }
         return false
     }else{
@@ -78,6 +77,12 @@ function isValidName(){
 function isValidTa(){
     let mensaje=document.getElementById("mensaje")
     if(!mensaje.checkValidity()){
+        if(nombre.validity.valueMissing){
+            error(nombre)
+        }
+        if(nombre.validity.patternMismatch){
+            error(nombre)
+        }
         error(mensaje)
         return false
     }else{
@@ -175,7 +180,7 @@ function error(elemento){
     elemento.focus()
 }
 function error2(elemento,mensaje) {
-    document.getElementById("mensajeError").innerHTML=mensaje
+    alert(mensaje)
     elemento.className = "error";
     elemento.focus();
 }//error
