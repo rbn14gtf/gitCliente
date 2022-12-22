@@ -12,8 +12,8 @@ function validar(e){
     if((isValidName())&&(isValidTa())&&(isValidDias())&&(window.confirm("Deseas enviar el formulario?"))){
         alert("Enviando Datos...")
         
-        window.open('mailto:3a.ruben.garciarivera@gmail.com?subject=Formulario&body=\"'+getMensajeCorreo()+'\"');
-        //window.location.reload();
+        // window.open('mailto:3a.ruben.garciarivera@gmail.com?subject=Formulario&body=\"'+getMensajeCorreo()+'\"');
+        window.location.reload();
         //e.preventDefault();
 
         return true
@@ -35,28 +35,28 @@ function limpiar(e){
 function getMensajeCorreo(e){
     let text=""
     text+="Nombre: "+document.getElementById("nombre").value+"\n"
-    text+="Mensaje: "+document.getElementById("mensaje").value+"\n"
+    text+=" Mensaje: "+document.getElementById("mensaje").value+"\n"
     
-    text+="Dias seleccionados: "+"\n"
+    text+=" Dias seleccionados: "+"\n"
     let dias=document.getElementById("dias").children
     for(let i=0;i<dias.length;i++){
         if(dias[i].tagName=="INPUT"){
             if(dias[i].checked){
-                text+=dias[i].id+"\n"
+                text+=dias[i].id+" \n"
                 
             }
             
         }
     }
 
-    text+="Asignatura: "+document.getElementById("asignaturasSelect").options[document.getElementById("asignaturasSelect").selectedIndex].text+"\n"
+    text+=" Asignatura: "+document.getElementById("asignaturasSelect").options[document.getElementById("asignaturasSelect").selectedIndex].text+"\n"
     for(let i=0;i<document.getElementById("radios").length;i++){
         
         if(document.getElementById("radios")[i].checked){
             text+=document.getElementById("radios").id+" "
         }
     }
-    text+="Dia Preferido: "+(document.getElementById("diaPref").options[document.getElementById("diaPref").selectedIndex].text+"\n")
+    text+=" Dia Preferido: "+(document.getElementById("diaPref").options[document.getElementById("diaPref").selectedIndex].text+"\n")
     return text;
 }
 function isValidName(){
