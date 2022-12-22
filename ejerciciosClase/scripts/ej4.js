@@ -5,7 +5,6 @@ let letrasDNI=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","
 function inicio(){
     document.getElementById("validar").addEventListener("click",validarDni)
 
-
     function soloNumero(dni){
         let dniArray=dni.split("");
         dniArray.pop();
@@ -18,12 +17,11 @@ function inicio(){
 
     function validarDni(){
         let dni=document.getElementById("dni").value
-        if(dni.charAt(dni.length-1)==letrasDNI[soloNumero(dni)%23]){
+        if(dni.charAt(dni.length-1)==letrasDNI[Number(dni.substr(0, dni.length - 1))%23]){
             alert("El dni "+dni+" es valido");
         }
         else{
             alert("Al dni "+dni+" no es valido\nA este dni le corresponderia la letra "+letrasDNI[soloNumero(dni)%23]);
         }
-
     }
 }
