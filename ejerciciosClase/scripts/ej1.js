@@ -19,7 +19,6 @@ function validar(e){
         return true
     }else{
         //evita que se produzca la redireccion
-        alert("Error")
         e.preventDefault();
         return false
     }
@@ -63,7 +62,13 @@ function getMensajeCorreo(e){
 function isValidName(){
     let nombre=document.getElementById("nombre")
     if(!nombre.checkValidity()){
-        error(nombre)
+
+        if(nombre.validity.rangeOverflow){
+            error2(nombre,"El nombre debe tener menos de 15 letras")
+        }
+        else if(nombre.validity.rangeUnderflow){
+            error2(nombre,"El nombre debe tener mas de 2 letras")
+        }
         return false
     }else{
         limpiarError(nombre)
@@ -91,6 +96,7 @@ function isValidDias(){
     if(cont>=2){
         return true
     }else{
+        alert("Marca como minimo dos dias")
         return false
     }
 }
@@ -141,10 +147,39 @@ function updateDiaPref(){
         }
     }
 }
+function marcarTodos(){
+    if(document.getElementById("checkAll").checked){
+        selectAll()
+    }else{
+        deSelectAll()
+    }
+
+}
+function selectAll(){  
+    let ele=document.getElementsByName('dias');  
+    for(let i=0; i<ele.length; i++){  
+        if(ele[i].type=='checkbox')  
+            ele[i].checked=true;  
+    }  
+}  
+function deSelectAll(){  
+    let ele=document.getElementsByName('dias');  
+    for(let i=0; i<ele.length; i++){  
+        if(ele[i].type=='checkbox')  
+            ele[i].checked=false;  
+          
+    }  
+}  
 function error(elemento){
     elemento.className="error"
     elemento.focus()
 }
+function error2(elemento,mensaje) {
+    document.getElementById("mensajeError").innerHTML=mensaje
+    elemento.className = "error";
+    elemento.focus();
+}//error
+
 function limpiarError(elemento){
     elemento.className=""
 }

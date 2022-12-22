@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Ejercicio Formularios 1</title>
-        <script src="ej1.js"></script>
+        <script src="../scripts/ej1.js"></script>
     </head>
     <style>
         form{
@@ -25,7 +25,7 @@
             <fieldset>
                 <legend style="text-align: left;">Datos Personales</legend>
                 <label for="nombre">Introduce tu nombre:</label>
-                <input type="text" name="nombre" id="nombre" onclick="pideNombre()" value="Ruben" required ><br>
+                <input type="text" name="nombre" id="nombre" onclick="pideNombre()" maxlength="15" required ><br>
                 <label for="mensaje">Mensaje</label><br>
                 <textarea name="mensaje" id="mensaje" onclick="pideMensaje()" cols="70" rows="10" minlength="2" maxlength="500">FDSF</textarea>
             </fieldset>
@@ -57,8 +57,8 @@
             <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Martes" checked>
             <label for="Martes">Martes</label><br>
 
-            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Miércoles">
-            <label for="Miércoles">Miércoles</label><br>
+            <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Miercoles">
+            <label for="Miercoles">Miércoles</label><br>
             
             <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Jueves">
             <label for="Jueves">Jueves</label><br>
@@ -66,6 +66,10 @@
             <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Viernes">
             <label for="Viernes">Viernes</label><br>
         </div><br>
+        <input type="checkbox" onclick="marcarTodos()" name="checkAll" id="checkAll" >
+        <label for="marcarTodos">Marcar Todos</label><br>
+        <input type="button" onclick='selects()' value="Select All"/>  
+        <input type="button" onclick='deSelect()' value="Deselect All"/>  
         <div id="diasPref">
             <label for="diasPref">Selecciona el dia preferente</label>
             <select name="diaPref" id="diaPref">
