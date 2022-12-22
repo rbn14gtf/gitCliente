@@ -76,13 +76,12 @@ function isValidName(){
 function isValidTa(){
     let mensaje=document.getElementById("mensaje")
     if(!mensaje.checkValidity()){
-        if(nombre.validity.valueMissing){
-            error(nombre)
+        if(mensaje.validity.valueMissing){
+            error2(mensaje,"Debe introducir un mensaje")
         }
-        if(nombre.validity.patternMismatch){
-            error(nombre)
+        if(mensaje.validity.patternMismatch){
+            error2(mensaje,"El mensaje debe tener entre 2 y 500 caracteres")
         }
-        error(mensaje)
         return false
     }else{
         limpiarError(mensaje)
@@ -172,6 +171,7 @@ function selectAll(bool){
                 ele[i].checked=false;  
             }
         } 
+        ele[0].checked=true
     }
 }  
 function error(elemento){
