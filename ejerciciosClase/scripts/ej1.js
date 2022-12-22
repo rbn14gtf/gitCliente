@@ -45,7 +45,6 @@ function getMensajeCorreo(e){
                 text+=dias[i].id+" \n"
                 
             }
-            
         }
     }
 
@@ -133,7 +132,6 @@ function cambiarFondo(id){
     }
 }
 
-
 function pideNombre(){
     document.getElementById("nombre").value=prompt("Introduce tu nombre","")
 }
@@ -175,7 +173,6 @@ function selectAll(bool){
             }
         } 
     }
-      
 }  
 function error(elemento){
     elemento.className="error"
