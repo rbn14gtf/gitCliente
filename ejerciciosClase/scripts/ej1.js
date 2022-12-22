@@ -154,26 +154,28 @@ function updateDiaPref(){
 }
 function marcarTodos(){
     if(document.getElementById("checkAll").checked){
-        selectAll()
+        selectAll(1)
     }else{
-        deSelectAll()
+        selectAll(0)
     }
 
 }
-function selectAll(){  
+function selectAll(bool){  
     let ele=document.getElementsByName('dias');  
-    for(let i=0; i<ele.length; i++){  
-        if(ele[i].type=='checkbox')  
-            ele[i].checked=true;  
-    }  
-}  
-function deSelectAll(){  
-    let ele=document.getElementsByName('dias');  
-    for(let i=0; i<ele.length; i++){  
-        if(ele[i].type=='checkbox')  
-            ele[i].checked=false;  
-          
-    }  
+    if(bool==1){
+        for(let i=0; i<ele.length; i++){  
+            if(ele[i].type=='checkbox') {
+                ele[i].checked=true;  
+            } 
+        }
+    }else{
+        for(let i=0; i<ele.length; i++){  
+            if(ele[i].type=='checkbox')  {
+                ele[i].checked=false;  
+            }
+        } 
+    }
+      
 }  
 function error(elemento){
     elemento.className="error"
