@@ -17,11 +17,14 @@ function inicio(){
 
     function validarDni(){
         let dni=document.getElementById("dni").value
-        if(dni.charAt(dni.length-1)==letrasDNI[Number(dni.substr(0, dni.length - 1))%23]){
+        if(!isNaN(dni.charAt(dni.length-1))){
+            alert("El dni debe contener una letra");
+        }
+        else if(dni.charAt(dni.length-1)==letrasDNI[Number(dni.substr(0, dni.length - 1))%23]){
             alert("El dni "+dni+" es valido");
         }
         else{
-            alert("Al dni "+dni+" no es valido\nA este dni le corresponderia la letra "+letrasDNI[soloNumero(dni)%23]);
+            alert("El dni "+dni+" no es valido\nA este dni le corresponderia la letra "+letrasDNI[soloNumero(dni)%23]);
         }
     }
 }
