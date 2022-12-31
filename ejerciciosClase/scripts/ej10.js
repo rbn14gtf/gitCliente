@@ -1,16 +1,33 @@
 window.onload=inicio
-const extensiones=["gmail.es","outlook.com","educamadrid.org"]
+const listaServidores=["gmail.es","outlook.com","educamadrid.org"]
 function inicio(){
     document.getElementById("validar").addEventListener("click",validarEmail)
 
 }
 function validarEmail(){
+    
     let email=document.getElementById("email").value
-
-    if(extensiones.includes(email.split("@")[1])){
-        alert("Email Valido")
+    if(formatoCorrecto(email)){
+        if(listaServidores.includes(email.split("@")[1])){
+            alert("Email Valido")
+        }else{
+            alert("Email no Valido")
+        }
     }else{
-        alert("Email no Valido")
+        alert("Formato no Valido")
     }
+    
 
+}
+function formatoCorrecto(email){
+    if(email.indexOf("@")==-1){
+        return false
+    }
+    else if(email.indexOf(".")==-1){
+        return false
+    }else if(email.indexOf("@")>email.indexOf(".")){
+        return false
+    }else{
+        return true
+    }
 }
