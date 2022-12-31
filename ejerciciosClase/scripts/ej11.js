@@ -4,12 +4,22 @@ let ciudades={"Andalucia":["Almería","Cádiz","Córdoba","Granada","Huelva","Ja
 let ciudadesSize=Object.keys(ciudades).length
 function inicio(){
     document.getElementById("ciudadesSelect").addEventListener('change', (event) => {
+        resetOptions()
         updateOption(event.target.value)
     });
     addOptions()
 
 }
 
+function resetOptions(){
+    let select = document.getElementById('provinciasSelect');
+    while(select.length!=0){
+        for (let i = 0; i<select.length; i++){
+            select.remove(i)
+        }
+
+    }
+}
 function addOptions(){
     let select = document.getElementById('ciudadesSelect');
     
