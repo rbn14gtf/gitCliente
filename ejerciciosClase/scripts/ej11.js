@@ -46,11 +46,6 @@ function updateOption(ciudad){
     let select = document.getElementById('provinciasSelect');
     if(ciudad=="Andalucia"){
         for (let i = 0; i<ciudades.Andalucia.length; i++){
-            if(!ciudades.Andalucia.includes(select[i])){
-                select.remove(i)
-            }
-        }
-        for (let i = 0; i<ciudades.Andalucia.length; i++){
             let opt = document.createElement('option');
             if(ciudades.Andalucia[i]=="Granada"){
                 opt.value = ciudades.Andalucia[i];
@@ -66,11 +61,6 @@ function updateOption(ciudad){
     }
     else if(ciudad=="Madrid"){
         for (let i = 0; i<ciudades.Madrid.length; i++){
-            if(!ciudades.Madrid.includes(select[i])){
-                select.remove(i)
-            }
-        }
-        for (let i = 0; i<ciudades.Madrid.length; i++){
             let opt = document.createElement('option');
             opt.value = ciudades.Madrid[i];
             opt.innerHTML = ciudades.Madrid[i];
@@ -79,11 +69,6 @@ function updateOption(ciudad){
         }
     }
     else if(ciudad=="Galicia"){
-        for (let i = 0; i<ciudades.Galicia.length; i++){
-            if(!ciudades.Galicia.includes(select[i])){
-                select.remove(i)
-            }
-        }
         for (let i = 0; i<ciudades.Galicia.length; i++){
             let opt = document.createElement('option');
             opt.value = ciudades.Galicia[i];
