@@ -17,7 +17,6 @@ function resetOptions(){
         for (let i = 0; i<select.length; i++){
             select.remove(i)
         }
-
     }
 }
 function addOptions(){
