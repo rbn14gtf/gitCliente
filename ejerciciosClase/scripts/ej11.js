@@ -20,9 +20,9 @@ function addOptions(){
                 opt.value = "Andalucia";
                 opt.innerHTML = "Andalucia";
                 break;
-                case 1:
-                    opt.value = "Madrid";
-                    opt.innerHTML = "Madrid";
+            case 1:
+                opt.value = "Madrid";
+                opt.innerHTML = "Madrid";
             break;
             case 2:
                 opt.value = "Galicia";
@@ -37,16 +37,29 @@ function updateOption(ciudad){
     let select = document.getElementById('provinciasSelect');
     if(ciudad=="Andalucia"){
         for (let i = 0; i<ciudades.Andalucia.length; i++){
+            if(!ciudades.Andalucia.includes(select[i])){
+                select.remove(i)
+            }
+        }
+        for (let i = 0; i<ciudades.Andalucia.length; i++){
             let opt = document.createElement('option');
-            opt.value = ciudades.Andalucia[i];
-            opt.innerHTML = ciudades.Andalucia[i];
+            if(ciudades.Andalucia[i]=="Granada"){
+                opt.value = ciudades.Andalucia[i];
+                opt.innerHTML = ciudades.Andalucia[i];
+                opt.selected=true;
+            }else{
+                opt.value = ciudades.Andalucia[i];
+                opt.innerHTML = ciudades.Andalucia[i];
+            }
             select.appendChild(opt);
     
         }
     }
     else if(ciudad=="Madrid"){
-        for (let i = 0; i<select.length; i++){
-            select.remove(i);
+        for (let i = 0; i<ciudades.Madrid.length; i++){
+            if(!ciudades.Madrid.includes(select[i])){
+                select.remove(i)
+            }
         }
         for (let i = 0; i<ciudades.Madrid.length; i++){
             let opt = document.createElement('option');
@@ -57,8 +70,10 @@ function updateOption(ciudad){
         }
     }
     else if(ciudad=="Galicia"){
-        for (let i = 0; i<select.length; i++){
-            select.remove(i);
+        for (let i = 0; i<ciudades.Galicia.length; i++){
+            if(!ciudades.Galicia.includes(select[i])){
+                select.remove(i)
+            }
         }
         for (let i = 0; i<ciudades.Galicia.length; i++){
             let opt = document.createElement('option');
@@ -69,11 +84,7 @@ function updateOption(ciudad){
         }
     }
     else{
-        // let opt = document.createElement('option');
-        // opt.value = ciudades.Galicia[i];
-        // opt.innerHTML = ciudades.Galicia[i];
-        // select.appendChild(opt);
-    
+        location.reload()
     }
     
     
