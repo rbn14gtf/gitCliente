@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 201 RGR</title>
+        <meta charset="UTF-8">
+        <script src="201RGR.js"></script>
+    </head>
+    <style>
+        form{
+            margin: auto;
+            text-align: center;
+            width: 40%;
+        }
+        #id{
+            margin: auto;
+            width: fit-content;
+        }
+        .error{
+            border: 3px solid red;
+        }
+    </style>
+    <body>
+        <form action="#" id="mainForm" method="post">
+            <fieldset>
+                <legend style="text-align: left;">Datos Personales</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" pattern="[A-Za-z]{2,15}" maxlength="15" title="Introduce entre 2 y 15 caracteres" value="Ruben" required><br><br>
+                <label for="mensaje">Mensaje:</label>
+                <input type="text" name="mensaje" id="mensaje" pattern="{2,500}" onclick="pideMensaje()" maxlength="500" title="Introduce entre 2 y 500 caracteres" value="Hola buenos dias" required><br>
+            </fieldset>
+            <div id="radios">
+                <label for="color">Elige un color</label><br>
+                <input type="radio" name="color" id="rojo" value="Rojo">
+                <label for="rojo">Rojo</label> <br>
+                <input type="radio" name="color" id="verde" value="Verde">
+                <label for="verde">Verde</label> <br>
+                <input type="radio" name="color" id="amarillo" value="Amarillo">
+                <label for="amarillo">Amarillo</label> <br>
+                <input type="radio" name="color" id="negro" value="Negro" checked>
+                <label for="negro">Negro</label> <br>
+            </div><br>
+            <div id="asignaturas">
+                <label for="asignaturas">Selecciona una asignatura</label>
+                <select name="asignaturas" id="asignaturasSelect">Selecciona una asignatura
+                    <option type="radio" name="asignaturas" value="Cliente">Cliente</option>
+                    <option type="radio" name="asignaturas" value="Servidor">Servidor</option>
+                    <option type="radio" name="asignaturas" value="DAW">DAW</option>
+                    <option type="radio" name="asignaturas" value="DIW">DIW</option>
+                </select>
+            </div><br>
+            <div id="dias">
+                <label for="dias">Selecciona los dias de disponibilidad</label><br>
+                <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Lunes" checked>
+                <label for="Lunes">Lunes</label><br>
+                
+                <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Martes">
+                <label for="Martes">Martes</label><br>
+
+                <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Miercoles">
+                <label for="Miercoles">Miercoles</label><br>
+                
+                <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Jueves">
+                <label for="Jueves">Jueves</label><br>
+
+                <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Viernes">
+                <label for="Viernes">Viernes</label><br>
+            </div><br>
+            <input type="checkbox" onclick="marcarTodos()" name="checkAll" id="checkAll" >
+            <label for="checkAll">Marcar Todos</label><br>
+            <div id="diasPref">
+                <label for="diasPref">Selecciona el dia preferente</label>
+                <select name="diaPref" id="diaPref">
+                    <option type="radio" name="diaPref" value="Lunes" selected>Lunes</option>
+                    <option type="radio" name="diaPref" value="Martes">Martes</option>
+                    <option type="radio" name="diaPref" value="Miercoles">Miercoles</option>
+                    <option type="radio" name="diaPref" value="Jueves">Jueves</option>
+                    <option type="radio" name="diaPref" value="Viernes">Viernes</option>
+                </select>
+            </div><br>
+
+            <div id="botones">
+                <input type="button" id="enviar" value="Enviar Informacion">
+                <input type="reset" id="reset" value="Rellenar de nuevo">
+                <input type="button" id="google" value="Clickame">
+                
+            </div>
+        </form>
+    </body>
+</html>
