@@ -43,7 +43,6 @@ function getMensajeCorreo(e){
         if(dias[i].tagName=="INPUT"){
             if(dias[i].checked){
                 text+=dias[i].id+" \n"
-                
             }
         }
     }
@@ -109,26 +108,19 @@ function cambiarFondo(id){
     if(id=="rojo"){
         document.getElementById("mainForm").style.backgroundColor = "red";
         document.getElementById("mainForm").style.border = "10px red";
-        document.getElementById("mainForm").style.borderRadius = "5px";
-
     }else if(id=="verde"){
         document.getElementById("mainForm").style.backgroundColor = "green";
         document.getElementById("mainForm").style.border = "10px green";
-        document.getElementById("mainForm").style.borderRadius = "5px";
-
     }else if(id=="amarillo"){
         document.getElementById("mainForm").style.backgroundColor = "yellow";
         document.getElementById("mainForm").style.border = "10px yellow";
-        document.getElementById("mainForm").style.borderRadius = "5px";
-
     }else if(id=="negro"){
         document.getElementById("mainForm").style.backgroundColor = "grey";
         document.getElementById("mainForm").style.border = "10px grey";
-        document.getElementById("mainForm").style.borderRadius = "5px";
-
     }else{
 
     }
+    document.getElementById("mainForm").style.borderRadius = "5px";
 }
 
 function pideNombre(){
@@ -143,9 +135,7 @@ function updateDiaPref(){
         if(dias[i].tagName=="INPUT"){
             if(dias[i].checked){
                 document.getElementById("diaPref").value=dias[i].id
-                
             }
-            
         }
     }
 }
@@ -155,7 +145,6 @@ function marcarTodos(){
     }else{
         selectAll(0)
     }
-
 }
 function selectAll(bool){  
     let ele=document.getElementsByName('dias');  
