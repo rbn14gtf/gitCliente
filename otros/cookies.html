@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cookies</title>
+    </head>
+    <body>
+        <script>
+            document.cookie = "name=Nombre;";
+            document.cookie = "name=Nombre;expires=Thu, 18 Dec 1969 12:00:00 UTC;";
+            document.cookie = "usuario=Ruben;";
+            document.cookie = "sexo=Hombre;";
+            var miCookie=document.cookie
+            console.log(miCookie)
+            document.cookie = "usuario=Pablo;";
+            console.log(miCookie)
+        </script>
+    </body>
+</html>
