@@ -52,6 +52,7 @@ function getMensajeCorreo(e){
     for(let i=0;i<document.getElementsByName("color").length;i++){
         
         if(document.getElementsByName("color")[i].checked){
+            //coge el texto del label al que pertenece
             text+=" Color Elegido: "+document.getElementsByName("color")[i].nextElementSibling.textContent+", "
         }else{
 
