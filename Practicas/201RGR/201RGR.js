@@ -9,7 +9,7 @@ function redirigir(){
     window.location.href = "https://google.com";
 }
 function validar(e){
-    if((isValidName())&&(isValidTa())&&(isValidDias())&&(window.confirm("Deseas enviar el formulario?"))){
+    if((isValidName())&&(isValidMensaje())&&(isValidDias())&&(window.confirm("Deseas enviar el formulario?"))){
         alert("Enviando Datos...")
         
         window.open('mailto:3a.ruben.garciarivera@gmail.com?subject=Formulario&body=\"'+getMensajeCorreo()+'\"');
@@ -34,8 +34,8 @@ function limpiar(e){
 }
 function getMensajeCorreo(e){
     let text=""
-    text+="Nombre: "+document.getElementById("nombre").value+"\n"
-    text+=" Mensaje: "+document.getElementById("mensaje").value+"\n"
+    text+="Nombre: "+document.getElementById("nombre").value+",\n"
+    text+=" Mensaje: "+document.getElementById("mensaje").value+",\n"
     
     text+=" Dias seleccionados: "+"\n"
     let dias=document.getElementById("dias").children
@@ -47,11 +47,14 @@ function getMensajeCorreo(e){
         }
     }
 
-    text+=" Asignatura: "+document.getElementById("asignaturasSelect").options[document.getElementById("asignaturasSelect").selectedIndex].text+"\n"
-    for(let i=0;i<document.getElementById("radios").length;i++){
+    text+=", Asignatura: "+document.getElementById("asignaturasSelect").options[document.getElementById("asignaturasSelect").selectedIndex].text+",\n"
+
+    for(let i=0;i<document.getElementsByName("color").length;i++){
         
-        if(document.getElementById("radios")[i].checked){
-            text+=document.getElementById("radios").id+" "
+        if(document.getElementsByName("color")[i].checked){
+            text+=" Color Elegido: "+document.getElementsByName("color")[i].nextElementSibling.textContent+", "
+        }else{
+
         }
     }
     text+=" Dia Preferido: "+(document.getElementById("diaPref").options[document.getElementById("diaPref").selectedIndex].text+"\n")
@@ -72,7 +75,7 @@ function isValidName(){
         return true
     }
 }
-function isValidTa(){
+function isValidMensaje(){
     let mensaje=document.getElementById("mensaje")
     if(!mensaje.checkValidity()){
         if(mensaje.validity.valueMissing){
