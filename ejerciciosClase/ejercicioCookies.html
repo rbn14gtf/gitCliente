@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Cookies</title>
+    </head>
+    <body>
+        <button id="verTodas">Ver Cookies</button>
+        <button id="crearCookie">Crear Cookie</button>
+        <button id="modificarCookie">Modificar Cookie</button>
+        <button id="verCookie">Ver Cookie</button>
+        <button id="borrarCookie">Borrar Cookie</button>
+
+        <script>
+            document.getElementById("verTodas").addEventListener("click",verTodas)
+            document.getElementById("crearCookie").addEventListener("click",crearCookie)
+            document.getElementById("modificarCookie").addEventListener("click",modificarCookie)
+            document.getElementById("verCookie").addEventListener("click",verCookie)
+            document.getElementById("borrarCookie").addEventListener("click",borrarCookie)
+
+            function verTodas(){
+                alert(document.cookie)
+            }
+            function modificarCookie(){
+                alert(document.cookie)
+            }
+            function verCookie(){
+                alert(document.cookie)
+            }
+            function duracionToMiliseconds(days){
+                return days*1000 * 60 * 60 * 24 
+            }
+            function crearCookie(){
+                let nombreCookie=String(prompt("Introduce el nombre de tu cookie",""))
+                let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,""))
+                let duracion=Number(prompt("Introduce la duracion de la cookie "+nombreCookie,""))
+                //pasar la fecha de hoy a milisegundos, sumarle la duracion en milisegundos
+
+                console.log(new Date().getTime()+duracionToMiliseconds(duracion))
+                console.log(new Date().getTime())
+                document.cookie="\""+nombreCookie+"="+valorCookie+";expires=\""
+            }
+            function borrarCookie(e){
+                if((e.target.id)=="borrarCookie1"){
+                    document.cookie = "nombre=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                }
+                else if((e.target.id)=="borrarCookie2"){
+                    document.cookie = "apellido=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                }
+                else{
+                    alert("Error")
+                }
+            }
+            
+        </script>
+    </body>
+</html>
