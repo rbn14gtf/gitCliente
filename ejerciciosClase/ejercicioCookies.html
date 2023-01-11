@@ -13,6 +13,7 @@
         <button id="borrarTodas">Delete All</button>
 
         <script>
+            window.onload=createTable(getCleanCookies().split(";"))
             document.getElementById("verTodas").addEventListener("click",getAll)
             document.getElementById("crearCookie").addEventListener("click",setCookie)
             document.getElementById("modificarCookie").addEventListener("click",updateCookie)
@@ -22,7 +23,9 @@
 
             function getAll(){
                 alert(document.cookie)
+                location.reload()
             }
+            
             function updateCookie(){
                 let nombreCookie=String(prompt("Introduce el nombre de la cookie que quieras modificar\n"+getCookiesNames(),"Nombre"))
                 let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,"Pablo"))
@@ -33,14 +36,7 @@
                 document.cookie=nombreCookie+"="+valorCookie+";expires="+new Date((new Date().getTime())+duracionToMiliseconds(duracion)).toUTCString()+";"
                 getAll()
             }
-            function getCookiesNames(){
-                let arrayCookies=getCleanCookies().split(";")
-                let stringCookies="";
-                for (let i = 0; i < arrayCookies.length; i++) {
-                    stringCookies+=(i+1)+" "+arrayCookies[i].toString().split("=")[0]+"\n"
-                }            
-                return stringCookies
-            }
+            
             function getCookie(){
                 let stringCookies=getCleanCookies()
                 
@@ -52,49 +48,88 @@
                         alert(arrayCookies[i])
                     }
                 }
-            }
-            function remove_character(str, char_pos){
-                let part1 = str.substring(0, char_pos);
-                let part2 = str.substring(char_pos + 1, str.length);
-                return (part1 + part2);
-            }
-            function getCleanCookies(){
-                let stringCookies=document.cookie.toString()
-                for(let i=0;i<stringCookies.length;i++){
-                    if(stringCookies.charAt(i)==" "){
-                        stringCookies=remove_character(stringCookies,i)
-                    }
-                }
-                return stringCookies
-            }
-            function duracionToMiliseconds(days){
-                return days*1000 * 60 * 60 * 24 
-            }
+            }//getCookie
+            
             function setCookie(){
-                let nombreCookie=String(prompt("Introduce el nombre de tu cookie","Nombre"))
+                let nombreCookie=String(prompt("Introduce el nombre de la cookie","Nombre"))
                 let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,"Ruben"))
                 let duracion=Number(prompt("Introduce la duracion de la cookie "+nombreCookie,"2"))
                 //pasar la fecha de hoy a milisegundos, sumarle la duracion en milisegundos
 
                 document.cookie=nombreCookie+"="+valorCookie+";expires="+new Date((new Date().getTime())+duracionToMiliseconds(duracion)).toUTCString()+";"
                 getAll()
-            }
+            }//setCookie
+            
             function deleteCookie(){
-                let nombreCookie=String(prompt("Introduce el nombre de tu cookie","Nombre"))
+                let nombreCookie=String(prompt("Introduce el nombre de la cookie que quieres borrar\n"+getCookiesNames(),"Nombre"))
                 document.cookie = nombreCookie+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
                 getAll()
-            }
+            }//deleteCookie
+
             function deleteAllCookies() {
                 const cookies = document.cookie.split(";");
-
                 for (let i = 0; i < cookies.length; i++) {
                     const cookie = cookies[i];
                     const eqPos = cookie.indexOf("=");
                     const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
                     document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
                 }
-            }
-            
+                location.reload()
+            }//deleteAllCookies
+
+            function removeCharacterAt(str, char_pos){
+                let part1 = str.substring(0, char_pos);
+                let part2 = str.substring(char_pos + 1, str.length);
+                return (part1 + part2);
+            }//removeCharacterAt
+
+            function getCleanCookies(){
+                let stringCookies=document.cookie.toString()
+                for(let i=0;i<stringCookies.length;i++){
+                    if(stringCookies.charAt(i)==" "){
+                        stringCookies=removeCharacterAt(stringCookies,i)
+                    }
+                }
+                return stringCookies
+            }//getCleanCookies
+
+            function duracionToMiliseconds(days){
+                return days*1000 * 60 * 60 * 24 
+            }//duracionToMiliseconds
+
+            function getCookiesNames(){
+                let arrayCookies=getCleanCookies().split(";")
+                let stringCookies="";
+                for (let i = 0; i < arrayCookies.length; i++) {
+                    stringCookies+=(i+1)+" "+arrayCookies[i].toString().split("=")[0]+"\n"
+                }            
+                return stringCookies
+            }//getCookiesNames
+
+            function createTable(arrayCookies){
+                var body = document.getElementsByTagName("body")[0];
+                body.appendChild(document.createElement("br"));
+                body.appendChild(document.createElement("br"));
+                var table = document.createElement("table");
+                var tableBody = document.createElement("tbody");
+
+                for (var i = 0; i < arrayCookies.length; i++) {
+                    var row = document.createElement("tr");
+                    for (var j = 0; j <2; j++) {
+                        var cell = document.createElement("td");
+                        var cellText = document.createTextNode(arrayCookies[i].toString().split("=")[j]);
+                        cell.appendChild(cellText);
+                        row.appendChild(cell);
+                    }
+                    tableBody.appendChild(row);
+                }
+                table.appendChild(tableBody);
+
+                body.appendChild(table);
+
+                table.setAttribute("border", "2");
+                
+            }//createTable
         </script>
     </body>
 </html>
