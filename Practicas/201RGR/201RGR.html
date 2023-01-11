@@ -11,6 +11,9 @@
             text-align: center;
             width: 40%;
         }
+        #mainForm{
+            background-color: gray;
+        }
         #id{
             margin: auto;
             width: fit-content;
@@ -24,19 +27,19 @@
             <fieldset>
                 <legend style="text-align: left;">Datos Personales</legend>
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" pattern="[A-Za-z]{2,15}" maxlength="15" title="Introduce entre 2 y 15 caracteres" value="Ruben" required><br><br>
+                <input type="text" name="nombre" id="nombre" pattern="[A-Za-z]{2,15}" maxlength="15" title="Introduce entre 2 y 15 caracteres" required><br><br>
                 <label for="mensaje">Mensaje:</label>
                 <input type="text" name="mensaje" id="mensaje" pattern="[A-Za-z]{2,500}"  minlength="2" maxlength="500" title="Introduce entre 2 y 500 caracteres" required><br>
             </fieldset>
             <div id="radios">
                 <label for="color">Elige un color</label><br>
-                <input type="radio" name="color" id="rojo" value="Rojo">
+                <input type="radio" onchange="cambiarFondo(id)" name="color" id="rojo" value="Rojo">
                 <label for="rojo">Rojo</label> <br>
-                <input type="radio" name="color" id="verde" value="Verde">
+                <input type="radio" onchange="cambiarFondo(id)" name="color" id="verde" value="Verde">
                 <label for="verde">Verde</label> <br>
-                <input type="radio" name="color" id="amarillo" value="Amarillo">
+                <input type="radio" onchange="cambiarFondo(id)" name="color" id="amarillo" value="Amarillo">
                 <label for="amarillo">Amarillo</label> <br>
-                <input type="radio" name="color" id="negro" value="Negro" checked>
+                <input type="radio" onchange="cambiarFondo(id)" name="color" id="negro" value="Negro" checked>
                 <label for="negro">Negro</label> <br>
             </div><br>
             <div id="asignaturas">
