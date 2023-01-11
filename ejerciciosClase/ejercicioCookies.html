@@ -10,49 +10,57 @@
         <button id="modificarCookie">Modificar Cookie</button>
         <button id="verCookie">Ver Cookie</button>
         <button id="borrarCookie">Borrar Cookie</button>
+        <button id="borrarTodas">Delete All</button>
 
         <script>
-            document.getElementById("verTodas").addEventListener("click",verTodas)
-            document.getElementById("crearCookie").addEventListener("click",crearCookie)
-            document.getElementById("modificarCookie").addEventListener("click",modificarCookie)
-            document.getElementById("verCookie").addEventListener("click",verCookie)
-            document.getElementById("borrarCookie").addEventListener("click",borrarCookie)
+            document.getElementById("verTodas").addEventListener("click",getAll)
+            document.getElementById("crearCookie").addEventListener("click",setCookie)
+            document.getElementById("modificarCookie").addEventListener("click",updateCookie)
+            document.getElementById("verCookie").addEventListener("click",getCookie)
+            document.getElementById("borrarCookie").addEventListener("click",deleteCookie)
+            document.getElementById("borrarTodas").addEventListener("click",deleteAllCookies)
 
-            function verTodas(){
+            function getAll(){
                 alert(document.cookie)
             }
-            function modificarCookie(){
-                let nombreCookie=String(prompt("Introduce el nombre de tu cookie",""))
+            function updateCookie(){
+                let nombreCookie=String(prompt("Introduce el nombre de tu cookie","Nombre"))
                 let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,""))
+                let duracion=Number(prompt("Introduce la duracion de la cookie "+nombreCookie,"2"))
+
                 //pasar la fecha de hoy a milisegundos, sumarle la duracion en milisegundos
 
-                document.cookie="\""+nombreCookie+"="+valorCookie+";"
+                document.cookie=nombreCookie+"="+valorCookie+";expires="+new Date((new Date().getTime())+duracionToMiliseconds(duracion)).toUTCString()+";"
+                getAll()
             }
-            function verCookie(){
+            function getCookie(){
                 alert(document.cookie)
             }
             function duracionToMiliseconds(days){
                 return days*1000 * 60 * 60 * 24 
             }
-            function crearCookie(){
-                let nombreCookie=String(prompt("Introduce el nombre de tu cookie",""))
-                let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,""))
-                let duracion=Number(prompt("Introduce la duracion de la cookie "+nombreCookie,""))
+            function setCookie(){
+                let nombreCookie=String(prompt("Introduce el nombre de tu cookie","Nombre"))
+                let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,"Ruben"))
+                let duracion=Number(prompt("Introduce la duracion de la cookie "+nombreCookie,"2"))
                 //pasar la fecha de hoy a milisegundos, sumarle la duracion en milisegundos
 
-                console.log(new Date().getTime()+duracionToMiliseconds(duracion))
-                console.log(new Date().getTime())
-                document.cookie="\""+nombreCookie+"="+valorCookie+";expires=\""
+                document.cookie=nombreCookie+"="+valorCookie+";expires="+new Date((new Date().getTime())+duracionToMiliseconds(duracion)).toUTCString()+";"
+                getAll()
             }
-            function borrarCookie(e){
-                if((e.target.id)=="borrarCookie1"){
-                    document.cookie = "nombre=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-                }
-                else if((e.target.id)=="borrarCookie2"){
-                    document.cookie = "apellido=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-                }
-                else{
-                    alert("Error")
+            function deleteCookie(){
+                let nombreCookie=String(prompt("Introduce el nombre de tu cookie","Nombre"))
+                document.cookie = nombreCookie+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                getAll()
+            }
+            function deleteAllCookies() {
+                const cookies = document.cookie.split(";");
+
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i];
+                    const eqPos = cookie.indexOf("=");
+                    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
                 }
             }
             
