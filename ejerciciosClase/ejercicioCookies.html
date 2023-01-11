@@ -113,11 +113,23 @@
                 var table = document.createElement("table");
                 var tableBody = document.createElement("tbody");
 
+                var row = document.createElement("tr");
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode("Clave");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                cell = document.createElement("td");
+                cellText = document.createTextNode("Valor");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                tableBody.appendChild(row);
+
+
                 for (var i = 0; i < arrayCookies.length; i++) {
-                    var row = document.createElement("tr");
+                    row = document.createElement("tr");
                     for (var j = 0; j <2; j++) {
-                        var cell = document.createElement("td");
-                        var cellText = document.createTextNode(arrayCookies[i].toString().split("=")[j]);
+                        cell = document.createElement("td");
+                        cellText = document.createTextNode(arrayCookies[i].toString().split("=")[j]);
                         cell.appendChild(cellText);
                         row.appendChild(cell);
                     }
