@@ -28,8 +28,11 @@
                 <legend style="text-align: left;">Datos Personales</legend>
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" pattern="[A-Za-z]{2,15}" maxlength="15" title="Introduce entre 2 y 15 caracteres" required><br><br>
+                //atributo required para indicar que es obligatorio
+                //minlength y maxlength para indicar los valores mínimo y máximo de los input
+                //pattern para establecer que caracteres estan permitidos
                 <label for="mensaje">Mensaje:</label>
-                <input type="text" name="mensaje" id="mensaje" pattern="[A-Za-z]{2,500}"  minlength="2" maxlength="500" title="Introduce entre 2 y 500 caracteres" required><br>
+                <input type="text" name="mensaje" id="mensaje" pattern="[A-Za-z]{2,500}" minlength="2" maxlength="500" title="Introduce entre 2 y 500 caracteres" required><br>
             </fieldset>
             <div id="radios">
                 <label for="color">Elige un color</label><br>
@@ -39,6 +42,7 @@
                 <label for="verde">Verde</label> <br>
                 <input type="radio" onchange="cambiarFondo(id)" name="color" id="amarillo" value="Amarillo">
                 <label for="amarillo">Amarillo</label> <br>
+                //checked para que el color negro esté marcado por defecto
                 <input type="radio" onchange="cambiarFondo(id)" name="color" id="negro" value="Negro" checked>
                 <label for="negro">Negro</label> <br>
             </div><br>
@@ -53,6 +57,7 @@
             </div><br>
             <div id="dias">
                 <label for="dias">Selecciona los dias de disponibilidad</label><br>
+                //checked para que el lunes esté seleccionado por defecto
                 <input type="checkbox" onclick="updateDiaPref()" name="dias" id="Lunes" checked>
                 <label for="Lunes">Lunes</label><br>
                 
@@ -73,6 +78,7 @@
             <div id="diasPref">
                 <label for="diasPref">Selecciona el dia preferente</label>
                 <select name="diaPref" id="diaPref">
+                    //checked para que el lunes esté seleccionado por defecto
                     <option type="radio" name="diaPref" value="Lunes" selected>Lunes</option>
                     <option type="radio" name="diaPref" value="Martes">Martes</option>
                     <option type="radio" name="diaPref" value="Miercoles">Miercoles</option>
@@ -85,7 +91,6 @@
                 <input type="button" id="enviar" value="Enviar Informacion">
                 <input type="reset" id="reset" value="Rellenar de nuevo">
                 <input type="button" id="google" value="Clickame">
-                
             </div>
         </form>
     </body>
