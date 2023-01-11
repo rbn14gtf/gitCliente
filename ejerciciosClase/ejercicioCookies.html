@@ -22,7 +22,11 @@
                 alert(document.cookie)
             }
             function modificarCookie(){
-                alert(document.cookie)
+                let nombreCookie=String(prompt("Introduce el nombre de tu cookie",""))
+                let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,""))
+                //pasar la fecha de hoy a milisegundos, sumarle la duracion en milisegundos
+
+                document.cookie="\""+nombreCookie+"="+valorCookie+";"
             }
             function verCookie(){
                 alert(document.cookie)
