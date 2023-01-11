@@ -21,11 +21,12 @@
             document.getElementById("borrarCookie").addEventListener("click",deleteCookie)
             document.getElementById("borrarTodas").addEventListener("click",deleteAllCookies)
 
+            //muestra todos las cookies
             function getAll(){
                 alert(document.cookie)
                 location.reload()
             }
-            
+            //funcion que "actualiza", simplemente machaca la cookie con un valor nuevo
             function updateCookie(){
                 let nombreCookie=String(prompt("Introduce el nombre de la cookie que quieras modificar\n"+getCookiesNames(),"Nombre"))
                 let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,"Pablo"))
@@ -36,20 +37,24 @@
                 document.cookie=nombreCookie+"="+valorCookie+";expires="+new Date((new Date().getTime())+duracionToMiliseconds(duracion)).toUTCString()+";"
                 getAll()
             }
-            
+            //funcion que devuelve la cookie introducida por teclado
             function getCookie(){
+                //devuelve una cadena con las cookies sin espacios, para un manejo mas sencillo
                 let stringCookies=getCleanCookies()
                 
+                //guarda en un array el string anterior
                 let arrayCookies=stringCookies.split(";")
 
                 let nombreCookieeABuscar=String(prompt("Introduce el nombre de la cookie que quieres ver","Nombre"))
                 for (let i = 0; i < arrayCookies.length; i++) {
+                    ///comprueba que el valor introducido existe en la tabla
                     if(nombreCookieeABuscar==arrayCookies[i].toString().split("=")[0]){
                         alert(arrayCookies[i])
                     }
                 }
             }//getCookie
             
+            //crea una cookie con los valores introducidos
             function setCookie(){
                 let nombreCookie=String(prompt("Introduce el nombre de la cookie","Nombre"))
                 let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,"Ruben"))
@@ -60,12 +65,14 @@
                 getAll()
             }//setCookie
             
+            //borra la cookie introducida por teclado
             function deleteCookie(){
                 let nombreCookie=String(prompt("Introduce el nombre de la cookie que quieres borrar\n"+getCookiesNames(),"Nombre"))
                 document.cookie = nombreCookie+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
                 getAll()
             }//deleteCookie
-
+            
+            //borra todas las cookies
             function deleteAllCookies() {
                 const cookies = document.cookie.split(";");
                 for (let i = 0; i < cookies.length; i++) {
@@ -77,12 +84,14 @@
                 location.reload()
             }//deleteAllCookies
 
+            //funcion que borra el caracter en la posicion indicada
             function removeCharacterAt(str, char_pos){
                 let part1 = str.substring(0, char_pos);
                 let part2 = str.substring(char_pos + 1, str.length);
                 return (part1 + part2);
             }//removeCharacterAt
 
+            //funcion que devuelve una cadena con las cookies sin espacios, para un manejo mas sencillo
             function getCleanCookies(){
                 let stringCookies=document.cookie.toString()
                 for(let i=0;i<stringCookies.length;i++){
@@ -93,10 +102,12 @@
                 return stringCookies
             }//getCleanCookies
 
+            //convierte los dias introducidos por teclado a milisegundos
             function duracionToMiliseconds(days){
                 return days*1000 * 60 * 60 * 24 
             }//duracionToMiliseconds
 
+            //devuelve un string con los nombres de las cookies existentes
             function getCookiesNames(){
                 let arrayCookies=getCleanCookies().split(";")
                 let stringCookies="";
@@ -106,10 +117,13 @@
                 return stringCookies
             }//getCookiesNames
 
+            //crea una tabla con las cookies existentes
             function createTable(arrayCookies){
                 var body = document.getElementsByTagName("body")[0];
                 body.appendChild(document.createElement("br"));
                 body.appendChild(document.createElement("br"));
+
+                //crea el elemento tabla
                 var table = document.createElement("table");
                 var tableBody = document.createElement("tbody");
 
