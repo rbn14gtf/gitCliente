@@ -24,8 +24,8 @@
                 alert(document.cookie)
             }
             function updateCookie(){
-                let nombreCookie=String(prompt("Introduce el nombre de tu cookie","Nombre"))
-                let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,""))
+                let nombreCookie=String(prompt("Introduce el nombre de la cookie que quieras modificar\n"+getCookiesNames(),"Nombre"))
+                let valorCookie=String(prompt("Introduce el valor de la cookie "+nombreCookie,"Pablo"))
                 let duracion=Number(prompt("Introduce la duracion de la cookie "+nombreCookie,"2"))
 
                 //pasar la fecha de hoy a milisegundos, sumarle la duracion en milisegundos
@@ -33,8 +33,39 @@
                 document.cookie=nombreCookie+"="+valorCookie+";expires="+new Date((new Date().getTime())+duracionToMiliseconds(duracion)).toUTCString()+";"
                 getAll()
             }
+            function getCookiesNames(){
+                let arrayCookies=getCleanCookies().split(";")
+                let stringCookies="";
+                for (let i = 0; i < arrayCookies.length; i++) {
+                    stringCookies+=(i+1)+" "+arrayCookies[i].toString().split("=")[0]+"\n"
+                }            
+                return stringCookies
+            }
             function getCookie(){
-                alert(document.cookie)
+                let stringCookies=getCleanCookies()
+                
+                let arrayCookies=stringCookies.split(";")
+
+                let nombreCookieeABuscar=String(prompt("Introduce el nombre de la cookie que quieres ver","Nombre"))
+                for (let i = 0; i < arrayCookies.length; i++) {
+                    if(nombreCookieeABuscar==arrayCookies[i].toString().split("=")[0]){
+                        alert(arrayCookies[i])
+                    }
+                }
+            }
+            function remove_character(str, char_pos){
+                let part1 = str.substring(0, char_pos);
+                let part2 = str.substring(char_pos + 1, str.length);
+                return (part1 + part2);
+            }
+            function getCleanCookies(){
+                let stringCookies=document.cookie.toString()
+                for(let i=0;i<stringCookies.length;i++){
+                    if(stringCookies.charAt(i)==" "){
+                        stringCookies=remove_character(stringCookies,i)
+                    }
+                }
+                return stringCookies
             }
             function duracionToMiliseconds(days){
                 return days*1000 * 60 * 60 * 24 
