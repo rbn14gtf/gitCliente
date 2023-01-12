@@ -41,7 +41,6 @@
                 let duracion=Number(prompt("Introduce la duracion de la cookie "+nombreCookie,"2"))
 
                 //pasar la fecha de hoy a milisegundos, sumarle la duracion en milisegundos
-
                 document.cookie=nombreCookie+"="+valorCookie+";expires="+new Date((new Date().getTime())+duracionToMiliseconds(duracion)).toUTCString()+";"
                 getAll()
             }
