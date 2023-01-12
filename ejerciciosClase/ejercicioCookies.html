@@ -13,7 +13,7 @@
         <button id="borrarTodas">Delete All</button>
 
         <script>
-            window.onload=createTable(getCleanCookies().split(";"))
+            window.onload=inicio()
             document.getElementById("verTodas").addEventListener("click",getAll)
             document.getElementById("crearCookie").addEventListener("click",setCookie)
             document.getElementById("modificarCookie").addEventListener("click",updateCookie)
@@ -21,6 +21,14 @@
             document.getElementById("borrarCookie").addEventListener("click",deleteCookie)
             document.getElementById("borrarTodas").addEventListener("click",deleteAllCookies)
 
+            function inicio(){
+                //mete datos por defecto
+                // document.cookie="Nombre=Ruben;"
+                // document.cookie="Apellidos=Garcia;"
+                // document.cookie="Edad=21;"
+                //crea la tabla con las cookies existentes
+                createTable(getCleanCookies().split(";"))
+            }
             //muestra todos las cookies
             function getAll(){
                 alert(document.cookie)
