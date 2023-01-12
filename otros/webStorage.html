@@ -10,7 +10,11 @@
             localStorage.getItem("name");
             sessionStorage.setItem("name", "Doe John");
             sessionStorage.getItem("name");
-
+            if(typeof(Storage!=="undefined")){
+                alert("Soporta Storage")
+            }else{
+                alert("No Soporta Storage")
+            }
         </script>
     </body>
 </html>

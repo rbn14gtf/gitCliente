@@ -14,7 +14,7 @@ function redirigir(){
 }
 //muestra un alert indicando los tres metodos de validacion pedidos
 function infoValidaciones(){
-    alert("TRES POSIBILIDADES DE VALIDACIÓN DE FORMULARIOS\n\n1 Atributos en la etiqueta input (maxlength,minlength,pattern)\n2 CheckValidity en el js\n3 Métodos de validity en el js (rangeOverflow,patternMismatch,valueMissing)")
+    alert("TRES POSIBILIDADES DE VALIDACIÓN DE FORMULARIOS\n\n1 Atributos en la etiqueta input (maxlength,minlength,pattern)\n2 CheckValidity en el js (rangeOverflow,patternMismatch,valueMissing)\n3 Métodos de js propios ")
 }
 //funcion que llama al resto de metodos de validacion y que en caso de que todos los input cumplan con los requisitos,
 //envia por correo los datos del formulario
@@ -80,13 +80,13 @@ function getMensajeCorreo(){
 function isValidName(){
     let nombre=document.getElementById("nombre")
     //comprueba los requisitos especificados en el input
-    if(!nombre.checkValidity()){
+    if((nombre.value=="")||(nombre.value.length<2)||(nombre.value.length>15)){
         //da un error en caso de que no se haya introducido un nombre
-        if(nombre.validity.valueMissing){
+        if(nombre.value==""){
             error2(nombre,"Debe introducir un nombre")
         }
         //da un error en caso de que se haya introducido un nombre que no tiene entre 2 y 15 caracteres
-        if(nombre.validity.patternMismatch){
+        else if((nombre.value.length<2)||(nombre.value.length>15)){
             error2(nombre,"El nombre debe tener entre 2 y 15 caracteres")
         }
         return false
